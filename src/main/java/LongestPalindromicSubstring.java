@@ -1,16 +1,13 @@
 public class LongestPalindromicSubstring {
 
     public String longestPalindrome(String s) {
-        long startTime = System.currentTimeMillis();
         int start=0;int end = 0;
 
-        int a =0;
-        int b=1;
         int length = s.length();
         boolean[][] result = new boolean[length][length];
-        long startTime1 = System.currentTimeMillis();
 
         boolean current = false;
+        //计算base case，即初始化result[i][i]和result[i][j]
         for(int i=0;i<length;i++){
             result[i][i] = true;
             if(i+1 <= length-1) {
@@ -23,9 +20,8 @@ public class LongestPalindromicSubstring {
 
         }
 
-        long startTime2 = System.currentTimeMillis();
 
-
+        //开始通过DP进行递归计算
         for(int slice=2;slice < length;slice++){
             for(int i=0;i<length-slice;i++){
                 current = result[i][i+slice] = result[i+1][i+slice-1] && (s.charAt(i) == s.charAt(i+slice));
@@ -33,28 +29,10 @@ public class LongestPalindromicSubstring {
                     start = i;
                     end = i+slice;
                 }
-//
-//                a = i;
-//                b=i+2;
-//
-//                a = i+3;
-//                b=i+2;
-//                a = i;
-//                b=i+4;
-//                a = i+8;
-//                b=i+2;
-//                current = result[i][i] ;
-//                //current = result[i+1][i+slice-1] && (s.charAt(i) == s.charAt(i+slice));
-//               if( current ){ //找到一个回文
-//                    start = i;
-//                    end = i+slice;
-//                }
+
             }
         }
 
-        long endTime = System.currentTimeMillis();
-
-        System.out.println("time consuming "+(startTime1-startTime)+","+(startTime2-startTime1)+","+(endTime-startTime2)+" for input "+s);
         return s.substring(start,end+1);
     }
 
