@@ -2,6 +2,39 @@ import java.util.Stack;
 
 /**
  * Question 84
+ *解法归纳：
+ ## 暴力方式
+ i和j分别设置为第一个柱子，然后：
+ ```
+ for(int i=0;i<heights.length;i++){
+ for(int j=0;j<heights.length;j++){
+ computeArea()...
+ }
+ }
+ ```
+ 暴力方式的 computeArea()最主要的是计算区域[i,j]的最小的height，由于i和j是顺序递增，因此，这一步的minHeight可以从上一步计算而来，而不是每次都需要遍历[i,j]来计算。因此，总体时间复杂度是O(n^2)；
+
+
+ ## 通过巧妙方式记录最小高度
+ (链接)(https://discuss.leetcode.com/topic/39151/5ms-o-n-java-solution-explained-beats-96)
+ 这个算法的基本逻辑，是遍历每一个柱子，计算以这个柱子的高度为**最小高度**的**最大面积**值。这个算法的关键也是如何为某个柱子快速获取满足条件的左右边界。如果通过蛮力方式获取左右边界，则算法的总体时间复杂度是O(n^2)。这里的算法在最坏情况下的时间复杂度还是(O(n^2))，但是在一般情况下，平均时间复杂度却可以达到O(n)
+
+ ## 通过栈的方式，使时间复杂度降低到O(n)
+ 这是唯一一个时间复杂度在O(n)的算法
+ https://discuss.leetcode.com/topic/7599/o-n-stack-based-java-solution
+ 可以看我代码的注释。
+ 如果当前元素的高度大于栈顶元素的高度，那么元素入栈，这样，栈里面的元素stack(i-1)肯定是stack(i)在height中第一个小于stack(i)的元素
+ //如果当前元素的高度小于栈顶元素的高度，就对栈进行弹出，开始计算面积。此时i是tp右侧第一个小于tp的元素，因此，计算得到的面积是，以tp为最小元素的面积。
+
+ ## 动态规划，时间复杂度是O(nlogn)
+ [动态规划求解](https://discuss.leetcode.com/topic/7491/simple-divide-and-conquer-ac-solution-without-segment-tree)
+ 通过DC的方式获得的解答是O(nlogn)复杂度的，基本思想，在[i,j]范围内的最优解：中间坐标为k=(i+j)/2，那么，最优解只可能是三选一：
+ 1. 区域 [i,(i+j)/2-1] ；
+ 2. 区域 [i,(i+j)/2+1,j] ；
+ 3. 在[i,j]范围内并且包含(i+j)/2的某个区域；
+
+ 第三个直接决定了整个算法的时间复杂度。通过getAreaBetween()的O(n)的时间复杂度，使得整个算法的时间复杂度为O(nlogn)，而如果getAreaBetween()使用的是暴力的方式，则时间复杂度是O(n^2logn)
+ *
  */
 public class LargestRectangleInHistogram {
     /**
