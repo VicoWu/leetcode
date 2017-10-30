@@ -79,8 +79,8 @@ public class LargestRectangleInHistogram {
         if (height == null || height.length == 0) {
             return 0;
         }
-        int[] lessFromLeft = new int[height.length]; // idx of the first bar the left that is lower than current
-        int[] lessFromRight = new int[height.length]; // idx of the first bar the right that is lower than current
+        int[] lessFromLeft = new int[height.length]; // idx of the first bar the left that is lower than current 这个数组记录了对于每一个数字，其左侧第一次出现比它小的柱子的位置
+        int[] lessFromRight = new int[height.length]; // idx of the first bar the right that is lower than current 逐个数组记录了对于每一个数字，其右侧第一次出现了比它大的柱子的位置
         lessFromRight[height.length - 1] = height.length;
         lessFromLeft[0] = -1;
 

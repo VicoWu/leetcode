@@ -5,7 +5,22 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 import org.apache.commons.io.*;
+
+/**
+ * Question 76
+ * https://leetcode.com/problems/minimum-window-substring/description/
+ */
 public class MinimumWindowSubstring {
+
+    /**
+     * 别人的解法
+     * 最开始的时候，start和end坐标都是0，然后，end逐渐往后移动一直到找到了一个满足条件的值，这第一次的范围可能还可以缩小，于是我们通过让end不变、start往前移动来
+     * 逐渐将基于当前end的start值缩小到最小。然后，再把end往前移动以找到一个新的end，然后再把start往前end以将范围缩到最小；
+     *
+     * @param s
+     * @param t
+     * @return
+     */
     public String minWindow2(String s, String t) {
 
         int[] counter = new int[128];
