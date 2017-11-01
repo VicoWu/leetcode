@@ -49,6 +49,11 @@ public class LongestValidParentheses {
         return 1;
     }
 
+    /**
+     * 基于动态规划的方式实现
+     * @param s
+     * @return
+     */
     public int longestValidParentheses2(String s) {
         char[] S = s.toCharArray();
         int[] V = new int[S.length];
@@ -60,8 +65,11 @@ public class LongestValidParentheses {
                 // matches found
                 V[i] = 2+ V[i-1];
                 // add matches from previous
-                if(i-V[i]>0)
-                    V[i] += V[i-V[i]];
+                if(i-V[i]>0) {
+                    if (V[i - V[i]] != 0)
+                        System.out.println(1);
+                    V[i] += V[i - V[i]];
+                }
                 open--;
             }
             if (V[i] > max) max = V[i];
@@ -70,7 +78,11 @@ public class LongestValidParentheses {
     }
 
 
-
+    /**
+     * 使用堆栈实现
+     * @param s
+     * @return
+     */
     public int longestValidParentheses1(String s) {
         int max = Integer.MIN_VALUE;
         s += "x";
@@ -91,9 +103,40 @@ public class LongestValidParentheses {
     }
 
 
+    /**
+     * 这是我自己的解法，是通过栈的方式
+     * @param s
+     * @return
+     */
+    public int longestValidParenthesesMine(String s) {
+        Stack<Integer> stack = new Stack<Integer>();
+        int globalLongest = 0;
+        int open=0;
+        for(int i=0;i<s.length();i++){
+
+            char c = s.charAt(i);
+            if(c ==')' && !stack.isEmpty() && open > 0)
+            {
+                stack.pop();
+                Integer lastUnMatched = stack.isEmpty()?-1:stack.peek();
+                globalLongest = Math.max(globalLongest,i-lastUnMatched);
+                open--;
+            }
+            else{
+                if(c == '(')
+                    open++;
+                stack.push(i);
+            }
+        }
+        return globalLongest;
+    }
+
+
+
+
     public static void main(String[] args) {
 
-        String s = ")(()))";
-        new LongestValidParentheses().longestValidParentheses1(s);
+        String s = "((()))(())";
+        new LongestValidParentheses().longestValidParentheses2(s);
     }
 }
