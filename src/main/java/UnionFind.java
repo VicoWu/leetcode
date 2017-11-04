@@ -5,7 +5,7 @@ import java.io.File;
 import java.util.Scanner;
 
 /**
- * 联通分量查找,这种查找算法可以用来在有向图或者无向图中确认是否有环
+ * 联通分量查找,这种查找算法可以用来在**有向图**或者**无向图**中确认是否有环
  *
  * http://www.cnblogs.com/SeaSky0606/p/4752941.html
  * http://www.geeksforgeeks.org/?p=26350 //这是讲Union find 算法的具体实现的
@@ -16,15 +16,43 @@ import java.util.Scanner;
  * 后者将p,q两点进行连接。注意，所谓的连接，其实可以简单的将p的连通分量值赋予q或者将q的连通分量值赋予p，即：
 
  id[p]=q 或者id[q]=p。
-
-
-
  */
 
 // Java Program for union-find algorithm to detect cycle in a graph
-import java.util.*;
-import java.lang.*;
-import java.io.*;
+ import java.lang.*;
+
+public  class UnionFind{
+
+    // Driver Method
+    public static void main (String[] args)
+    {
+        /* Let us create following graph
+         0
+        |  \
+        |    \
+        1-----2 */
+        int V = 3, E = 3;
+        Graph graph = new Graph(V, E);
+
+        // add edge 0-1
+        graph.edge[0].src = 0;
+        graph.edge[0].dest = 1;
+
+        // add edge 1-2
+        graph.edge[1].src = 1;
+        graph.edge[1].dest = 2;
+
+        // add edge 0-2
+        graph.edge[2].src = 0;
+        graph.edge[2].dest = 2;
+
+        if (graph.isCycle(graph)==1)
+            System.out.println( "graph contains cycle" );
+        else
+            System.out.println( "graph doesn't contain cycle" );
+    }
+}
+
 
 class Graph
 {
@@ -107,32 +135,5 @@ class Graph
 
 
 
-    // Driver Method
-    public static void main (String[] args)
-    {
-        /* Let us create following graph
-         0
-        |  \
-        |    \
-        1-----2 */
-        int V = 3, E = 3;
-        Graph graph = new Graph(V, E);
 
-        // add edge 0-1
-        graph.edge[0].src = 0;
-        graph.edge[0].dest = 1;
-
-        // add edge 1-2
-        graph.edge[1].src = 1;
-        graph.edge[1].dest = 2;
-
-        // add edge 0-2
-        graph.edge[2].src = 0;
-        graph.edge[2].dest = 2;
-
-        if (graph.isCycle(graph)==1)
-            System.out.println( "graph contains cycle" );
-        else
-            System.out.println( "graph doesn't contain cycle" );
-    }
 }
