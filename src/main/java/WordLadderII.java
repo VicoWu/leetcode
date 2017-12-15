@@ -91,12 +91,122 @@ public class WordLadderII {
             }
         }
 
+        return null;
+
     }
 
+    public void recurse(String current,Map<String,Boolean> visited,Set<String> dict ,List<String> path,String endWord,List<List<String>> globalResult ){
+        visited.put(current,true);
+        char[] ca  = current.toCharArray();
+        for(int i=0;i<ca.length;i++){
+            for(char c='a';c<='z';c++){
+                char bak = ca[i];
+                ca[i] = c;
+                String instance = new String(ca);
+
+                if(!visited.containsKey(instance) && dict.contains(instance)){ //对于广度优先遍历，这个相当于遍历到一个孩子节点
+                    path.add(instance);
+                    visited.put(instance,true);
+                    if(instance.equals(endWord)){
+                        globalResult.add(path);
+                    }
+                    else
+                        recurse(instance,visited,dict,path,endWord,globalResult);
+                    visited.put(instance,false);
+                    path.remove(instance);
+                }
+
+                ca[i] = bak;
+            }
+        }
+    }
+
+
+    public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList){
+
+        List<List<String>> globalResult = new ArrayList<>();
+
+
+        Set<String> dict = new HashSet<String>();
+        for(String d:wordList){
+            dict.add(d);
+        }
+
+        Map<String,List<String>> preMap = new HashMap<String,List<String>>();
+        Map<String,Integer> levelMap = new HashMap<String,Integer>();
+        Queue<String> queue = new LinkedList<String>();
+        levelMap.put(beginWord,0);
+        queue.add(beginWord);
+        while(!queue.isEmpty()){
+            String current =  queue.poll();
+            char[] ca  = current.toCharArray();
+            boolean found = false;
+            for(int i=0;i<ca.length && !found;i++){
+                for(char c='a';c<='z' && !found;c++){
+                    char bak = ca[i];
+                    ca[i] = c;
+                    String instance = new String(ca);
+                    if(dict.contains(instance)
+                            &&
+                            (!levelMap.containsKey(instance)
+                                    || levelMap.get(instance) == levelMap.get(current)+1)){ //找到一个孩子
+                        addPre(preMap,instance,current); //记录前置节点
+                        if(instance.equals(endWord)){
+                            found = true;
+                        }
+                        queue.add(instance); //入队列
+                        levelMap.put(instance,levelMap.get(current)+1);
+                    }
+                    ca[i] = bak;
+                }
+            }
+        }
+
+        List<String> currentPath = new LinkedList<String>();
+        computeGlobalResultFromPre(preMap,globalResult,endWord,currentPath);
+
+        return globalResult;
+    }
+
+    private  List<List<String>> computeGlobalResultFromPre(Map<String,List<String>> preMap ,List<List<String>> globalResult ,String key,List<String> currentPath){
+
+        currentPath.add(key);
+        List<String> myPres = preMap.get(key);
+        if(myPres==null){ //只有beginWord的前置节点是空的
+            List<String> result = new LinkedList<>(currentPath);
+            globalResult.add(result);
+        }
+        else {
+            for(String pre:myPres){
+                computeGlobalResultFromPre(preMap,globalResult,pre,currentPath);
+            }
+        }
+        currentPath.remove(key);
+        return globalResult;
+    }
+
+    private void addPath(List<List<String>> globalResult ,String item){
+        for(int i=0;i<globalResult.size();i++){
+            globalResult.get(i).add(item);
+        }
+    }
+
+    private void addPre(Map<String,List<String>> preMap,String current,String pre){
+        if(preMap.containsKey(current)){
+            preMap.get(current).add(pre);
+        }
+        else{
+            List<String> pres = new LinkedList<String>();
+            pres.add(pre);
+            preMap.put(current,pres);
+        }
+    }
 
     public static void main(String[] args) {
         List<String> wordList = new LinkedList<String>();
         wordList.add("hot");wordList.add("dot");wordList.add("dog");wordList.add("lot");wordList.add("log");wordList.add("cog");
+        new WordLadderII().findLadders("hit","cog",wordList);
+        //wordList.add("hot");wordList.add("dot");wordList.add("dog");wordList.add("lot");wordList.add("log");wordList.add("cog");
         //new WordLadderII().findLadders("hit","cog",wordList);
     }
 }
