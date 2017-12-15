@@ -4,6 +4,33 @@ import java.util.List;
 
 /**
  * Question 282
+ *
+ * ## 讨论区的实现
+ 这是讨论区的解法，在代码中名字叫做`addOperators1`
+ https://discuss.leetcode.com/topic/24523/java-standard-backtrace-ac-solutoin-short-and-clear/2
+
+ 这是代码中关于后面添加一个乘号`*`的递推解释
+
+ `for example, if you have a sequence of 12345 and you have proceeded to 1 + 2 + 3, now your eval is 6 right?
+ If you want to add a * between 3 and 4, you would take 3 as the digit to be multiplied, so you want to take it out
+ from the existing eval. You have 1 + 2 + 3 * 4 and the eval now is (1 + 2 + 3) - 3 + (3 * 4). Hope this could help : )`
+
+ ## 我自己仿造讨论区把代码写了一边，几乎一样
+ 该算法没有捷径，需要从第一个字符开始，暴力方式尝试每一个位置添加三种运算符的情况，但是并不是每一种组合都完全需要重新计算，
+ 我们可以通过前面的一段结果，推算添加了一个字符以后的结果
+ 由于最终需要运算结果，因此，关键问题是，如果我们已经为前面的某一段确定了形式并有了运算结果，怎么得到添加了一段字符以后的计算结果，比如，
+ 已经确定了前面的形式是"1+2+3"，后面来了一个4，我们必须
+ 推算得到`"1+2+3+4"`、`"1+2+3-4"`、`"1+2+3*4"`三种情况的结果，因此，对于每一步，我们需要有的中间结果为：当前的前缀样式`"1+2+3"`，
+ 前缀样式的最后一个结果("3")，前缀的计算结果(6,即1+2+3的结果)，才能推算得到`"1+2+3+4"`、`"1+2+3-4"`、`"1+2+3*4"`的结果
+ 需要注意的地方：
+ 1.防止溢出，必须用long，比如输入为`"8787878787",target=435`,即，我们需要的形式是`"87+87+87+87+87"`，
+ 虽然这五个数字都没有溢出，但是我们在计算过程中会尝试`"87*87*87*87*87"`，可能发生溢出；
+ 2.数字是可能存在多位的，比如上面的87，因此，在代码中，我们使用for循环来确定所有可能，`"8","87","878","8787","87878"`等等
+ 3.数字0开头只能单独才合法，00，02都是非法的数字，因此如果我们发现数字的开头是0，则到了第二个位置就应该终止；
+
+
+
+
  */
 public class ExpressionAddOperators {
 
