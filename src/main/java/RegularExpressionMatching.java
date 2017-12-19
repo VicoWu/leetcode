@@ -1,9 +1,15 @@
 /**
  * Question 10
+ * 这一题我直接使用的是自顶向下的方法求解，看方法@code upToBottomDP()
+ * 注意理解这一题的含义
+ *  . 匹配且仅仅匹配一个字符
+ *  * 匹配0个或者任意多个前面的字符，比如b*，可以匹配0个或者任意多个b
+ *
+ *  因此可以参考这个解答
+ *  https://discuss.leetcode.com/topic/40371/easy-dp-java-solution-with-detailed-explanation
+ *
+ *
  */
-
-import java.util.*;
-import java.util.regex.*;
 
 public class RegularExpressionMatching {
     public boolean isMatch(String s, String p) {
@@ -65,16 +71,32 @@ public class RegularExpressionMatching {
 
 
     private Boolean[][] result =null;
+
+
     public boolean upToBottomDP(String s, String p){
 
+        /**
+         * 将匹配结果保存在二维数组result中，其实如果单纯使用DP,是不需要result的，但是考虑到避免重复计算，我们使用result保存中间结果，避免可能出现的重复计算
+         * result[i][j] 保存的是s.subString(i,s.length)和p.subString(j,p.length)是否匹配，
+         * 因此初始化的时候，result[s.length()][p.length()]=true，相当于一个空的输入串和空的正则肯定是匹配的
+         */
         result = new Boolean[s.length()+1][p.length()+1];
 
         result[s.length()][p.length()] = true;
         return dp(0,0,s,p);
     }
 
+    /**
+     * i和j分别是输入s和正则p的游标，dp(i,j,s,p)返回s.subString(i,s.length)和p(j,p.length)是否是匹配的。
+     * 因此，当i==j==0，dp(0,0,s,p);返回最终结果，然后通过i和j不断递归，通过动态规划，最终获取结果
+     * @param i
+     * @param j
+     * @param s
+     * @param p
+     * @return
+     */
     public Boolean dp(int i, int j, String s, String p) {
-        if (result[i][j] != null)
+        if (result[i][j] != null) //中间结果重用
             return result[i][j];
 
         if (j == p.length()) {
@@ -82,11 +104,14 @@ public class RegularExpressionMatching {
             return result[i][j];
         }
 
+        //输入串和正则的头部是否匹配，如果头部都不匹配，那肯定就不匹配
         boolean matchedHead = (i<s.length())&& (s.charAt(i) == p.charAt(j)  || p.charAt(j) == '.');
-        if (j + 1 < p.length() && p.charAt(j + 1) == '*') {
-            result[i][j] = matchedHead && dp(i + 1, j, s, p) || dp(i, j + 2, s, p);
+        //如果第二个字符是*，则分为两种情况，看看正则的第二个字符是不是*
+        if (j + 1 < p.length() && p.charAt(j + 1) == '*') {  //如果正则的第二个字符是*
+            result[i][j] = matchedHead && dp(i + 1, j, s, p) //头部匹配，比如，s='a',p='a*',因此只需要比较s.subString(i+1,s.length())和p.subString(j,p.length())是否匹配
+                    || dp(i, j + 2, s, p); //如果头部不匹配，比如s='a',p='b*'，则只能是b*匹配0个b，因此需要比较s.subString(i,s.length())和p.subString(j+2,p.length())是否匹配
         } else
-            result[i][j] = matchedHead && dp(i + 1, j + 1, s, p);
+            result[i][j] = matchedHead && dp(i + 1, j + 1, s, p); //如果正则的第二个字符不是*，则老老实实地分别往后移动一个位置，继续比较，
         return result[i][j];
 
     }
@@ -219,6 +244,6 @@ public class RegularExpressionMatching {
         //Pattern p = Pattern.compile("c*a*b");
         //System.out.println(p.matcher("aab").matches());
        //System.out.println(new RegularExpressionMatching().isMatch("aaa","a.a"));
-        System.out.println(new RegularExpressionMatching().upToBottomDP("a","a.*"));
+        System.out.println(new RegularExpressionMatching().upToBottomDP("a","b*"));
     }
 }
