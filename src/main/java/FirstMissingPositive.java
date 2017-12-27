@@ -15,7 +15,6 @@ public class FirstMissingPositive {
                 A[tmp-1] = tmp;
 
             }
-            printArray(A);
         }
 
 
@@ -28,7 +27,7 @@ public class FirstMissingPositive {
 
 
     public static void main(String[] args) {
-        int[] result = {2,1,4};
+        int[] result = {-1,2,4};
        System.out.println(new FirstMissingPositive().firstMissingPositive(result)) ;
       //  System.out.println(new FirstMissingPositive().firstMissingPositive1(result)) ;
     }
