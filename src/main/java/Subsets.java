@@ -4,6 +4,10 @@ import java.util.List;
 /**
  * Created by wuchang at 1/2/18
  * Question 78
+ * 由于求的是所有的子集，因此，对于每一个元素，都有两种选择，保留或者丢弃。
+ 即，对于输入nums，对于第1个元素nums[0]，子集中可以包含nums[0]或者不包含nums[0]，这形成了两种情况，
+ 然后，我们对nums[1,nums.length-1]求所有的子集，包含nums[0]或者不包含nums[0]形成的集合与对nums[1,nums.length-1]求所有的子集进行笛卡尔积，就是我们要的结果。
+ 另外，由于需要回溯，因此，在递归退出的时候，需要把这一层递归添加进来的元素删除。
  */
 
 public class Subsets {
