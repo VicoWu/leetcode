@@ -3,6 +3,22 @@ import java.util.Arrays;
 /**
  * Created by wuchang at 1/3/18
  * Question 377
+ *
+
+ [Permutations](https://leetcode.com/problems/permutations/description/)
+ [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+ [Next permutation](https://leetcode.com/problems/next-permutation/description/)
+ [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
+ [Subsets](https://leetcode.com/problems/subsets/description/)
+ [Subsets II](https://leetcode.com/problems/subsets-ii/description/)
+ [Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+ [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+ [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
+ [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+
+ [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
+
+
  * [这里](https://leetcode.com/problems/combination-sum-iv/discuss/85036)非常详细地讲解了这一题的解答思路
  注意这一题与[Combination Sum](https://leetcode.com/problems/combination-sum/description/)的相同和不同：
  相同：

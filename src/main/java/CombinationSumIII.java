@@ -4,6 +4,21 @@ import java.util.List;
 /**
  * Created by wuchang at 1/3/18
  * Question 216
+ *
+ *
+
+ [Permutations](https://leetcode.com/problems/permutations/description/)
+ [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+ [Next permutation](https://leetcode.com/problems/next-permutation/description/)
+ [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
+ [Subsets](https://leetcode.com/problems/subsets/description/)
+ [Subsets II](https://leetcode.com/problems/subsets-ii/description/)
+ [Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+ [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+ [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
+ [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+
+ [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
  * 对于[1..9]，我们先从1开始，看看有没有以1开头的合理组合，所有以1开头的组合都找完以后，再找以2开头的，再找以3开头的组合。。。
  假如说我们现在要找k个数字组成的组合，范围是[1...9]，假如现在1定下来，我们找以1开头的组合，因此我们需要在[2...9]范围内查找由k-1个数字并且和为n-1的组合，对于[2...n]中的每一个数字t，我们需要再在[t+1,9]的范围内查找由k-2个数字并且和为n-1-t组成的组合，依次类推。
  在不断递归的过程中，我们都会通过当前current的大小来判断current.size()是否已经等于k以及剩余和是否为0，如果是，则保存这个结果，返回。

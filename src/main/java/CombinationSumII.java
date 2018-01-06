@@ -5,6 +5,24 @@ import java.util.List;
 /**
  * Created by wuchang at 1/3/18
  * Question 40
+ *
+
+
+ [Permutations](https://leetcode.com/problems/permutations/description/)
+ [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+ [Next permutation](https://leetcode.com/problems/next-permutation/description/)
+ [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
+ [Subsets](https://leetcode.com/problems/subsets/description/)
+ [Subsets II](https://leetcode.com/problems/subsets-ii/description/)
+ [Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+ [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+ [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
+ [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+
+ [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
+
+
+
  这一题与[Combination Sum](https://leetcode.com/problems/combination-sum/description/)是解法一样，但是区别有两点：
  1. 这一题中C里面的每一个数字都只能用一次
  2. 这一题中C里面可能有重复数字

@@ -5,6 +5,21 @@ import java.util.List;
 /**
  * Created by wuchang at 1/3/18
  * Question 39
+
+ [Permutations](https://leetcode.com/problems/permutations/description/)
+ [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+ [Next permutation](https://leetcode.com/problems/next-permutation/description/)
+ [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
+ [Subsets](https://leetcode.com/problems/subsets/description/)
+ [Subsets II](https://leetcode.com/problems/subsets-ii/description/)
+ [Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+ [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+ [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
+ [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+
+ [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
+
+
  这一题同样是递归和回溯的典型应用
 
  对于candidates，我们首先在`[0,candidates.length-1]`的范围内进行搜索，因此取出`candidates[0]`，剩余`target-candidates[0]`，由于题目中允许candidates中的任何一个数字被任意多次使用，因此，我们还是在`[0,candidates.length-1]`的范围内来给`target-candidates[0]`进行递归搜索。如果什么时候`target==0`，说明找到候选，保存结果。

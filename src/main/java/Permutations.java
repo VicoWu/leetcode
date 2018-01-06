@@ -4,7 +4,18 @@ import java.util.List;
 /**
  * Created by wuchang at 1/2/18
  * Question 46
- *
+ [Permutations](https://leetcode.com/problems/permutations/description/)
+ [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
+ [Next permutation](https://leetcode.com/problems/next-permutation/description/)
+ [Permutation Sequence](https://leetcode.com/problems/permutation-sequence/description/)
+ [Subsets](https://leetcode.com/problems/subsets/description/)
+ [Subsets II](https://leetcode.com/problems/subsets-ii/description/)
+ [Combination Sum](https://leetcode.com/problems/combination-sum/description/)
+ [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
+ [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
+ [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+
+ [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
  * 对于输入的nums，对于index=0，我们将nums[0]分别与nums中的每一个元素交换(包括自己)，
  * 这样就在index=0的位置形成了nums.length种情况，然后，我们再处理nums[1],将nums[1]与[1,nums.length-1]
  * 的所有元素进行一次交换，以此类推，我们将nums[i]与[i,nums.length-1]的所有元素交换。当进行到最后的时候，就是我们得到结果的时候。
