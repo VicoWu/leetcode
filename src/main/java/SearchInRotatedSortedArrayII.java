@@ -1,7 +1,12 @@
 /**
  * Created by wuchang at 12/29/17
  * Question 81
- *
+ [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+ [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+ [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+ [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/description/)
+
+
  * 这一题必须参照[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/ ) 进行解答。
  由于[Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/ ) 中Rotated Sorted Array 中没有重复数字，因此，我们可以很明确地根据left , mid，right之间的大小关系，知道这个target是在左侧区间还是右侧区间，可是，一旦有重复数字，这个判断就失灵了：
  比如：

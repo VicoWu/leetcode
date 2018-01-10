@@ -2,6 +2,13 @@
  * Created by wuchang at 12/29/17
  * Question 33
  *
+ *
+ [Search in Rotated Sorted Array](https://leetcode.com/problems/search-in-rotated-sorted-array/description/)
+ [Search in Rotated Sorted Array II](https://leetcode.com/problems/search-in-rotated-sorted-array-ii/)
+ [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/)
+ [Find Minimum in Rotated Sorted Array II](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array-ii/description/)
+
+
  直接二分查找
 
  这是我自己的解法，对于一个区间[left,right]，如果pivot不在这个区间里面，肯定有nums[left]<=nums[right]，否则，如果pivot在这里面，必有nums[left] > nums[right]，比如{4,5,6,0,1,2,3}
