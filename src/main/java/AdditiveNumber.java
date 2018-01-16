@@ -1,4 +1,7 @@
 import java.math.BigInteger;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * Created by wuchang at 12/29/17
@@ -31,6 +34,11 @@ public class AdditiveNumber {
      * @return
      */
     public boolean isAdditiveNumber(String num) {
+
+        AtomicInteger ai;
+        ThreadLocal tl;
+        ConcurrentHashMap chm;
+        ReentrantLock rtl;
 
         for(int i=0;i<num.length()-2;i++){//这里可以优化，假如num.length=5，那么第一个数字最大只能长度为2
             if(i>0 && num.startsWith("0"))
