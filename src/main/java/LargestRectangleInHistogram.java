@@ -131,8 +131,12 @@ public class LargestRectangleInHistogram {
     /*
 
     below is my provement about the correctness of maxCombineArea(const vector<int> &height, int s, int m, int e) method:
-Let us suppose that optimal solution is [op_lower,op_upper] ,so ,from method maxCombineArea()，there must be a step where i meets op_lower or j meets op_uppers. We choose one condition ,that is , j have just meet op_upper and i has not reached op_lower yet. So , the correctness proof of method maxCombineArea() become this: j will stand still until i reached op_lower。I use proof by contradiction:
-if , before i reached to op_lower,maxCombineArea() method make j moved forword to j+1, then ,according to the algorithm of maxCombineArea(), the reason of this movement must be height[i-1] <= height[j+1] ; In this condition ,we find that area of range [op_lower,op_upper] is smaller that area [op_lower,j+1],which is contrary to the hypothesis that [op_lower,op_upper] is optimal solution. So , before i reached op_lower,j will stand still at op_upper。
+Let us suppose that optimal solution is [op_lower,op_upper] ,so ,from method maxCombineArea()，there must be a step where i meets op_lower or j meets op_uppers.
+We choose one condition ,that is , j have just meet op_upper and i has not reached op_lower yet. So , the correctness proof of method maxCombineArea() become this:
+j will stand still until i reached op_lower。I use proof by contradiction:
+if , before i reached to op_lower,maxCombineArea() method make j moved forword to j+1, then ,according to the algorithm of maxCombineArea(),
+the reason of this movement must be height[i-1] <= height[j+1] ; In this condition ,we find that area of range [op_lower,op_upper] is smaller
+ that area [op_lower,j+1],which is contrary to the hypothesis that [op_lower,op_upper] is optimal solution. So , before i reached op_lower,j will stand still at op_upper。
      */
     public static int getAreaBetween(int[] height,int start,int middle,int end){
         int i=middle;int j=middle;

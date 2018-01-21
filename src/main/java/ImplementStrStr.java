@@ -1,7 +1,10 @@
 /**
  * Created by wuchang at 12/21/17
  * Question 28
- * 多少个这里的KMP算法是我自己的实现，最核心的是创建KMP表。网上的一些讲解方法非常复杂，KMP表的长度还需要是pattern的长度+1，我创建的KMP表的长度直接等于pattern的长度；
+ # 暴力方法
+ [这里](https://leetcode.com/problems/implement-strstr/discuss/12807/)讲了暴力解法。
+ # KMP方法
+ 这里的KMP算法是我自己的实现，最核心的是创建KMP表。网上的一些讲解方法非常复杂，KMP表的长度还需要是pattern的长度+1，我创建的KMP表的长度直接等于pattern的长度；
  ```
  pattern     table
  abab        0012
@@ -38,6 +41,8 @@
  abcdabc
 
  ```
+
+
 
 
  */
@@ -92,7 +97,6 @@ public class ImplementStrStr {
                 else
                     kmpTable[i] = 0;
             }
-
         }
 
         return kmpTable;
@@ -138,6 +142,7 @@ public class ImplementStrStr {
 
     public static void main(String[] args) {
 //       System.out.println( new ImplementStrStr().strStr("BBC ABCDAB ABCDABCDABDE","ABCDABD"));
-        System.out.println( new ImplementStrStr().strStr("aabaaabaaac","aabaaac"));
+      //  System.out.println( new ImplementStrStr().strStr("aabaaabaaac","aabaaac"));
+        System.out.println( new ImplementStrStr().strStr("abcdabhe","abcdabc"));
     }
 }

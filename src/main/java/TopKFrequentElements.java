@@ -14,7 +14,9 @@ import java.util.Map;
  同样，这四题其实是一个系列的。
 
  # 我的思路
- 联想到这一题与[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)相似，也是要求top k，因此，我最初的想法是，先统计每一个字符的频率，然后在这些频率上进行类似快排的partition算法，直到找到这个我们需要的k。但是这一题不一样的地方，是这些单词的频率是有上界的，即所有单词的频率之和不会超过nums的长度，即，nums中任何一个字符的频率，都在`[1,nums.length]`之间，而[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)中是直接对一个无序上组求top k，数组里面的数字的值是没有具体范围的。因此，我们使用一个bucket数组，数组的索引即代表频率，数组每一个索引位置的值是一个list，记载了对应频率的所有字符。当bucket填充完毕以后，我们从后往前遍历数组，就可以得到我们要求的频率最高的k个元素了。
+ 联想到这一题与[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)相似，也是要求top k，因此，
+ 我最初的想法是，先统计每一个字符的频率，然后在这些频率上进行类似快排的partition算法，直到找到这个我们需要的k。
+ 但是这一题不一样的地方，是这些单词的频率是有上界的，即所有单词的频率之和不会超过nums的长度，即，nums中任何一个字符的频率，都在`[1,nums.length]`之间，而[Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)中是直接对一个无序上组求top k，数组里面的数字的值是没有具体范围的。因此，我们使用一个bucket数组，数组的索引即代表频率，数组每一个索引位置的值是一个list，记载了对应频率的所有字符。当bucket填充完毕以后，我们从后往前遍历数组，就可以得到我们要求的频率最高的k个元素了。
  这是典型的空间换时间。
 
  */
