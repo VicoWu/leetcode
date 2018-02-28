@@ -49,7 +49,7 @@ public class CallHandler {
     
     /* Gets the first available employee who can handle this call. */
     public Employee getHandlerForCall(Call call) {
-        for (int level = call.getRank().getValue(); level < LEVELS - 1; level++) {
+        for (int level = call.getRank().getValue(); level < LEVELS - 1; level++) {//从较低的LEVEL开始遍历，寻找一个空闲的Employee，注意，每一个Call对象都有一个最低的level，因此接待者的level必须等于或者大于Call的level
             List<Employee> employeeLevel = employeeLevels.get(level);
             for (Employee emp : employeeLevel) {
                 if (emp.isFree()) {
@@ -69,13 +69,13 @@ public class CallHandler {
     /* Routes the call to an available employee, or saves in a queue if no employee available. */
     public void dispatchCall(Call call) {
     	/* Try to route the call to an employee with minimal rank. */
-        Employee emp = getHandlerForCall(call);
-        if (emp != null) {
+        Employee emp = getHandlerForCall(call); //对于一个呼叫，按照respondent -> manager -> director 的顺序找到一个处理者
+        if (emp != null) { //找到了
         	emp.receiveCall(call);
         	call.setHandler(emp);
         } else {
 	        /* Place the call into corresponding call queue according to its rank. */
-	        call.reply("Please wait for free employee to reply");
+	        call.reply("Please wait for free employee to reply"); //没有找到，则放入到等待队列
 	        callQueues.get(call.getRank().getValue()).add(call);
         }
     }    
@@ -84,7 +84,7 @@ public class CallHandler {
      * if we were able to assign a call, false otherwise. */
     public boolean assignCall(Employee emp) {
         /* Check the queues, starting from the highest rank this employee can serve. */
-        for (int rank = emp.getRank().getValue(); rank >= 0; rank--) {
+        for (int rank = emp.getRank().getValue(); rank >= 0; rank--) { //某一个级别的Employee，只有权限处理级别等于或者低于自己级别的呼叫
             List<Call> que = callQueues.get(rank);
             
             /* Remove the first call, if any */

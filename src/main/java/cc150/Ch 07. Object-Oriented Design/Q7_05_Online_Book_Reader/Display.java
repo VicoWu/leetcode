@@ -30,7 +30,10 @@ public class Display {
 	public void refreshDetails() {
 		/* updates details display */
 	}
-	
+
+	/**
+	 * page代表书籍上的文字，用户在翻页的时候，只有文字发生变化，而书籍的标题、其它详细信息都不变
+	 */
 	public void refreshPage() {
 		/* updated page display */
 	}

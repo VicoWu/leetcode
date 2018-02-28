@@ -1,21 +1,21 @@
 package Q7_01_Deck_of_Cards;
 
-import java.util.ArrayList;
-
 import CtCILibrary.AssortedMethods;
 
+import java.util.ArrayList;
+
 public class Deck <T extends Card> {
-	private ArrayList<T> cards;
-	private int dealtIndex = 0; // marks first undealt card
+	private ArrayList<T> cards; //所有的牌
+	private int dealtIndex = 0; // marks first undealt card 已经打出去的牌
 	
 	public Deck() {
 	}
 	
 	public void setDeckOfCards(ArrayList<T> deckOfCards) {
 		cards = deckOfCards;
-	}
+	} //初始化所有的 牌
 	
-	public void shuffle() {
+	public void shuffle() { //洗牌
 		for (int i = 0; i < cards.size(); i++) {
 			int j = AssortedMethods.randomIntInRange(i, cards.size() - i - 1);
 			T card1 = cards.get(i);

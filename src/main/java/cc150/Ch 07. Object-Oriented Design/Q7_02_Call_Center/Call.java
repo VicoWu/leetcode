@@ -14,7 +14,7 @@ public class Call {
 	private Employee handler;
 
 	public Call(Caller c) {
-		rank = Rank.Responder;
+		rank = Rank.Responder; //这个级别代表了这个呼叫的最小级别，即最低级别的接待者
 		caller = c;
 	}
 

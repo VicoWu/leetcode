@@ -1,5 +1,8 @@
 package Q7_01_Deck_of_Cards;
 
+/**
+ * 代表了一张扑克牌，可以看到，value是抽象方法，因为同一张牌在不同的打法下面可能会有不同的值，比如,ACE有时候代表1，有时候14
+ */
 public abstract class Card {
 	private boolean available = true;
 	
@@ -14,7 +17,7 @@ public abstract class Card {
 		suit = s;
 	}
 	
-	public abstract int value();
+	public abstract int value();//抽象方法
 	
 	public Suit suit() { 
 		return suit; 

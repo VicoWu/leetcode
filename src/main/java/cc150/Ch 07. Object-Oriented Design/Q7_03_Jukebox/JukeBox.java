@@ -2,6 +2,9 @@ package Q7_03_Jukebox;
 
 import java.util.Set;
 
+/**
+ * JukeBox代表了真个程序的程序体
+ */
 public class JukeBox {
 	private CDPlayer cdPlayer;
 	private User user;

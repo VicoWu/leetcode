@@ -6,7 +6,10 @@ public class Game {
 	private Board board;
 	private final int ROWS = 10;
 	private final int COLUMNS = 10;
-	
+
+	/**
+	 * 一个游戏基本上包含棋盘、选手、棋子
+	 */
 	private Game() {
 		board = new Board(ROWS, COLUMNS);
 		players = new Player[2];
@@ -15,7 +18,7 @@ public class Game {
 		Automator.getInstance().initialize(players); // used for testing
 	}
 	
-	public static Game getInstance() {
+	public static Game getInstance() { //单例
 		if (instance == null) {
 			instance = new Game();
 		}

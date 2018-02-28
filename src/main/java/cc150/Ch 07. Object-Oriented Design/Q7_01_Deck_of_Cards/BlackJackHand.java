@@ -6,7 +6,11 @@ public class BlackJackHand extends Hand<BlackJackCard> {
 	public BlackJackHand() {
 		
 	}
-	
+
+	/**
+	 * 继承了父类的Hand类，计算具体的得分，因此不同的游戏有不同的规则
+	 * @return
+	 */
 	public int score() {
 		ArrayList<Integer> scores = possibleScores();
 		int maxUnder = Integer.MIN_VALUE;

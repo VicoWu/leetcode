@@ -23,7 +23,11 @@ public class UserManager {
 		toUser.receivedAddRequest(req);
 		fromUser.sentAddRequest(req);
 	}
-	
+
+	/**
+	 * 接受了添加用户的骑牛
+	 * @param req
+	 */
 	public void approveAddRequest(AddRequest req) {
 		req.status = RequestStatus.Accepted;
 		User from = req.getFromUser();
@@ -31,7 +35,11 @@ public class UserManager {
 		from.addContact(to);
 		to.addContact(from);
 	}
-	
+
+	/**
+	 * 拒绝了添加用户的请求
+	 * @param req
+	 */
 	public void rejectAddRequest(AddRequest req) {
 		req.status = RequestStatus.Rejected;
 		User from = req.getFromUser();

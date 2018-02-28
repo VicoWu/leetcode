@@ -7,8 +7,8 @@ import java.util.HashMap;
 public class User {
 	private int id;
 	private UserStatus status = null;
-	private HashMap<Integer, PrivateChat> privateChats = new HashMap<Integer, PrivateChat>();
-	private ArrayList<GroupChat> groupChats = new ArrayList<GroupChat>();
+	private HashMap<Integer, PrivateChat> privateChats = new HashMap<Integer, PrivateChat>(); //当前的privateChat
+	private ArrayList<GroupChat> groupChats = new ArrayList<GroupChat>(); //当前的groupChat
 	private HashMap<Integer, AddRequest> receivedAddRequests = new HashMap<Integer, AddRequest>();
 	private HashMap<Integer, AddRequest> sentAddRequests = new HashMap<Integer, AddRequest>();
 	
@@ -21,7 +21,13 @@ public class User {
 		this.fullName = fullName;
 		this.id = id;
 	}
-	
+
+	/**
+	 * 向某个用户发送消息
+	 * @param toUser
+	 * @param content
+	 * @return
+	 */
 	public boolean sendMessageToUser(User toUser, String content) {
 		PrivateChat chat = privateChats.get(toUser.getId());
 		if (chat == null) {
@@ -31,7 +37,14 @@ public class User {
 		Message message = new Message(content, new Date());
 		return chat.addMessage(message);
 	}
-	
+
+
+	/**
+	 * 向某个群聊发送消息
+	 * @param groupId
+	 * @param content
+	 * @return
+	 */
 	public boolean sendMessageToGroupChat(int groupId, String content) {
 		GroupChat chat = groupChats.get(groupId);
 		if (chat != null) {
@@ -83,12 +96,20 @@ public class User {
 	public void requestAddUser(String accountName) {
 		UserManager.getInstance().addUser(this, accountName);
 	}
-	
+
+	/**
+	 * 加入一个私聊
+	 * @param conversation
+	 */
 	public void addConversation(PrivateChat conversation) {
 		User otherUser = conversation.getOtherParticipant(this);
 		privateChats.put(otherUser.getId(), conversation);
 	}
 
+	/**
+	 * 加入到群聊
+	 * @param conversation
+	 */
 	public void addConversation(GroupChat conversation) {
 		groupChats.add(conversation);
 	}	

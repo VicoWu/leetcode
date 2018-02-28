@@ -4,16 +4,16 @@ package Q7_02_Call_Center;
  * abstract class, since there should be no reason to instantiated an Employee type directly.
  */
 abstract class Employee {
-	private Call currentCall = null;
-	protected Rank rank;
-	private CallHandler callHandler;
+	private Call currentCall = null; //当前正在进行的一次呼叫
+	protected Rank rank;//我的级别
+	private CallHandler callHandler; //整个呼叫系统的句柄
 
 	public Employee(CallHandler handler) {
 		callHandler = handler;
 	}
 
 	/* Start the conversation */
-	public void receiveCall(Call call) {
+	public void receiveCall(Call call) { //开始接听一个会话
 		currentCall = call;
 	}
 
@@ -28,7 +28,7 @@ abstract class Employee {
 		}
 
 		/* Check if there is a call waiting in queue */
-		assignNewCall();
+		assignNewCall(); //服务结束，自己从等待队列里面取出一个来
 	}
 
 	/*
@@ -39,14 +39,14 @@ abstract class Employee {
 		if (currentCall != null) {
 			/* escalate call */
 			currentCall.incrementRank();
-			callHandler.dispatchCall(currentCall);
+			callHandler.dispatchCall(currentCall); //不呼叫分派给别人
 
 			/* free the employee */
 			currentCall = null;
 		}
 
 		/* assign a new call */
-		assignNewCall();
+		assignNewCall();//重新获取一个等待着的呼叫
 	}
 
 	/* Assign a new call to an employee, if the employee is free. */

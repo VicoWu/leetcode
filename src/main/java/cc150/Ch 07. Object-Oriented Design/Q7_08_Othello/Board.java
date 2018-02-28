@@ -15,7 +15,7 @@ public class Board {
 		 *     BW
 		 */
 		int middleRow = board.length / 2;
-		int middleColumn = board[middleRow].length / 2;
+		int middleColumn = board[middleRow].length / 2;//初始化棋盘，先放置四个棋子
 		board[middleRow][middleColumn] = new Piece(Color.White);
 		board[middleRow + 1][middleColumn] = new Piece(Color.Black);
 		board[middleRow + 1][middleColumn + 1] = new Piece(Color.White);
@@ -40,12 +40,12 @@ public class Board {
 		int flipped = 0;
 		for (int result : results) {
 			if (result > 0) {
-				flipped += result;
+				flipped += result; //统计上下左右总共翻转的个数
 			}
 		}
 		
 		/* if nothing was flipped, then it's an invalid move */
-		if (flipped < 0) {
+		if (flipped < 0) { //如果上下左右都没有被翻转，说明放到了一个错误的位置
 			return false;
 		}
 		
@@ -63,26 +63,29 @@ public class Board {
 		int c = 0;
 		switch (d) {
 		case up:
-			r = -1;
+			r = -1;//继续向上
 			break;
-		case down:
+		case down: //继续向下
 			r = 1;
 			break;
-		case left:
+		case left: //继续向左
 			c = -1;
 			break;
-		case right:
+		case right: //继续向右
 			c = 1;
 			break;
 		}
-		
+
+		/**
+		 * 越界
+		 */
 		/* If out of bounds, or nothing to flip, return an error (-1) */
 		if (row < 0 || row >= board.length || column < 0 || column >= board[row].length || board[row][column] == null) {
 			return -1;
 		}
 		
 		/* Found same color - return nothing flipped */
-		if (board[row][column].getColor() == color) {
+		if (board[row][column].getColor() == color) { //找到了相同颜色，可以退出了
 			return 0;
 		}
 		
@@ -90,7 +93,7 @@ public class Board {
 		 * of the row (or a null piece) before we found our own color, so there's nothing to flip. Return
 		 * the error code.
 		 */
-		int flipped = flipSection(row + r, column + c, color, d);
+		int flipped = flipSection(row + r, column + c, color, d); //在相同方向上继续向上
 		if (flipped < 0) {
 			return -1;
 		}

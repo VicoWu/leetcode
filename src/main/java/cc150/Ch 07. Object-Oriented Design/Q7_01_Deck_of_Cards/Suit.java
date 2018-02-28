@@ -1,12 +1,15 @@
 package Q7_01_Deck_of_Cards;
 
-public enum Suit { 
-	Club (0),
-	Diamond (1),
-	Heart (2),
-	Spade (3);
+/**
+ * 这个枚举类型代表了一张扑克牌，注意，与Card相区分，Suit只是代表扑克牌本身，与规则无关
+ */
+public enum Suit {
+	Club (0), //梅花
+	Diamond (1), //方块
+	Heart (2), //红桃
+	Spade (3); //黑桃
 	
-	private int value;
+	private int value; //扑克牌上的值
 	private Suit(int v) {
 		value = v;
 	}
