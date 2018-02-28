@@ -129,7 +129,7 @@ public class CourseSchedule {
                         inDegree[nei]--;
                     }
             }
-            if(none == 0) //none不为0，并且pre>0，说明虽然还存在入度不为0 的点，但是我们已经无法找到一个入度为0的点，那肯定就是因为有环
+            if(none == 0) //none为0，并且pre>0，说明虽然还存在入度不为0 的点，但是我们已经无法找到一个入度为0的点，那肯定就是因为有环
                 return false;
         }
         return true;

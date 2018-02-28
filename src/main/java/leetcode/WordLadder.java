@@ -39,7 +39,7 @@ public class WordLadder {
             }
 
             Set<String> temp = new HashSet<String>();
-            for (String word : beginSet) {
+            for (String word : beginSet) { //通过交换，beginSet一直是元素数量较少的那一方
                 char[] chs = word.toCharArray();
 
                 for (int i = 0; i < chs.length; i++) {
@@ -133,7 +133,7 @@ public class WordLadder {
         Set<String> S = new HashSet<String>();
         Set<String> U = new HashSet<String>();
 
-        Integer[] result= new Integer[wordList.size()];
+        Integer[] result= new Integer[wordList.size()];//result中存放了距离
 
         String[] wordArray = new String[wordList.size()];
         int endWordIndex = -1;
@@ -146,20 +146,20 @@ public class WordLadder {
                 endWordIndex = i;
         }
 
-        if(endWordIndex == -1)
-            return 0;
+        if(endWordIndex == -1) //没有找到endWord
+            return 0; //返回长度0
 
         for(int i=0;i<wordArray.length;i++){
 
             Integer minLength = null;
             int minIndex = -1;
-            for(int j=0;j<wordArray.length;j++){
+            for(int j=0;j<wordArray.length;j++){ //找出距离S的距离最近的点
 
                 String word = wordArray[j];
                 if(S.contains(word))
                     continue;
-                Integer length = result[j];
-                if(biggerOrEqual(minLength,length))
+                Integer length = result[j]; //当前单词和beginWord之间的距离
+                if(biggerOrEqual(minLength,length)) //
                 {
                     minLength = length;
                     minIndex = j;
@@ -167,10 +167,10 @@ public class WordLadder {
             }
 
             String v = wordArray[minIndex];
-            S.add(v); U.remove(v);
+            S.add(v); U.remove(v); //把这个距离最短的点加入到S中
             for(int j=0;j<result.length;j++){
                 String word = wordArray[j];
-                Integer updatedLength = add(minLength,getDistance(v,word));
+                Integer updatedLength = add(minLength,getDistance(v,word)); //根据当前加入的点，重新获取每个点的最近距离
                 if(biggerOrEqual(result[j] , updatedLength))
                     result[j] =updatedLength;
             }

@@ -37,7 +37,7 @@ public class WordBreakII {
     private List<String> dfs(String input ,Set<String> dict,  Map<String, LinkedList<String>> cache){
         if(input == null)
             return null ;
-        LinkedList<String> found = new LinkedList<String>();
+        LinkedList<String> found = new LinkedList<String>();//found代表对input的返回结果，即切割的结果
         if(cache.containsKey(input))
             return cache.get(input); //避免重复计算，已经计算过了，直接返回结果
 
