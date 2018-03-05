@@ -8,6 +8,20 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 07. Object-Oriented Design" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 09. Scalability and Memory Limits" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 10. Sorting and Searching" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 08. Recursion and Dynamic Programming" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 01. Arrays and Strings" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 02. Linked Lists" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 03. Stacks and Queues" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 04. Trees and Graphs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 05. Bit Manipulation" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 06. Math and Logic Puzzles" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 13. Java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 15. Threads and Locks" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 16. Moderate" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/Ch 17. Hard" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java/cc150/CtCILibrary" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/src/main/java/amazon" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>

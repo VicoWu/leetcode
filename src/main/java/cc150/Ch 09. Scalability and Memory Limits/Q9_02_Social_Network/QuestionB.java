@@ -2,9 +2,7 @@ package Q9_02_Social_Network;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class QuestionB {
 
@@ -17,27 +15,34 @@ public class QuestionB {
 		pathOne.addAll(pathTwo); // add second path
 		return pathOne;
 	}
-	
+
+	/**
+	 * 注意，这个方法被调用一次，只会从primary往前搜索一层就返回
+	 * @param people
+	 * @param primary
+	 * @param secondary
+	 * @return
+	 */
 	/* Search one level and return collision, if any. */
 	public static Person searchLevel(HashMap<Integer, Person> people, BFSData primary, BFSData secondary) {
 		/* We only want to search one level at a time. Count how many nodes are currently in the primary's
 		 * level and only do that many nodes. We'll continue to add nodes to the end. */
-		int count = primary.toVisit.size(); 
+		int count = primary.toVisit.size();
 		for (int i = 0; i < count; i++) {
 			/* Pull out first node. */
 			PathNode pathNode = primary.toVisit.poll();
 			int personId = pathNode.getPerson().getID();
 			
 			/* Check if it's already been visited. */
-			if (secondary.visited.containsKey(personId)) {
+			if (secondary.visited.containsKey(personId)) {//如果这个节点是secondary已经访问的，那么说明相遇了
 				return pathNode.getPerson();
 			}				
 			
 			/* Add friends to queue. */
 			Person person = pathNode.getPerson();
-			ArrayList<Integer> friends = person.getFriends();
+			ArrayList<Integer> friends = person.getFriends(); //从队列中弹出person节点，然后获取它的所有邻接节点
 			for (int friendId : friends) {
-				if (!primary.visited.containsKey(friendId)) {
+				if (!primary.visited.containsKey(friendId)) { //这个person的这个邻接节点还没有被访问，就入队列
 					Person friend = people.get(friendId);
 					PathNode next = new PathNode(friend, pathNode);
 					primary.visited.put(friendId, next);
@@ -52,16 +57,16 @@ public class QuestionB {
 		BFSData sourceData = new BFSData(people.get(source));
 		BFSData destData = new BFSData(people.get(destination));
 		
-		while (!sourceData.isFinished() && !destData.isFinished()) {
+		while (!sourceData.isFinished() && !destData.isFinished()) { //不断循环，每一步循环，sourceData到destData会往前进一步，destData到sourceData也会往前进一步
 			/* Search out from source. */
-			Person collision = searchLevel(people, sourceData, destData);
+			Person collision = searchLevel(people, sourceData, destData); //先从sourceData到destData进行一步搜索
 			if (collision != null) {
 				return mergePaths(sourceData, destData, collision.getID());
 			}
 			
 			/* Search out from destination. */
-			collision = searchLevel(people, destData, sourceData);
-			if (collision != null) {
+			collision = searchLevel(people, destData, sourceData); //然后从destData到sourceData进行一步搜索
+			if (collision != null) { //双向BFS进行搜索发生了对撞，即相遇了，说明找到了
 				return mergePaths(sourceData, destData, collision.getID());
 			}
 		}

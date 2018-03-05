@@ -3,8 +3,8 @@ package Q9_02_Social_Network;
 import java.util.HashMap;
 
 public class Server {
-	HashMap<Integer, Machine> machines = new HashMap<Integer, Machine>();
-	HashMap<Integer, Integer> personToMachineMap = new HashMap<Integer, Integer>();
+	HashMap<Integer, Machine> machines = new HashMap<Integer, Machine>(); //所有的服务器
+	HashMap<Integer, Integer> personToMachineMap = new HashMap<Integer, Integer>(); //用户id到服务器id的映射关系
 	
 	public Machine getMachineWithId(int machineID) {
 		return machines.get(machineID);
