@@ -8,7 +8,7 @@ import java.util.List;
  * Created by wuchang at 3/7/18
  * Question 51
  直接使用了[这里](https://leetcode.com/problems/n-queens/discuss/19805/My-easy-understanding-Java-Solution)的解法，是递归方法。
- 我在我的leetcode工程里面在EightQueen.java类里面分别实现了8皇后的递归和非递归解法。
+ 我在我的leetcode工程里面在[EightQueen.java](https://github.com/VicoWu/leetcode/blob/master/src/main/java/leetcode/EightQueen.java)类里面分别实现了8皇后的递归和非递归解法。
  */
 
 public class NQueens {

@@ -6,6 +6,8 @@ import java.util.List;
 /**
  * Created by wuchang at 3/7/18
  * Question 52
+ 我在代码里面直接复制和简单修改了[N-Queens](https://leetcode.com/problems/n-queens/description/)的代码，结构和原理都是相似的。
+ 我在我的leetcode工程里面在[EightQueen.java](https://github.com/VicoWu/leetcode/blob/master/src/main/java/leetcode/EightQueen.java)类里面分别实现了8皇后的递归和非递归解法。
  */
 
 public class NQueensII {
