@@ -5,8 +5,12 @@ import java.util.Stack;
 /**
  * Created by wuchang at 2/8/18
  * question 277
- * [这里](https://discuss.leetcode.com/topic/23534/java-solution-two-pass)的解法跟下面通过栈
- * 的方式求解相似
+[这里](https://discuss.leetcode.com/topic/23534/java-solution-two-pass)的解法跟下面通过栈
+的方式求解相似
+[这里](http://www.cnblogs.com/grandyang/p/5310649.html)对这一题有比较详细的解释
+
+ 无论什么解法，其实方法都是大体相似的，即，如果这个集合里面有名人，那么，我们通过一轮O(n)的遍历，找到的一定就是名人。但是，有可能集合里面没有名人，那么我们找到的这个人就不是名人。
+ 因此，需要第二轮O（n）的遍历来确认它是不是名人。
  */
 
 public class FindTheCelebrity {
@@ -55,7 +59,7 @@ public class FindTheCelebrity {
             }
 
             else
-                st.push(a);//如果b认识a，那么b肯定不是名人，a可能是名人
+                st.push(a);//如果a不认识b，那么b肯定不是名人，a可能是名人
         }
 
         c = st.pop();
@@ -73,6 +77,28 @@ public class FindTheCelebrity {
         }
         return c;
     }
+
+
+    /**
+     * 设定候选人res为0，原理是先遍历一遍，对于遍历到的人i，若候选人res认识i，则将候选人res设为i，
+     * 完成一遍遍历后，我们来检测候选人res是否真正是名人，我们如果判断不是名人，则返回-1，如果并没有冲突，返回res，参见代码如下：
+     * 这是[这里](http://www.cnblogs.com/grandyang/p/5310649.html)的解法
+     * @param n
+     * @return
+     */
+    public int findCelebrity1(int n) {
+        int res = 0;
+        for (int i = 0; i < n; ++i) {
+            if (knows(res, i)) res = i;
+        }
+        for (int i = 0; i < n; ++i) {
+            if (res != i && (knows(res, i) || !knows(i, res))) return -1;
+        }
+        return res;
+    }
+
+
+
 
     // Driver program to test above methods
     public static void main(String[] args)

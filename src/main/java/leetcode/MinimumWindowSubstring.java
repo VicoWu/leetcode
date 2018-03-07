@@ -1,10 +1,8 @@
 package leetcode; /**
  * Question 76
  */
-import java.io.File;
-import java.io.IOException;
-import java.util.*;
-import org.apache.commons.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Question 76
@@ -35,8 +33,8 @@ public class MinimumWindowSubstring {
             counter[(int) t.charAt(i)] ++;//数字代表这个字符在t中的出现次数，即目前还需要在s中找到这个字符多少次，0代表刚好找全，为负数代表目前已经找到的次数大于这个字符在t中的出现次数
         while (end < s.length()) {
             int index = (int) s.charAt(end++); //当前字符
-            if (counter[index]-- > 0) //当前字符是t中的字符
-                unFoundCounter--; //如果某一个字符多次出现，则只有第一次会执行unFoundCounter--
+            if (counter[index]-- > 0) //在s中遇到的任何一个字符，都把对应的counter值减去1
+                unFoundCounter--; //由于counter[index]-- > 0，说明是t中的字符，因此unFoundCounter--
             while (unFoundCounter == 0) { //目前s在begin - end范围内包含了t字符串
 
                 if (end - begin < currentMinRange) { //找到一个更小的范围
@@ -128,15 +126,17 @@ public class MinimumWindowSubstring {
 //       Map<Character ,Integer> m = new HashMap<Character ,Integer>();
 //       System.out.println(m.get("abc".charAt(1)));
 
-        try {
-            String a = FileUtils.readFileToString(new File("/Users/wuchang/s"));
+ //       try {
+//            String a = FileUtils.readFileToString(new File("/Users/wuchang/s"));
+//
+//            String b = FileUtils.readFileToString(new File("/Users/wuchang/t"));
+//            System.out.println("length 1 "+a.length()+",length b is "+b.length());
+            String s = "abcedfg";
+            String t = "dec";
+            System.out.println(new MinimumWindowSubstring().minWindow2(s, t)) ;
 
-            String b = FileUtils.readFileToString(new File("/Users/wuchang/t"));
-            System.out.println("length 1 "+a.length()+",length b is "+b.length());
-            System.out.println(new MinimumWindowSubstring().minWindow(a, b)) ;
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 }
