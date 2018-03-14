@@ -11,8 +11,14 @@ public class EditDistance {
         for(int j=0;j<=word2.length();j++) distance[0][j] = j;
 
         for(int i=1;i<=word1.length();i++){
-            for(int j=1;j<=word2.length();j++){
-                distance[i][j] = Math.min(word1.charAt(i-1) == word2.charAt(j-1)?distance[i-1][j-1]:distance[i-1][j-1]+1,Math.min(distance[i][j-1]+1,distance[i-1][j]+1));
+            for(int j=1;j<=word2.length();j++){ //distance[i][j]可以通过distance[i-1][j-1]、distance[i-1][j]、distance[i][j-1]推导出来
+                distance[i][j] = Math.min(
+                        word1.charAt(i-1) == word2.charAt(j-1) //如果最后两个单词相同
+                                ?distance[i-1][j-1]
+                                :distance[i-1][j-1]+1,
+                        Math.min(distance[i][j-1]+1,distance[i-1][j]+1)
+
+                );
             }
         }
         return distance[word1.length()][word2.length()];

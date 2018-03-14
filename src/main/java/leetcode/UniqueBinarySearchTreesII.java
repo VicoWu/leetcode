@@ -115,9 +115,10 @@ public class UniqueBinarySearchTreesII {
 
         for(int i=lo;i<=ri;i++){ //对当前的[lo,ri]范围进行切割，切割为[lo,i-1]和[i+1,ri]，根节点是i
 
-           List<TreeNode> left =  generateTrees(lo,i-1);
-           List<TreeNode> right = generateTrees(i+1,ri);
+           List<TreeNode> left =  generateTrees(lo,i-1); //存放了左子树形成的所有树的root节点的list
+           List<TreeNode> right = generateTrees(i+1,ri);//存放了右子树形成的所有树的root节点的list
 
+            //加入左子树形成了m个树，右子树形成了n个树，那么此时就可以形成m*n个不同的树
            for(TreeNode tl:left) {
                for (TreeNode tr : right) {
                    TreeNode root = new TreeNode(i); //创建根节点
@@ -177,6 +178,6 @@ public class UniqueBinarySearchTreesII {
 //        tn1.right = tn2;
 //        tn2.right = tn3;
 //        new UniqueBinarySearchTreesII().treeCopy(tn1);
-        new UniqueBinarySearchTreesII().generateTrees(0);
+        new UniqueBinarySearchTreesII().generateTrees(3);
     }
 }
