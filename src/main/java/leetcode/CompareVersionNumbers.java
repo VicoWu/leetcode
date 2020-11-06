@@ -3,6 +3,7 @@ package leetcode;
 /**
  * Created by wuchang at 1/12/18
  * Question 165
+ * Integer.valueOf  方法自动可以把 leading zero去掉，然后转换成整数
  */
 
 public class CompareVersionNumbers {
@@ -23,7 +24,4 @@ public class CompareVersionNumbers {
         System.out.println(new CompareVersionNumbers().compareVersion("1.21","1.31"));
         System.out.println(new CompareVersionNumbers().compareVersion("1.2","1.13"));
     }
-
-
-
 }

@@ -51,7 +51,7 @@ public class CombinationSumIII {
             return;
         }
 
-        if(n  < lo)
+        if(n  < lo) //目标值是n，但是我们发现现在最左侧的值已经大于这个目标值了， 因此后面肯定不会有候选项，放弃
             return;
 
         for(int i=lo;i<10;i++){ //i代表了起始的搜索位置，我们在[lo,9]的范围内进行搜索

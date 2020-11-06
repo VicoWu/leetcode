@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -79,9 +80,37 @@ public class CombinationSumII {
     }
 
 
+    // ##########################
+
+    public List<List<Integer>> combinationSum2_2(int[] cand, int target) {
+        Arrays.sort(cand);
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        List<Integer> path = new ArrayList<Integer>();
+        dfs_com(cand, 0, target, path, res);
+        return res;
+
+    }
+    void dfs_com(int[] cand, int cur, int target, List<Integer> path, List<List<Integer>> res) {
+        if (target == 0) {
+            res.add(new ArrayList(path));
+            return ;
+        }
+        if (target < 0) return;
+        for (int i = cur; i < cand.length; i++){
+            if (i > cur && cand[i] == cand[i-1]) continue;
+            path.add(path.size(), cand[i]);
+            dfs_com(cand, i+1, target - cand[i], path, res);
+            path.remove(path.size()-1);
+        }
+    }
+
+
     public static void main(String[] args) {
 
-        int[] nums = {10, 1, 2, 7, 6, 1, 5};
-        new CombinationSumII().combinationSum2(nums,8);
+        int[] nums = {10, 1,  7, 6, 1, };
+        new CombinationSumII().combinationSum2_2(nums,8);
     }
+
+
+
 }
