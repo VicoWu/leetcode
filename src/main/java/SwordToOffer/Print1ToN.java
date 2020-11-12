@@ -52,7 +52,8 @@ public class Print1ToN
 
     public static void main(String[] args)
     {
-        new Print1ToN().print1ToMaxOfNDigit(3);
+        System.out.println((int)'0');
+        //new Print1ToN().print1ToMaxOfNDigit(3);
     }
 
 }

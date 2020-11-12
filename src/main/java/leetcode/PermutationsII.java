@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Set;
  * Created by wuchang at 1/2/18
  * Question 47
  *
+ * Sword to Offer 面试题17 全排列
  [Permutations](https://leetcode.com/problems/permutations/description/)
  [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
  [Next permutation](https://leetcode.com/problems/next-permutation/description/)
@@ -57,6 +59,32 @@ public class PermutationsII {
         int tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
+    }
+
+    public List<List<Integer>> permuteUnique2(int[] nums) {
+        Arrays.sort(nums);
+        List<List<Integer>> result  = new LinkedList<>();
+        recursive(nums,0,result,new LinkedList<Integer>());
+        return result;
+    }
+
+    public void recursive2(int[] nums, int lo,List<List<Integer>> result,List<Integer> current){
+        if(lo == nums.length){
+            result.add(new LinkedList<>(current));
+            return;
+        }
+        HashSet<Integer> exists = new HashSet<>();
+        for(int i=lo; i<nums.length; i++){
+            if(exists.contains(nums[i]))
+                continue;
+            exists.add(nums[i]);
+            swap(nums, lo , i);
+            current.add(nums[i]);
+            recursive2(nums, lo+1, result, current);
+            current.remove(nums[i]); // recover
+            swap(nums, lo , i); // recover
+        }
+
     }
 
 

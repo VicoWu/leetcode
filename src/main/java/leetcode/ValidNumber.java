@@ -41,7 +41,78 @@ public class ValidNumber {
                 && numberAfterE; //防止e是最后一个字符
     }
 
+    public boolean isNumber2(String s){
+        s = s.trim();
+        int index = checkSign(0, s);
+        if(index == -1)
+            return false;
+        if(s.charAt(index) != '.'){
+            index = checkUnsignedInt(index, s, false);
+            if(index == s.length()) // 全部是数字
+                return true;
+            if(index == -1) //一个数字都没有
+                return false;
+        }
+        if(s.charAt(index) == '.') // 数字检查完了， 开始检查小数部分
+        {
+            index = checkUnsignedInt(index+1, s, false);
+            if(index == -1)  // 非法
+                return false;
+            if(index == s.length()) // 到字符串的末尾了
+                return true;
+        }
+        if(s.charAt(index) == 'e') // 遇到e了
+        {
+            index = checkSign(index+1, s); //检查符号
+            if(index == -1)
+                return false;
+            index = checkUnsignedInt(index, s, true); // 检查最后面的一段数字
+            if(index == -1 || index != s.length()) //非法数字
+                return false;
+            else
+                return true;
+        }
+        else
+            return false;
+    }
+
+    private int checkSign(int startIndex, String s){
+        if(startIndex >= s.length())
+            return -1;
+        return (s.charAt(startIndex) == '+' || s.charAt(startIndex) == '-') ? startIndex + 1 : startIndex;
+    }
+
+    /**
+     * 检查无符号数字，要求至少有一个数字
+     * @param startIndex
+     * @param s
+     * @return
+     */
+    private int checkUnsignedInt(int startIndex, String s, boolean atLeastOne){
+        int i = startIndex;
+        if(startIndex >= s.length())
+            return atLeastOne ? -1 : startIndex;
+        for(; i < s.length() && s.charAt(i) >= '0' && s.charAt(i) <= '9'; ){
+            i++;
+        }
+        if(i == startIndex)
+            return -1;
+        return i;
+    }
+
+
+
+
     public static void main(String[] args) {
-        System.out.println(new ValidNumber().isNumber(".2"));
+        System.out.println(new ValidNumber().isNumber2("."));
+        System.out.println(new ValidNumber().isNumber2("2e10"));
+        System.out.println(new ValidNumber().isNumber2("1e"));
+        System.out.println(new ValidNumber().isNumber2("e3"));
+        System.out.println(new ValidNumber().isNumber2(".6e-1"));
+        System.out.println(new ValidNumber().isNumber2(".99e2.6"));
+        System.out.println(new ValidNumber().isNumber2("3."));
+        System.out.println(new ValidNumber().isNumber2("--6"));
+
+
     }
 }

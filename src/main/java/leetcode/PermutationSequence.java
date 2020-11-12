@@ -27,7 +27,7 @@ import java.util.*;
  123
  132
  213
- 132
+ 231
  321 #这里开始乱序
  312
  ```
@@ -70,7 +70,6 @@ public class PermutationSequence {
           * 我们要求第k个数，如果从0排，求的是序号k-1的那个数字
           */
         return getPermutation(n,k-1,n,new StringBuffer(),fm,remain);
-
     }
 
 
@@ -95,11 +94,38 @@ public class PermutationSequence {
         nums[j] = tmp;
     }
 
+    public String getPermutation2(int n, int k){
+        List<Integer> remain = new ArrayList<>();
+        StringBuffer sb = new StringBuffer();
+        long currentBatch  = 1;
+        for(int i = 1;i<=n;i++){
+            remain.add(i);
+            currentBatch *= i;
+        }
+        getPermutation2(remain, sb, n, k , currentBatch);
+        return sb.toString();
+    }
+
+    public void getPermutation2(List<Integer> remain, StringBuffer currentResult, int n, int k, long currentBatch){
+         if(remain.size() == 1)
+         {
+             currentResult.append(remain.get(0));
+             return;
+         }
+         currentBatch = currentBatch / remain.size();
+         int index = (int)((long)(k-1)/currentBatch);
+         int remainIndex =(int) ((long)(k-1) % currentBatch);
+         currentResult.append(remain.remove(index));
+         getPermutation2(remain, currentResult, n , remainIndex + 1, currentBatch);
+    }
+
+
+
 
 
     public static void main(String[] args) {
-
-       for(int i=1;i<=24;i++)
-         System.out.println(new PermutationSequence().getPermutation(1,1));
+         System.out.println(new PermutationSequence().getPermutation2(3, 2));
+//       for(int i=1;i<=24;i++)
+//         System.out.println(new PermutationSequence().getPermutation(1,1));
     }
 }
