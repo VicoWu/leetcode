@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="497e5782-cca1-4351-97a0-710e7380121c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicatesfromSortedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/SumOf2Integers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversalII.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/MissingNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/MissingNumber.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ValidNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ValidNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/coding_problems-master/leetcode/easy/SymmetricTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/coding_problems-master/leetcode/easy/SymmetricTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,6 +29,9 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/leetcode$TheSkylineProblem.coverage" NAME="TheSkylineProblem Coverage Results" MODIFIED="1509350047899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/leetcode$RegularExpressionMatching.coverage" NAME="RegularExpressionMatching Coverage Results" MODIFIED="1508068104270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/leetcode$SpiralMatrix.ic" NAME="SpiralMatrix Coverage Results" MODIFIED="1605321499545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>leetcode.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/leetcode$BinaryTreeInOrderTraverse.coverage" NAME="BinaryTreeInOrderTraverse Coverage Results" MODIFIED="1507888676926" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/leetcode$TrappingRainWater.coverage" NAME="TrappingRainWater Coverage Results" MODIFIED="1508749536571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/leetcode$LongestConsecutiveSequence.coverage" NAME="LongestConsecutiveSequence Coverage Results" MODIFIED="1509161357578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -55,25 +57,25 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="26" />
+          <entry key="java" value="38" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="26" />
+          <entry key="JAVA" value="38" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="8217" />
+          <entry key="java" value="12341" />
           <entry key="xml" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="8217" />
+          <entry key="JAVA" value="12341" />
           <entry key="XML" value="8" />
         </counts>
       </usages-collector>
@@ -84,8 +86,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/List.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="250">
-              <caret line="599" column="6" selection-start-line="599" selection-start-column="6" selection-end-line="599" selection-end-column="6" />
+            <state relative-caret-position="618">
+              <caret line="584" column="9" selection-start-line="584" selection-start-column="9" selection-end-line="584" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -193,7 +195,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/SwordToOffer/NumberOfDigitOne.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="236">
-              <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+              <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -202,7 +204,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+              <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -211,7 +213,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SumOf2Integers.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="345">
-              <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -220,7 +222,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/MissingNumber.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="156">
-              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
             </state>
           </provider>
         </entry>
@@ -229,7 +231,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicatesfromSortedList.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="201">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
               <folding>
                 <element signature="e#753#754#0" expanded="true" />
                 <element signature="e#800#801#0" expanded="true" />
@@ -251,7 +253,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
-              <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+              <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -269,7 +271,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="30" />
+              <caret line="29" selection-start-line="29" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -278,16 +280,134 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="382">
-              <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+              <caret line="120" selection-start-line="120" selection-end-line="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="261">
+              <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/coding_problems-master/leetcode/easy/SymmetricTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="274">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrixII.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="22" selection-start-line="22" selection-end-line="27" selection-end-column="2" />
+              <folding>
+                <element signature="e#1880#1890#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversalII.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="750">
+              <caret line="50" selection-start-line="50" selection-end-line="70" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#623#633#0" expanded="true" />
+                <element signature="e#690#705#0" expanded="true" />
+                <element signature="e#904#913#0" expanded="true" />
+                <element signature="e#1258#1273#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeZigzagLevelOrderTraversal.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="381">
+              <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="345">
+              <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Queue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="332">
+              <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/LinkedList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="627">
+              <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Deque.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2385">
+              <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -389,13 +509,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/EditDistance.java" />
-        <option value="$PROJECT_DIR$/src/main/java/KthSmallestElementInBST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DeleteNodeInBST.java" />
-        <option value="$PROJECT_DIR$/src/main/java/MergeKSortedLists.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ThreeSum.java" />
-        <option value="$PROJECT_DIR$/src/main/java/LRUCache.java" />
-        <option value="$PROJECT_DIR$/src/main/java/WorkSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/WordSearch.java" />
         <option value="$PROJECT_DIR$/src/main/java/SortList.java" />
         <option value="$PROJECT_DIR$/src/main/java/BinaryTreeMaximumPathSum.java" />
@@ -440,6 +553,13 @@
         <option value="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" />
         <option value="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" />
         <option value="$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedList.java" />
+        <option value="$PROJECT_DIR$/coding_problems-master/leetcode/easy/SymmetricTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversalII.java" />
+        <option value="$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java" />
       </list>
     </option>
   </component>
@@ -555,6 +675,17 @@
             <path>
               <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
               <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="coding_problems-master" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+              <item name="coding_problems-master" type="462c0819:PsiDirectoryNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="leetcode" type="b2602c69:ProjectViewProjectNode" />
+              <item name="leetcode" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -589,10 +720,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="Permu&#9;PSI&#9;JAVA://leetcode.PermutationsII&#10;Union&#9;FILE&#9;file:///Users/wuchang/work/workspace/leetcode/src/main/java/UnionFind.java" />
+    <property name="SearchEverywhereHistoryKey" value="Symm&#9;FILE&#9;file:///Users/chang.wu/work/workspace/origin-github-src/leetcode/src/main/java/leetcode/SymmetricTree.java&#10;Permu&#9;PSI&#9;JAVA://leetcode.PermutationsII&#10;Union&#9;FILE&#9;file:///Users/wuchang/work/workspace/leetcode/src/main/java/UnionFind.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605147069736" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1605578525003" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -611,15 +742,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ReverseLinkedList">
+  <component name="RunManager" selected="Application.BinarySearchTreeToDoublyLinkedList">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PermutationSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.PermutationSequence" />
+    <configuration name="BinarySearchTreeToDoublyLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.BinarySearchTreeToDoublyLinkedList" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -632,13 +763,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Print1ToN" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="SwordToOffer.Print1ToN" />
+    <configuration name="BinaryTreeLevelOrderTraversal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.BinaryTreeLevelOrderTraversal" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="SwordToOffer.*" />
+          <option name="PATTERN" value="leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -660,8 +791,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SumOf2Integers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.SumOf2Integers" />
+    <configuration name="SpiralMatrix" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.SpiralMatrix" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -674,8 +805,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ValidNumber" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.ValidNumber" />
+    <configuration name="SymmetricTree" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.SymmetricTree" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -718,19 +849,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Print1ToN" />
-      <item itemvalue="Application.SumOf2Integers" />
-      <item itemvalue="Application.ValidNumber" />
-      <item itemvalue="Application.PermutationSequence" />
       <item itemvalue="Application.ReverseLinkedList" />
+      <item itemvalue="Application.SymmetricTree" />
+      <item itemvalue="Application.SpiralMatrix" />
+      <item itemvalue="Application.BinaryTreeLevelOrderTraversal" />
+      <item itemvalue="Application.BinarySearchTreeToDoublyLinkedList" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BinarySearchTreeToDoublyLinkedList" />
+        <item itemvalue="Application.BinaryTreeLevelOrderTraversal" />
+        <item itemvalue="Application.SpiralMatrix" />
+        <item itemvalue="Application.SymmetricTree" />
         <item itemvalue="Application.ReverseLinkedList" />
-        <item itemvalue="Application.PermutationSequence" />
-        <item itemvalue="Application.ValidNumber" />
-        <item itemvalue="Application.SumOf2Integers" />
-        <item itemvalue="Application.Print1ToN" />
       </list>
     </recent_temporary>
   </component>
@@ -752,18 +883,18 @@
       <workItem from="1581505470120" duration="18377000" />
       <workItem from="1603973573393" duration="10610000" />
       <workItem from="1604624643759" duration="4875000" />
-      <workItem from="1604669626307" duration="26704000" />
+      <workItem from="1604669626307" duration="42683000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="421770000" />
+    <option name="totallyTimeSpent" value="437749000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="53" y="27" width="1627" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2637224" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26498422" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -772,13 +903,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48832807" weight="0.11657754" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.540694" visible="true" weight="0.08983957" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4858044" visible="true" weight="0.38502672" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.53817034" weight="0.19465241" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49148265" weight="0.48770052" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.459306" side_tool="true" visible="true" weight="0.08983957" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49085173" weight="0.16470589" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.51419556" side_tool="true" visible="true" weight="0.38502672" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.46246058" weight="0.15828878" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
@@ -792,11 +923,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24973376" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="Coverage" order="5" sideWeight="0.51029414" side_tool="true" visible="true" weight="0.028753994" />
+      <window_info anchor="right" id="Coverage" order="5" sideWeight="0.5113043" side_tool="true" visible="true" weight="0.028391168" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" sideWeight="0.4897059" visible="true" weight="0.028391168" />
+      <window_info anchor="right" id="Maven Projects" order="9" sideWeight="0.48869565" visible="true" weight="0.028391168" />
       <window_info anchor="right" id="SciView" order="10" />
     </layout>
   </component>
@@ -1853,6 +1984,48 @@
           <properties />
           <option name="timeStamp" value="380" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="388" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java</url>
+          <line>113</line>
+          <properties />
+          <option name="timeStamp" value="389" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="390" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java</url>
+          <line>67</line>
+          <properties />
+          <option name="timeStamp" value="391" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java</url>
+          <line>93</line>
+          <properties />
+          <option name="timeStamp" value="392" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java</url>
+          <line>45</line>
+          <properties />
+          <option name="timeStamp" value="393" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java</url>
+          <line>18</line>
+          <properties />
+          <option name="timeStamp" value="394" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java</url>
           <line>52</line>
@@ -1877,6 +2050,14 @@
           </properties>
           <option name="timeStamp" value="376" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java</url>
+          <line>115</line>
+          <properties class="leetcode.SymmetricTree" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="383" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -1890,11 +2071,35 @@
         <watch expression="i - nums[j]" language="JAVA" />
         <watch expression="s.indexOf(index) == '.'" language="JAVA" />
         <watch expression="s.indexOf(index)" language="JAVA" />
+        <watch expression="cur" language="JAVA" />
+        <watch expression="st" language="JAVA" />
+        <watch expression="st.isEmpty()" language="JAVA" />
+        <watch expression="poped" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
+      <expression>
+        <expression-string>poped</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>st.isEmpty()</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>st</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>cur</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>s.indexOf(index)</expression-string>
         <language-id>JAVA</language-id>
@@ -1928,18 +2133,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/TheSkylineProblem.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/ValidateBinarySearchTree.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/MaximalRectangle.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/MinimumWindowSubstring.java" />
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home/src.zip!/java/lang/String.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/LongestValidParentheses.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/RecoverBinarySearchTree.java" />
-    <entry file="jar://$USER_HOME$/Desktop/gatherdata-2.0.jar!/com/netease/bigdata/adapter/gjsCrm/handler/impl/WechatMsgHandler.class" />
-    <entry file="jar://$USER_HOME$/Desktop/gatherdata-2.0.jar!/com/netease/bigdata/adapter/gjsCrm/handler/GjsCrmBaseMessageHandler.class" />
-    <entry file="jar://$USER_HOME$/Desktop/gatherdata-2.0.jar!/com/netease/bigdata/adapter/gjsInformation/GjsInformationMessageService.class" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/RedundantConnection.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/RedundantConnectionII.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/MorrisTraversal.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/RegularExpressionMatching.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/KthSmallestNumberInMultiplicationTable.java" />
@@ -2025,7 +2218,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/SwordToOffer/NumberOfDigitOne.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
-          <caret line="36" column="24" lean-forward="true" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
+          <caret line="36" column="24" selection-start-line="36" selection-start-column="24" selection-end-line="36" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -2039,7 +2232,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="58" column="1" lean-forward="true" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
+          <caret line="58" column="1" selection-start-line="58" selection-start-column="1" selection-end-line="58" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -2053,21 +2246,21 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SumOf2Integers.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="48" column="24" lean-forward="true" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/MissingNumber.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicatesfromSortedList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="201">
-          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
           <folding>
             <element signature="e#753#754#0" expanded="true" />
             <element signature="e#800#801#0" expanded="true" />
@@ -2085,7 +2278,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="98" column="7" lean-forward="true" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
+          <caret line="98" column="7" selection-start-line="98" selection-start-column="7" selection-end-line="98" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -2110,21 +2303,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="599" column="6" selection-start-line="599" selection-start-column="6" selection-end-line="599" selection-end-column="6" />
+          <caret line="29" selection-start-line="29" selection-end-line="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
-          <caret line="120" lean-forward="true" selection-start-line="120" selection-end-line="120" />
+          <caret line="120" selection-start-line="120" selection-end-line="120" />
         </state>
       </provider>
     </entry>
@@ -2144,8 +2330,109 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="261">
+          <caret line="35" column="47" selection-start-line="35" selection-start-column="47" selection-end-line="35" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coding_problems-master/leetcode/easy/SymmetricTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/SpiralMatrixII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="21" column="64" lean-forward="true" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Deque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="192" column="17" selection-start-line="192" selection-start-column="17" selection-end-line="192" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/LinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="105" column="11" selection-start-line="105" selection-start-column="11" selection-end-line="105" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="143" column="17" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_201.jdk/Contents/Home/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="584" column="9" selection-start-line="584" selection-start-column="9" selection-end-line="584" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversalII.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" selection-start-line="50" selection-end-line="70" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#623#633#0" expanded="true" />
+            <element signature="e#690#705#0" expanded="true" />
+            <element signature="e#904#913#0" expanded="true" />
+            <element signature="e#1258#1273#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeZigzagLevelOrderTraversal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="381">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeLevelOrderTraversal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="22" selection-start-line="22" selection-end-line="27" selection-end-column="2" />
+          <folding>
+            <element signature="e#1880#1890#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/leetcode/BinarySearchTreeToDoublyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="28" lean-forward="true" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
         </state>
       </provider>
     </entry>

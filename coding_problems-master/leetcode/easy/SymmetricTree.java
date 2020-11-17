@@ -27,4 +27,9 @@ public class SymmetricTree{
 			return false;
 		}
 	}
+
+	Stack<ListNode> st = new Stack<>();
+	public boolean isSymmetric(TreeNode root){
+
+	}
 }

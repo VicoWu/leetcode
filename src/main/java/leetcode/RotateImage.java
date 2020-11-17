@@ -33,11 +33,12 @@ package leetcode;
 
  ```
  /*
- clockwise rotate
+ clockwise rotate 这种做法的好处是，全部都是交换，没有链式的传递的交换，所以非常简单
  first reverse up to down, then swap the symmetry
  1 2 3     7 8 9     7 4 1
- 4 5 6  => 4 5 6  => 8 5 2
+  4 5 6  => 4 5 6  => 8 5 2
  7 8 9     1 2 3     9 6 3
+
 
 ```
  */
@@ -47,7 +48,7 @@ public class RotateImage {
 
         int n = matrix.length;
         int round = (n+1)/2;
-        for(int r=0;r<round;r++){
+        for(int r=0;r<round;r++){ // 逐圈进行
             for(int s = r;s<n-r-1;s++){
                 int i = r;int j=s;
                 int times = 0;

@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -65,18 +66,52 @@ public class SpiralMatrix {
         return res;
     }
 
+    public List<Integer> spiralOrder(int[][] matrix){
+        int leftBound = 0;
+        int topBound = 0;
+        int rightBound = matrix[0].length-1;
+        int downBound = matrix.length-1;
+        int x = topBound; int y = leftBound;
+        List<Integer> res = new LinkedList<>();
+        while(leftBound <= rightBound && topBound <= downBound){
+            for(y=leftBound;y<=rightBound;y++){
+                res.add(matrix[x][y]);
+            }
+            topBound++;
+            for(x = topBound;x <= downBound; x++){
+                res.add(matrix[x][y]);
+            }
+            rightBound--;
+
+            if(downBound > topBound){
+                for(y = rightBound; y >= leftBound;y--){
+                    res.add(matrix[x][y]);
+                }
+            }
+            downBound--;
+
+            if(leftBound  < rightBound){
+                for(x = downBound;x >= topBound ; x--){
+                    res.add(matrix[x][y]);
+                }
+            }
+            leftBound++;
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
 
-        int n = 5;
-        int[][]  matrix = new int[n][n];
+        int m = 1, n = 5;
+        int[][]  matrix = new int[m][n];
         int k = 0;
-        for(int i=0;i<n;i++){
+        for(int i=0;i<m;i++){
             for(int j=0;j<n;j++){
                 matrix[i][j]=k++;
             }
         }
-        int[][] matrix2 = {{2,3}};
-        new SpiralMatrix().spiralOrder1(matrix2);
+        ///int[][] matrix2 = {{2,3}};
+        new SpiralMatrix().spiralOrder(matrix);
     }
 
 }
