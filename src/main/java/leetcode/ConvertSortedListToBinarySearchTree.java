@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by wuchang at 1/6/18
  * Question 109
@@ -53,8 +56,8 @@ public class ConvertSortedListToBinarySearchTree {
 
         int size = 0;
         ListNode runner = head;
-        node = head;
 
+        node = head;
         while(runner != null){
             runner = runner.next;
             size ++;
@@ -65,6 +68,7 @@ public class ConvertSortedListToBinarySearchTree {
         return inorderHelper(0, size - 1);
     }
 
+    //这里的二叉遍历的作用完全是控制树的深度(高度)，保证构成的二叉树是一个平衡二叉树
     public TreeNode inorderHelper(int start, int end){
         if(start > end){
             return null;
@@ -110,15 +114,62 @@ public class ConvertSortedListToBinarySearchTree {
         return thead;
     }
 
+    /**
+     * 这是我自己的方法、
+     * 先完整地构造出一个平衡的二叉树，这个二叉树的节点数量就是链表的节点数量，同时，由于构造树的过程是通过队列来进行分层构造，因此构造完成以后肯定是平衡的
+     * 当这棵平衡树构造完成以后，我们就可以对这棵树进行中序遍历，遍历过程中同时遍历链表，两遍对应逐一赋值。
+     */
+    ListNode curPo = null;
+    public TreeNode sortedListToBST3(ListNode head) {
+        int size = 0;
+        for(ListNode cur = head; cur != null; size++)
+            cur = cur.next;
+        curPo = head;
+        Queue queue = new LinkedList<>();
+        TreeNode root = constructTree(size,queue);
+        TreeNode res = inOrderTraverse(root);
+        return res;
+    }
+    public TreeNode inOrderTraverse(TreeNode root){
+        if(root == null)
+            return null;
+        inOrderTraverse(root.left);
+        root.val = curPo.val;
+        curPo = curPo.next;
+        inOrderTraverse(root.right);
+        return root;
+    }
+
+    private TreeNode constructTree(int listSize, Queue queue){
+        TreeNode root = new TreeNode(-1);
+        queue.add(root);
+        int initSize = 1;
+        while(!queue.isEmpty()){
+            TreeNode node = (TreeNode) queue.poll();
+            if(initSize++ < listSize)
+            {
+                node.left = new TreeNode(-1);
+                queue.add(node.left);
+            }
+            if(initSize++ < listSize)
+            {
+                node.right = new TreeNode(-1);
+                queue.add(node.right);
+            }
+        }
+        return root;
+    }
+
 
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode tail = node1;
-        for(int i=2;i<1000000;i++){
+        for(int i=2;i<=3;i++){
             ListNode node = new ListNode(i);
             tail.next = node;
             tail  = node;
         }
+        new ConvertSortedListToBinarySearchTree().sortedListToBST3(node1);
         long start = System.currentTimeMillis();
         TreeNode result = new ConvertSortedListToBinarySearchTree().sortedListToBST2(node1);
         long end = System.currentTimeMillis();

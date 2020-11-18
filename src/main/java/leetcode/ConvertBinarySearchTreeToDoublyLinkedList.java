@@ -5,7 +5,7 @@ package leetcode;
  * @date 11/17/20
  * leetcode  https://leetcode.com/problems/convert-binary-search-tree-to-sorted-doubly-linked-list/
  */
-public class BinarySearchTreeToDoublyLinkedList
+public class ConvertBinarySearchTreeToDoublyLinkedList
 {
     public static class TreeNode {
         int val;
@@ -43,7 +43,7 @@ public class BinarySearchTreeToDoublyLinkedList
         n6.right = n8;
         n18.left = n16;
         n18.right = n19;
-        TreeNode res = new BinarySearchTreeToDoublyLinkedList().convert(n10);
+        TreeNode res = new ConvertBinarySearchTreeToDoublyLinkedList().convert(n10);
         TreeNode cur = res;
         while(cur != null){
             System.out.println(cur.val);
