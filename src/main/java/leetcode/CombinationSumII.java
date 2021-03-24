@@ -10,7 +10,6 @@ import java.util.List;
  * Question 40
  *
 
-
  [Permutations](https://leetcode.com/problems/permutations/description/)
  [Permutations II](https://leetcode.com/problems/permutations-ii/description/)
  [Next permutation](https://leetcode.com/problems/next-permutation/description/)
@@ -21,6 +20,7 @@ import java.util.List;
  [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
  [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
  [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+ [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/)
 
  [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
 

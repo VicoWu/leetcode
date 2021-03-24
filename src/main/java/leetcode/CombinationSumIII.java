@@ -19,6 +19,7 @@ import java.util.List;
  [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
  [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
  [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+ [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/)
 
  [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
  * 对于[1..9]，我们先从1开始，看看有没有以1开头的合理组合，所有以1开头的组合都找完以后，再找以2开头的，再找以3开头的组合。。。

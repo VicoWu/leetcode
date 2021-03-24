@@ -18,6 +18,7 @@ import java.util.List;
  [Combination Sum II](https://leetcode.com/problems/combination-sum-ii/description/)
  [Combination Sum III](https://leetcode.com/problems/combination-sum-iii/description/)
  [Combination Sum IV](https://leetcode.com/problems/combination-sum-iv/description/)
+ [Sum of Square Numbers](https://leetcode.com/problems/sum-of-square-numbers/)
 
  [这里](https://leetcode.com/problems/permutations/discuss/18239)介绍了各种排列问题通过回溯方法进行解答的方案；
 
@@ -59,7 +60,7 @@ public class CombinationSum {
     public static void main(String[] args) {
 
         int[] nums = {2,3,6,7};
-        new CombinationSum().combinationSum(nums,7);
+        new CombinationSum().combinationSum(nums,4);
     }
 
 }
