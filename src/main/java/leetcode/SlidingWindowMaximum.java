@@ -27,6 +27,9 @@ import java.util.Deque;
  [480. Sliding Window Median](https://leetcode.com/problems/sliding-window-median/description/)
  [346	Moving Average from Data Stream](http://www.cnblogs.com/grandyang/p/5450001.html)，这个从流中求均值最简单
 
+
+ 力扣： https://leetcode-cn.com/problems/sliding-window-maximum/solution/dong-hua-yan-shi-dan-diao-dui-lie-239hua-hc5u/
+
  */
 public class SlidingWindowMaximum {
 
