@@ -4,7 +4,7 @@
  * Solution: The first element such that arr[i-1]>arr[i] is the min element.
  */
 
-public class MinimumRotateSortedArray{
+public class MinimumRotatedSortedArray{
 	public int findMin(int[] num){
 		if(num==null || num.length==0){
 			return -1;

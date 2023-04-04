@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -59,10 +60,67 @@ public class FourSum {
         return res;
     }
 
+    public List<List<Integer>> fourSum2(int[] nums, int target) {
+        Arrays.sort(nums);
+        List<List<Integer>> results = new ArrayList();
+        for(int i = 0; i <= nums.length - 4; i++){
+            //去重，如果nums[3] == nums[2]， 那么i=3的结果可用方案肯定已经包含在i=2里面了
+            if(i > 0 && nums[i] == nums[i-1])
+                continue;
+            // 转换成long，防止溢出
+            if((4 * (long)nums[i]) > target){
+                continue;
+            }
+            for(int j = i+1; j<= nums.length - 3; j++) {
+                //去重，如果nums[4] == nums[3]， 那么j=4的可能方案肯定已经包含在j=3里面了
+                if(j > i + 1 && nums[j] == nums[j-1])
+                    continue;
+                System.out.println(j);
+                int start = j+1;
+                int end = nums.length-1;
+
+                //  转换成long，防止溢出
+                if((long)nums[i] + 3 * (long)nums[j] > target || (long)nums[i] + (long)nums[j] + 2 * (long)nums[nums.length - 1] < target){
+                    continue;
+                }
+                int currentTarget = target -  nums[i] - nums[j];
+                while(start < end){
+                    System.out.println(start + " " + end);
+                    long currentSum = nums[i] + nums[j] + nums[start] + nums[end];
+                    if(nums[start] == currentTarget - nums[end]){
+                        results.add(oneResult(nums, i, j, start, end));
+                        start++;
+                        end--;
+                        while(start < end && nums[start] == nums[start-1]) start++;
+                        while(start < end && nums[end] == nums[end+1]) end--;
+                    }
+                    else if(currentSum < target){
+                        start++;
+                    }
+                    else{
+                        end--;
+                    }
+                }
+            }
+
+        }
+        return results;
+    }
+
+    private List<Integer> oneResult(int[] nums, int a, int b, int c, int d){
+        List<Integer> result = new ArrayList();
+        result.add(nums[a]);
+        result.add(nums[b]);
+        result.add(nums[c]);
+        result.add(nums[d]);
+        return result;
+    }
+
 
     public static void main(String[] args) {
-
-        int[] S = {1,0,-1,0,-2,2};
-        new FourSum().fourSum(S,0);
+        int[] S = {1000000000,1000000000,1000000000,1000000000,-1000000000,-1000000000,-1000000000,-1000000000};
+        new FourSum().fourSum2(S,0);
     }
+
+
 }

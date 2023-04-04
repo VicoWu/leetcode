@@ -19,7 +19,7 @@ public class BinaryTreeInOrderTraverse {
 
 
     public List<Integer> inorderTraversal(TreeNode root) {
-
+        String s = "";
         List<Integer> result = new LinkedList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode current = root;

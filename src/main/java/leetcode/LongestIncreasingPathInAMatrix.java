@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Created by wuchang at 12/18/17
  * Question 329
@@ -109,9 +112,66 @@ public class LongestIncreasingPathInAMatrix {
     }
 
 
+    /**
+     * 力扣的解法：https://leetcode.cn/problems/fpTFWP/solution/zui-chang-di-zeng-lu-jing-by-leetcode-so-1chr/
+     */
+    static class LikouSolution {
+        public int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
+        public int rows, columns;
+
+        public int longestIncreasingPath(int[][] matrix) {
+            if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
+                return 0;
+            }
+            rows = matrix.length;
+            columns = matrix[0].length;
+            int[][] outdegrees = new int[rows][columns];
+            for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < columns; ++j) {
+                    for (int[] dir : dirs) {
+                        int newRow = i + dir[0], newColumn = j + dir[1];
+                        if (newRow >= 0 && newRow < rows && newColumn >= 0 && newColumn < columns && matrix[newRow][newColumn] > matrix[i][j]) {
+                            ++outdegrees[i][j];
+                        }
+                    }
+                }
+            }
+            Queue<int[]> queue = new LinkedList<int[]>();
+            for (int i = 0; i < rows; ++i) {
+                for (int j = 0; j < columns; ++j) {
+                    if (outdegrees[i][j] == 0) {
+                        queue.offer(new int[]{i, j});
+                    }
+                }
+            }
+            int ans = 0;
+            while (!queue.isEmpty()) {
+                ++ans; //每到这个位置，增加一层
+                int size = queue.size(); // 遍历这个queue
+                for (int i = 0; i < size; ++i) { //遍历当前出度为0的所有节点
+                    int[] cell = queue.poll();
+                    int row = cell[0], column = cell[1];
+                    for (int[] dir : dirs) {
+                        int newRow = row + dir[0], newColumn = column + dir[1];
+                        if (newRow >= 0 && newRow < rows && newColumn >= 0 && newColumn < columns
+                                && matrix[newRow][newColumn] < matrix[row][column]) { // 如果旁边的值比当前的小，那么旁边的节点的出度减去1
+                            --outdegrees[newRow][newColumn];
+                            if (outdegrees[newRow][newColumn] == 0) {
+                                queue.offer(new int[]{newRow, newColumn}); //发现了下一层节点
+                            }
+                        }
+                    }
+                }
+            }
+            return ans;
+        }
+    }
+
+
     public static void main(String[] args) {
 
         int[][] nums = {{9,9,4},{6,6,8},{2,1,1}};
+        new LikouSolution().longestIncreasingPath(nums);
         System.out.println(new LongestIncreasingPathInAMatrix().longestIncreasingPath(nums));
     }
 }

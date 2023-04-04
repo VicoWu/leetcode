@@ -37,7 +37,7 @@ public class SerializeAndDeserializeBinaryTree {
         Deque<String> sQueue = new LinkedBlockingDeque<String>();
         Deque<TreeNode> treeDueue = new LinkedBlockingDeque<TreeNode>();
         String[] values =  data.split(SPLITTER);
-        TreeNode root = new TreeNode(Integer.valueOf(values[0]));
+        TreeNode root = new TreeNode(Integer.valueOf(values[0])); //第一个元素是根元素
         treeDueue.addLast(root);
 
 
