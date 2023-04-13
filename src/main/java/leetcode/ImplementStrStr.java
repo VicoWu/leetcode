@@ -6,7 +6,9 @@ package leetcode;
  # 暴力方法
  [这里](https://leetcode.com/problems/implement-strstr/discuss/12807/)讲了暴力解法。
  # KMP方法
- 这里的KMP算法是我自己的实现，最核心的是创建KMP表。网上的一些讲解方法非常复杂，KMP表的长度还需要是pattern的长度+1，我创建的KMP表的长度直接等于pattern的长度；
+ 这里的KMP算法是我自己的实现，最核心的是创建KMP表。网上的一些讲解方法非常复杂，我看到的kmp算法的好的博客是https://www.zhihu.com/question/21923021/answer/281346746
+
+ KMP表的长度还需要是pattern的长度+1，我创建的KMP表的长度直接等于pattern的长度；
  ```
  pattern     table
  abab        0012
@@ -142,9 +144,93 @@ public class ImplementStrStr {
         return next;
     }
 
+
+    /**
+     *     作者：海纳
+     *     链接：https://www.zhihu.com/question/21923021/answer/281346746
+     *     来源：知乎
+     *     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     */
+    private Integer[] getNext(String pattern)
+    {
+
+        // 为了代码方便，next数组的长度比needle的长度多1，并且next[0]=-1
+        // next[i]=j, 代表模式字符串pattern的子串[0 .. i - 1]的前缀集合和后缀集合的交集的最长元素的长度是j
+        // 对于任何pattern字符串， 为了代码统一，next[0]=-1,
+        // 同时，next[1]=0是因为任何单个字符串的前缀集合和后缀集合都是空集，因此它们的交集的最长元素的长度是0
+        // 对于example pattern="abababca"，next[2]=0, next[3]=1, next[4]=2, next[5]=3, next[6]=4, next[7]=0
+        Integer[] next = new Integer[pattern.length()+1];
+        next[0] = -1;
+        int i = 0, j = -1;
+
+        while (i < pattern.length())
+        {
+            //当前字符匹配成功
+            if (j == -1 || pattern.charAt(i) == pattern.charAt(j))
+            {
+                ++i;
+                ++j;
+                next[i] = j;//next[i]=j，比如i=4, j = 2, 则next[4]=2，代表pattern[0 .. 3] = "abab"，这个字符串的前缀集合和后缀集合的交集的最长元素的长度是2
+            }
+            else{
+                /**
+                 * 匹配失败了
+                 * next[j]代表长度为j的字符串needle[0 .. j-1]的前缀集合和后缀集合的交集中的最长元素
+                 * 比如pattern="abababca", next[4]=2, 这是因为：pattern[0..j-1]="abab",前缀集合和后缀集合的交集中的最长元素是"ab"， length 是2
+                 * 所以当j=4匹配失败的时候，我们可以将j reset成next[j]=2, 因为"abab" 的前缀集合和后缀集合交集是2， 即pattern[0 .. 1] 已经不需要比较了, 只需要从j=next[4]=2开始比较就行
+                 */
+                j = next[j];
+            }
+
+        }
+        return next;
+    }
+
+
+    /**
+     *     作者：海纳
+     *     链接：https://www.zhihu.com/question/21923021/answer/281346746
+     *     来源：知乎
+     *     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     *    @return
+     */
+   public int KMP(String mainStr, String pattern)
+    {
+        int i = 0;
+        int j = 0;
+        Integer[] next = getNext(pattern);
+        while (i < mainStr.length() && j < pattern.length())
+        {
+            if (j == -1 || mainStr.charAt(i) == pattern.charAt(j))
+            {
+                i++;
+                j++;
+            }
+            else {
+                /**
+                 * 匹配失败了
+                 * next[j]代表长度为j的字符串needle[0 .. j-1]的前缀集合和后缀集合的交集中的最长元素
+                 * 比如pattern="abababca", next[4]=2, 这是因为：pattern[0..j-1]="abab",前缀集合和后缀集合的交集中的最长元素是"ab"， length 是2
+                 * 所以当j=4匹配失败的时候，我们可以将j reset成next[j]=2, 因为"abab" 的前缀集合和后缀集合交集是2， 即needle[0 .. 1] 已经不需要比较了
+                 */
+                j = next[j];
+            }
+
+        }
+
+        if (j == pattern.length())
+            return i - j;
+        else
+            return -1;
+    }
+
+
+
+
     public static void main(String[] args) {
 //       System.out.println( new ImplementStrStr().strStr("BBC ABCDAB ABCDABCDABDE","ABCDABD"));
       //  System.out.println( new ImplementStrStr().strStr("aabaaabaaac","aabaaac"));
-        System.out.println( new ImplementStrStr().strStr("abcdabhe","abcdabc"));
+        // System.out.println( new ImplementStrStr().strStr("abcdabhe","abcdabc"));
+        System.out.println(new ImplementStrStr().KMP("ababababca","abababca"));
     }
 }

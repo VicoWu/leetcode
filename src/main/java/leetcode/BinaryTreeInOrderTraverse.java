@@ -44,12 +44,33 @@ public class BinaryTreeInOrderTraverse {
         return result;
     }
 
+    public List<Integer> inorderTraversal3(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        List<Integer> result = new ArrayList<Integer>();
+        stack.push(root);
+        TreeNode node = root;
+        while(!stack.isEmpty() || node != null){
+            while(node != null && node.left != null){
+                stack.push(node.left);
+                node = node.left;
+            }
+            node = stack.pop();
+            result.add(node.val);
+            if(node.right != null){
+                stack.push(node.right);
+            }
+            node = node.right;
+        }
+        return result;
+    }
+
+
     public static void main(String[] args){
         TreeNode root = new TreeNode(1);
 
 
-        TreeNode n2 = new TreeNode(2);
-        root.left = n2;
+//        TreeNode n2 = new TreeNode(2);
+//        root.left = n2;
 //        TreeNode n3 = new TreeNode(3);
 //        TreeNode n4 = new TreeNode(4);
 //        TreeNode n5 = new TreeNode(5);
@@ -62,7 +83,15 @@ public class BinaryTreeInOrderTraverse {
 //        n4.left = n6;
 
 
-        new BinaryTreeInOrderTraverse().inorderTraversal(root);
+        TreeNode n5 = new TreeNode(5);
+        TreeNode n2 = new TreeNode(2);
+        TreeNode n7 = new TreeNode(7);
+        TreeNode n9 = new TreeNode(9);
+
+        n5.left = n2;
+        n5.right = n7;
+        n7.right = n9;
+        new BinaryTreeInOrderTraverse().inorderTraversal3(n5);
     }
 
 }

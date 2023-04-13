@@ -171,6 +171,49 @@ public class UniqueBinarySearchTreesII {
     }
 
 
+    /**
+     * Definition for a binary tree node.
+     * public class TreeNode {
+     *     int val;
+     *     TreeNode left;
+     *     TreeNode right;
+     *     TreeNode() {}
+     *     TreeNode(int val) { this.val = val; }
+     *     TreeNode(int val, TreeNode left, TreeNode right) {
+     *         this.val = val;
+     *         this.left = left;
+     *         this.right = right;
+     *     }
+     * }
+     */
+    class Solution {
+        public List<TreeNode> generateTrees(int n) {
+            List<TreeNode> results = new ArrayList<TreeNode>();
+            return generateTree(1, n);
+        }
+
+        public List<TreeNode> generateTree(int left,int right){
+            List<TreeNode> results=new ArrayList<TreeNode>();
+            if(left > right){
+                results.add(null);
+                return results;
+            }
+            for(int mid = left; mid<=right; mid++){
+                List<TreeNode> leftTrees = generateTree(left, mid-1);
+                List<TreeNode> rightTrees = generateTree(mid+1, right);
+                for(TreeNode leftTree: leftTrees){
+                    for(TreeNode rightTree: rightTrees){
+                        TreeNode parent = new TreeNode(mid);
+                        parent.left = leftTree;
+                        parent.right = rightTree;
+                        results.add(parent);
+                    }
+                }
+            }
+            return results;
+        }
+    }
+
     public static void main(String[] args) {
 //        TreeNode tn1 = new TreeNode(1);
 //        TreeNode tn2 = new TreeNode(2);

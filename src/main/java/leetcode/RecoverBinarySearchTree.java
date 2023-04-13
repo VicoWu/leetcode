@@ -1,7 +1,9 @@
 package leetcode;
 
-/**
+import java.util.List;
 
+/**
+ * Question 99
  99. Recover Binary Search Tree
  * ## 通过中序遍历
  https://discuss.leetcode.com/topic/3988/no-fancy-algorithm-just-simple-and-powerful-in-order-traversal/2
@@ -83,6 +85,43 @@ public class RecoverBinarySearchTree {
         // End of "do some business"
 
         traverse(root.right);
+    }
+
+    private TreeNode switchLeft = null;
+    private TreeNode switchRight = null;
+    private TreeNode previous = null;
+    public void recoverTree3(TreeNode root) {
+        findNodeToSwitch(root);
+        int tmp = switchLeft.val;
+        switchLeft.val = switchRight.val;
+        switchRight.val = tmp;
+    }
+
+    /**
+     * 寻找错序
+     * 两种情况
+     * [1,2,3,4,5] 变成的错序[1,4,3,2,5] 这时候switchLeft=4, switchRight=2, 交换即可
+     * [1,2,3,4,5] 变成的错序[1,3,2,4,5] 这时候switchLeft=3, switchRight=2，交换即可
+     * @param root
+     */
+    private void findNodeToSwitch(TreeNode root){
+        if(root == null)
+            return;
+        List<Integer> paths ;
+
+        findNodeToSwitch(root.left);
+        if(previous != null && root.val <= previous.val){
+            // 我们发现了第二个错序，比如： [1,2,3,4,5] 变成的错序[1,5,3,2,5]
+            if(switchLeft != null){
+                switchRight = root;
+            }else{
+                // 当前发现的第一个错序
+                switchLeft = previous;
+                switchRight = root;
+            }
+        }
+        previous = root;
+        findNodeToSwitch(root.right);
     }
 
 

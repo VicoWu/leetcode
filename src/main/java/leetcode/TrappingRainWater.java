@@ -16,6 +16,9 @@ import java.util.Stack;
  两个指针i和j分别从两侧向中间汇聚，但并不是同时向中间汇聚，而是每次都将较小的一侧向中间汇聚，这就相当于：一个水槽，较高的一侧固定不动，较低的一侧不断升高，
  但是只要升高的过程中较低的一侧始终低于固定的、较高的一侧，那么这个储水量就由较低的一侧决定。
 
+
+ https://leetcode.cn/problems/trapping-rain-water/solutions/9112/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
+
  */
 public class TrappingRainWater {
     public int trap(int[] height) {
@@ -77,6 +80,91 @@ public class TrappingRainWater {
         return res;
 
     }
+
+
+    /**
+     * 某个位置的
+     */
+    class Solution {
+        public int trap(int[] height) {
+            int[] leftWall = new int[height.length];
+            int[] rightWall = new int[height.length];
+            leftWall[0]=0;
+            rightWall[height.length-1]=0;
+            int currentLeftWallHeight = 0;
+            int currentRightWallHeight = 0;
+            for(int i=0;i<height.length;i++){
+                //如果当前高度小于左侧墙壁的高度，那么左侧墙壁就是该位置的左侧墙壁
+                if(height[i] < currentLeftWallHeight){
+                    leftWall[i] = currentLeftWallHeight;
+                }
+                else {
+                    //如果左侧墙壁比当前位置还矮，那么当前位置无法蓄水
+                    leftWall[i] = 0;
+                    currentLeftWallHeight = height[i]; //同时更新左侧墙壁的高度值，意味着该位置右边的位置以该位置为墙壁
+                }
+                // 如果当前高度小于当前的右侧墙壁高度（右侧墙壁高度已经在前面的某个位置计算好了），那么更新该位置的右侧墙壁高度
+                if(height[i] < currentRightWallHeight){
+                    rightWall[i] = currentRightWallHeight;
+                }
+                else{
+                    // 我们需要计算该位置的右侧墙壁高度
+                    currentRightWallHeight = 0;
+                    for(int j = i+1; j<height.length; j++){
+                        // 这个高度比我还高，因此可以作为我右侧的wall
+                        if(height[j] > height[i]){ //只要右侧有比我高的，那么就可以作为墙壁
+                            currentRightWallHeight = Math.max(height[j], currentRightWallHeight);
+                        }
+                    }
+                    rightWall[i] = currentRightWallHeight;
+                }
+            }
+            int volume = 0;
+            // 开始统计总的蓄水量
+            // 累加每一个位置的蓄水量
+            // 每一个位置的蓄水量取决于左侧高度和右侧高度的较小值
+            for(int i = 0; i< height.length; i++){
+                if(leftWall[i] > height[i] && rightWall[i] > height[i]){
+                    volume = volume + Math.min(leftWall[i], rightWall[i]) - height[i];
+                }
+            }
+            return volume;
+        }
+    }
+
+
+    /**
+     *     作者：windliang
+     *     链接：https://leetcode.cn/problems/trapping-rain-water/solutions/9112/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
+     *     来源：力扣（LeetCode）
+     *     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     * @param height
+     * @return
+     */
+    public int trap6(int[] height) {
+        int sum = 0;
+        Stack<Integer> stack = new Stack<>();
+        int current = 0;
+        while (current < height.length) {
+            //如果栈不空并且当前指向的高度大于栈顶高度就一直循环
+            while (!stack.empty() && height[current] > height[stack.peek()]) {
+                int h = height[stack.peek()]; //取出要出栈的元素
+                stack.pop(); //出栈
+                if (stack.empty()) { // 栈空就出去
+                    break;
+                }
+                int distance = current - stack.peek() - 1; //两堵墙之前的距离。
+                int min = Math.min(height[stack.peek()], height[current]);
+                sum = sum + distance * (min - h);
+            }
+            stack.push(current); //当前指向的墙入栈
+            current++; //指针后移
+        }
+        return sum;
+    }
+
+
+
 
     public static void main(String[] args) {
 

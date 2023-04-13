@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -111,8 +112,95 @@ public class DifferentWaysToAddParentheses {
     }
 
 
+    public List<Integer> diffWaysToCompute3(String expression) throws Exception {
+        String[] expressionArray = split(expression);
+        return computeSubExpression(expressionArray, 0, expressionArray.length-1);
+    }
+
+    public List<Integer> computeSubExpression(String[] expressionArray, int start, int end) throws Exception {
+        List<Integer> results = new ArrayList<Integer>();
+        if(start == end){
+            results.add(Integer.valueOf(expressionArray[start]));
+            return results;
+        }
+        for(int i = start;i<=end;i++){
+            if(isOp(expressionArray[i])){
+                List<Integer> leftVs = computeSubExpression(expressionArray, start, i-1);
+                List<Integer> rightVs = computeSubExpression(expressionArray,i+1, end);
+                for(Integer leftV: leftVs){
+                    for(Integer rightV: rightVs){
+                        Integer value = compute(leftV, rightV, expressionArray[i]);
+                        results.add(value);
+                    }
+                }
+            }
+        }
+        return results;
+    }
+
+    private Integer compute(Integer leftV, Integer rightV, String op) throws Exception {
+        switch(op){
+            case "+":
+                return leftV + rightV;
+            case "-":
+                return leftV - rightV;
+            case "*":
+                return leftV * rightV;
+            default:
+                throw new Exception("Unsupported operator");
+        }
+    }
+
+
+    private Integer compute(String left, String right, String op) throws Exception {
+        Integer leftV = Integer.valueOf(left);
+        Integer rightV = Integer.valueOf(right);
+        switch(op){
+            case "+":
+                return leftV + rightV;
+            case "-":
+                return leftV - rightV;
+            case "*":
+                return leftV * rightV;
+            default:
+                throw new Exception("Unsupported operator");
+        }
+    }
+
+    private boolean isOp(String c){
+        return c.equals("*") || c.equals("+") || c.equals("-");
+    }
+
+
+    private String[] split(String expression) {
+        int i = 0;
+        List<String> splits = new ArrayList<>();
+
+        while(i < expression.length()){
+            char c = expression.charAt(i);
+            if(c < '0' || c > '9'){
+                splits.add(String.valueOf(c));
+                i++;
+            }else{
+                int j = i;
+                while(j < expression.length() &&  expression.charAt(j) >= '0' && expression.charAt(j)<= '9'){
+                    j++;
+                }
+                splits.add(expression.substring(i, j));
+                i=j;
+            }
+        }
+        return splits.toArray(new String[0]);
+    }
+
+
     public static void main(String[] args) {
 
+        try {
+            new DifferentWaysToAddParentheses().diffWaysToCompute3("20*20-10");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         new DifferentWaysToAddParentheses().diffWaysToCompute1("20*20-10");
     }
 }

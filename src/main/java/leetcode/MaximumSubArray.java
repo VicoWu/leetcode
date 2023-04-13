@@ -49,10 +49,45 @@ public class MaximumSubArray
 
     }
 
+
+    public int maxSubArray4(int[] nums) {
+        return maxSumInSubArray3(nums, 0, nums.length-1);
+    }
+
+    private int maxSumInSubArray3(int[] nums, int start, int end){
+        if(start == end){
+            return nums[start];
+        }
+        if(start + 1 == end){
+            return Math.max(Math.max(nums[start], nums[end]), nums[start] + nums[end]);
+        }
+        int mid = (start + end)/2;
+        int maxCross=nums[mid] + nums[mid+1];
+
+        int currentSum = 0; int maxSum = 0;
+        for(int i = mid-1;i>=start;i--){
+            currentSum = currentSum + nums[i];
+            maxSum = Math.max(currentSum, maxSum);
+        }
+        maxCross = maxCross + maxSum;
+        currentSum = 0;
+        maxSum = 0;
+        for(int j = mid+2;j<=end;j++){
+            currentSum = currentSum + nums[j];
+            maxSum = Math.max(currentSum, maxSum);
+        }
+        maxCross = maxCross + maxSum;
+        return Math.max(maxCross, Math.max(maxSumInSubArray3(nums, start, mid), maxSumInSubArray3(nums, mid+1, end)));
+    }
+
+
     public static void main(String[] args)
     {
         int[] testsData = {-2,1,-3,4,-1,2,1,-5,4};
+        System.out.println(new MaximumSubArray().maxSubArray4(testsData));
         System.out.println(new MaximumSubArray().maxSubArrayByDivideandConqur(testsData));
     }
+
+
 
 }
