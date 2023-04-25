@@ -65,6 +65,36 @@ public class StringToInteger {
         return base * sign;
     }
 
+    public int myAtoi2(String s) {
+        char[] input = s.toCharArray();
+        int i = 0;
+        int res = 0;
+        boolean positive = true;
+        while(i < input.length && input[i] == ' ')  i++;
+        // Skip preceeding + or -
+        if(i < input.length && (input[i]== '-' || input[i] == '+')){
+            if(input[i] == '-')
+                positive = false;
+            i++;
+        }
+        // skip preceeding 0
+        while(i < input.length && (input[i] == '0')){
+            i++;
+        }
+        while(i < input.length && input[i] >= '0' && input[i] <= '9'){
+            int dif = positive ? (input[i] - '0') : ('0' - input[i]);
+            if((res > Integer.MAX_VALUE/10 || res == Integer.MAX_VALUE/10 && dif > 7)){
+                return Integer.MAX_VALUE;
+            }
+            if(res < Integer.MIN_VALUE/10 || res == Integer.MIN_VALUE/10 && dif < -8){
+                return Integer.MIN_VALUE;
+            }
+            res = res * 10 + dif;
+            i++;
+        }
+        return res;
+
+    }
 
     public static void main(String[] args) {
 

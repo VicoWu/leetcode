@@ -133,11 +133,41 @@ public class Pow {
     }
 
 
+    public double myPow3(double x, int n) {
+        if(n == 0)
+            return 1;
+        if(n == 1)
+            return x;
+        if(n == Integer.MIN_VALUE){
+            return (1/x) * compute(x,-Integer.MAX_VALUE);
+        }
+        return compute(x, n);
+    }
+
+
+    private double compute(double x, int n){
+        long k = n <  0 ? -n: n;
+        long t = 2;
+        double res = ((1 & k) == 1 ? x : 1.0d);
+        double curValue = x;
+        while(t <= k){
+            long v =  k & t;
+            curValue = curValue * curValue;
+            if(v == t){
+                res = res * curValue;
+            }
+            t = t<<1;//左移动一位
+        }
+        if(n < 0)
+            return 1/res;
+        return res;
+    }
+
 
     public static void main(String[] args) {
 
-        System.out.println(new Pow().powByBIT(2,10));
-        System.out.println(Integer.MIN_VALUE/2);
+        System.out.println(new Pow().myPow3(2.0, -2147483648));
+        //System.out.println(Integer.MIN_VALUE/2);
         //new Pow().myPow(34.00515,-3);
     }
 }

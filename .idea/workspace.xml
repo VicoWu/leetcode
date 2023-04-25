@@ -5,27 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="497e5782-cca1-4351-97a0-710e7380121c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/DijkstraShortestPath.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/JumpGameIII.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/MinPathSum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/SubArrayOfSumK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_kafka_kafka_clients_test_unknown.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20200518.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/MatrixBlockSum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/SearchInsert.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/SwapPairs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeInOrderTraverse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/BinaryTreeInOrderTraverse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/DifferentWaysToAddParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/DifferentWaysToAddParentheses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/GenerateParentheses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/GenerateParentheses.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ImplementStrStr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ImplementStrStr.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/JumpGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/JumpGame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/JumpGameII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/JumpGameII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/MaximumSubArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/MaximumSubArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/CombinationSumIV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/CombinationSumIV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ContainerWithMostWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ContainerWithMostWater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/RecoverBinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/RecoverBinarySearchTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/UniqueBinarySearchTreesII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/UniqueBinarySearchTreesII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/PermutationsII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Pow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Pow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/RotateImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/StringToInteger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/StringToInteger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ThreeSumClosest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ThreeSumClosest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/Zigzag.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/Zigzag.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,13 +122,23 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/StringToInteger.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletResponse.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-aws/3.2.0/hadoop-aws-3.2.0.jar!/org/apache/hadoop/fs/s3native/NativeS3FileSystem.class" root0="SKIP_INSPECTION" />
-    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-aws/2.6.0-cdh5.16.2/hadoop-aws-2.6.0-cdh5.16.2.jar!/org/apache/hadoop/fs/s3/S3FileSystem.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServletRequest.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/cc150/Ch 17. Hard/Q17_12_BiNode/QuestionA.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/src.zip!/java/util/PriorityQueue.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/SwapPairs.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/ContainerWithMostWater.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/Zigzag.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/main/java/leetcode/MergeKSortedLists.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="jar://$MAVEN_REPOSITORY$/org/apache/hadoop/hadoop-aws/2.6.0-cdh5.16.2/hadoop-aws-2.6.0-cdh5.16.2.jar!/org/apache/hadoop/fs/s3/S3FileSystem.class" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0-sources.jar!/javax/servlet/http/HttpServlet.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/org/scala-lang/scala-library/2.11.11/scala-library-2.11.11-sources.jar!/scala/package.scala" root0="SKIP_INSPECTION" />
-    <setting file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home/src.zip!/java/util/PriorityQueue.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -359,15 +368,15 @@
       <recent name="leetcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PathSumIII">
+  <component name="RunManager" selected="Application.MaxSideLength">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BinaryTreeInOrderTraverse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.BinaryTreeInOrderTraverse" />
+    <configuration name="DivideTwoIntegers" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.DivideTwoIntegers" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -380,8 +389,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DifferentWaysToAddParentheses" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.DifferentWaysToAddParentheses" />
+    <configuration name="MaxSideLength" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.MaxSideLength" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -394,8 +403,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ImplementStrStr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.ImplementStrStr" />
+    <configuration name="Pow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.Pow" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -408,8 +417,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PathSumIII" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.PathSumIII" />
+    <configuration name="ReverseLinkedListII" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.ReverseLinkedListII" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -422,8 +431,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubArrayOfSumK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.SubArrayOfSumK" />
+    <configuration name="ReverseNodesInKGroup" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.ReverseNodesInKGroup" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -468,19 +477,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ImplementStrStr" />
-      <item itemvalue="Application.DifferentWaysToAddParentheses" />
-      <item itemvalue="Application.BinaryTreeInOrderTraverse" />
-      <item itemvalue="Application.SubArrayOfSumK" />
-      <item itemvalue="Application.PathSumIII" />
+      <item itemvalue="Application.ReverseLinkedListII" />
+      <item itemvalue="Application.ReverseNodesInKGroup" />
+      <item itemvalue="Application.Pow" />
+      <item itemvalue="Application.DivideTwoIntegers" />
+      <item itemvalue="Application.MaxSideLength" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PathSumIII" />
-        <item itemvalue="Application.SubArrayOfSumK" />
-        <item itemvalue="Application.BinaryTreeInOrderTraverse" />
-        <item itemvalue="Application.DifferentWaysToAddParentheses" />
-        <item itemvalue="Application.ImplementStrStr" />
+        <item itemvalue="Application.MaxSideLength" />
+        <item itemvalue="Application.DivideTwoIntegers" />
+        <item itemvalue="Application.Pow" />
+        <item itemvalue="Application.ReverseNodesInKGroup" />
+        <item itemvalue="Application.ReverseLinkedListII" />
       </list>
     </recent_temporary>
   </component>
@@ -531,7 +540,8 @@
       <workItem from="1656900526185" duration="594000" />
       <workItem from="1658110606742" duration="11385000" />
       <workItem from="1680507661677" duration="2000" />
-      <workItem from="1680507844477" duration="40192000" />
+      <workItem from="1680507844477" duration="65335000" />
+      <workItem from="1681958880130" duration="12552000" />
     </task>
     <servers />
   </component>
@@ -1364,7 +1374,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/CombinationSumIV.java</url>
-          <line>102</line>
+          <line>124</line>
           <option name="timeStamp" value="345" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -1779,28 +1789,218 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java</url>
-          <line>96</line>
+          <line>97</line>
           <option name="timeStamp" value="503" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java</url>
-          <line>106</line>
+          <line>107</line>
           <option name="timeStamp" value="504" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java</url>
-          <line>107</line>
+          <line>108</line>
           <option name="timeStamp" value="505" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java</url>
-          <line>98</line>
+          <line>99</line>
           <option name="timeStamp" value="506" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/PathSumIII.java</url>
-          <line>101</line>
+          <line>102</line>
           <option name="timeStamp" value="507" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ThreeSumClosest.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="508" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ThreeSumClosest.java</url>
+          <line>71</line>
+          <option name="timeStamp" value="514" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="515" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="516" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MedianOfTwoSortedArray.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="531" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="539" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="540" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="541" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>72</line>
+          <option name="timeStamp" value="543" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="544" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="545" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sqrt.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="547" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Zigzag.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="548" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="549" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="551" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseInteger.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="552" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="555" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseLinkedListII.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="563" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java</url>
+          <line>87</line>
+          <option name="timeStamp" value="587" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="588" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/ReverseNodesInKGroup.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="594" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java</url>
+          <line>140</line>
+          <option name="timeStamp" value="602" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="603" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java</url>
+          <line>160</line>
+          <option name="timeStamp" value="604" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java</url>
+          <line>162</line>
+          <option name="timeStamp" value="605" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="607" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="608" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="611" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="613" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DivideTwoIntegers.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="614" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="615" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="616" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="617" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="618" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="619" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="620" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="621" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MaxSideLength.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="622" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java</url>
@@ -1842,28 +2042,46 @@
           </properties>
           <option name="timeStamp" value="405" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Pow.java</url>
+          <line>166</line>
+          <properties class="leetcode.Pow" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="595" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="leetcode.ReverseNodesInKGroup$ListNode" memberName="val" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="(n - currentSum - 1) % k" language="JAVA" />
-        <watch expression="currentSum" language="JAVA" />
-        <watch expression="index +  A[index]" language="JAVA" />
-        <watch expression="nums[i] + 3 * nums[j] &gt; target" language="JAVA" />
-        <watch expression="nums[i] + nums[j] + 2 * nums[nums.length - 1] &lt; target" language="JAVA" />
-        <watch expression="2 * nums[nums.length - 1" language="JAVA" />
-        <watch expression="nums[i] + nums[j] + 2 * nums[nums.length - 1]" language="JAVA" />
-        <watch expression="4 * nums[i]" language="JAVA" />
-        <watch expression="(long)(4 * nums[i])" language="JAVA" />
-        <watch expression="nums[i]" language="JAVA" />
-        <watch expression="cache[index]" language="JAVA" />
-        <watch expression="index+A[index]" language="JAVA" />
-        <watch expression="next[4]" language="JAVA" />
-        <watch expression="splits" language="JAVA" />
-        <watch expression="currentSum" language="JAVA" />
-        <watch expression="root.val" language="JAVA" />
-        <watch expression="targetSum" language="JAVA" />
-        <watch expression="2000000000 + 294967296" language="JAVA" />
+        <watch expression="x/1000000000" language="JAVA" />
+        <watch expression="x/10000000000" language="JAVA" />
+        <watch expression="result &lt; Integer.MIN_VALUE/10" language="JAVA" />
+        <watch expression="currentGroupHead" language="JAVA" />
+        <watch expression="currentGroupTail" language="JAVA" />
+        <watch expression="pre" language="JAVA" />
+        <watch expression="nextGroupHead" language="JAVA" />
+        <watch expression="currentGroupTail" language="JAVA" />
+        <watch expression="pivot" language="JAVA" />
+        <watch expression="currentGroupHead" language="JAVA" />
+        <watch expression="currentGroupTail" language="JAVA" />
+        <watch expression="pre" language="JAVA" />
+        <watch expression="nextGroupHead" language="JAVA" />
+        <watch expression="currentGroupHead" language="JAVA" />
+        <watch expression="currentGroupTail" language="JAVA" />
+        <watch expression="preGroupTail" language="JAVA" />
+        <watch expression="(right - left ) &gt;&gt; 1" language="JAVA" />
+        <watch expression="(right + left) &gt;&gt; 1" language="JAVA" />
+        <watch expression="left + (right - left)/2" language="JAVA" />
+        <watch expression="(right - left)/2" language="JAVA" />
+        <watch expression="(right - left) &gt;&gt; 1" language="JAVA" />
+        <watch expression="mat.length-mid" language="JAVA" />
+        <watch expression="mat[0].length-mid" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

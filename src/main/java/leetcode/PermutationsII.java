@@ -1,10 +1,6 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by wuchang at 1/2/18
@@ -87,6 +83,41 @@ public class PermutationsII {
 
     }
 
+
+    public List<List<Integer>> permuteUnique3(int[] nums) {
+        List<List<Integer>> res = new ArrayList();
+        List<Integer> prec = new ArrayList<Integer>();
+        Arrays.sort(nums);
+        boolean[] visited = new boolean[nums.length];
+        permuteUniqueByRange(res, prec, visited, nums, 0);
+        return res;
+    }
+
+    /**
+     *
+     * @param res
+     * @param preceeding
+     * @param visited
+     * @param nums
+     * @param start 代表当前的深度，如果start == nums.length, 代表已经到了最后一层了，可以打印结果了
+     */
+    public void permuteUniqueByRange(List<List<Integer>> res, List<Integer> preceeding, boolean[] visited, int[] nums, int start){
+        if(start == nums.length){
+            res.add(new ArrayList(preceeding));
+        }else{
+            int prev = nums[0] - 1;
+            for(int i = 0; i < nums.length; i++){
+                if(nums[i] != prev && !visited[i]){
+                    visited[i] = true;
+                    preceeding.add(nums[i]);
+                    permuteUniqueByRange(res, preceeding, visited, nums, start+1);
+                    visited[i] = false;
+                    preceeding.remove(preceeding.size() - 1);
+                    prev = nums[i];
+                }
+            }
+        }
+    }
 
 
     public static void main(String[] args) {

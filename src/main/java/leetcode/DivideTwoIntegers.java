@@ -1,5 +1,8 @@
 package leetcode;
 
+import javax.sound.midi.SysexMessage;
+import java.util.List;
+
 /**
  * Created by wuchang at 12/21/17
  * Question 29
@@ -107,6 +110,36 @@ public class DivideTwoIntegers {
          return sign==1?result:-result;
     }
 
+    public int divide2(int dividend, int divisor) {
+        int abs_dividend = dividend < 0 ? -dividend : dividend;
+        int abs_divisor = divisor < 0 ? -divisor :  divisor;
+        int res = 0;
+        int left = 1;
+        int right = abs_dividend;
+        while(left > 0 && left <= right){
+            int mid = left + ((right - left) >> 1);
+            int cur = quickMultiple(abs_divisor, mid);
+            System.out.println(left + " " + mid + " " + right);
+            if(cur > abs_dividend){
+                right = mid - 1;
+            }else{
+                res = mid;
+                left = mid + 1;
+            }
+        }
+        return res;
+    }
+
+
+    private int quickMultiple(int x, int y){
+        if(y == 0)
+            return 0;
+        if(y == 1)
+            return x;
+        int sub = quickMultiple(x, y>>1);
+        return sub + sub + (y % 2 == 1 ? x : 0);
+    }
+
     public static void main(String[] args) {
 //        System.out.println(-15/3);
 //        System.out.println(-14/3);
@@ -115,7 +148,8 @@ public class DivideTwoIntegers {
 //        System.out.println(3&1);
 //        System.out.println(4&1);
 //        System.out.println(Integer.MAX_VALUE+" "+Integer.MIN_VALUE);
-        System.out.println(new DivideTwoIntegers().divide(-2147483648,2));
+       // System.out.println(-Integer.MIN_VALUE + ",  " + -Integer.MAX_VALUE);
+        System.out.println(new DivideTwoIntegers().divide2(2147483647,2));
 
 //        for(int i=3;i<2147483648L;i+=2){
 //
@@ -123,6 +157,8 @@ public class DivideTwoIntegers {
 //            if(result < 3)
 //                System.out.println(result);
 //        }
+
+        List<Integer> list ;
 
     }
 }

@@ -27,4 +27,24 @@ public class ContainerWithMostWater {
         }
         return maxArea;
     }
+
+    public int maxArea2(int[] height) {
+        int currentMax = 0;
+        for(int i = 0, j = height.length -1;j > i; ){
+            int h = Math.min(height[i], height[j]);
+            currentMax = Math.max(currentMax, (j - i) * h);
+            if(height[i] < height[j]){
+                // 如果左侧比较低，因此我们把左侧向右移动到一个更高的高度
+                while(i < height.length && height[i] <= h){
+                    i++;
+                }
+            }else{
+                // 如果右侧比较低，因此我们把右侧向左移动到一个更高的高度
+                while(j >= 0 && height[j] <= h){
+                    j--;
+                }
+            }
+        }
+        return currentMax;
+    }
 }

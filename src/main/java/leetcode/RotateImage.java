@@ -66,6 +66,39 @@ public class RotateImage {
         System.out.println();
     }
 
+    public void rotate5(int[][] matrix) {
+        int n = matrix.length;
+        int colNum = n;
+        int roundNum = (n+1)/2; // 总圈数，比如n=3, roundNum=2, n=4, roundNum=2, n=5，roundNum=3
+        for(int round = 0; round < roundNum; round++){
+            int row = round;
+            // 对于当前的圈，需要处理的总数量，比如，colNum=4，需要以3个数字开始循环
+            for(int col = round; col < colNum - 1 + round ; col++){
+                // 当前的数字是matrix[row][col]
+                //保存第二个值
+                int tmp2 = matrix[col][n - 1 - row];
+                // 用第一个值matrix[row][col]覆盖第二个值
+                matrix[col][n - 1 - row] = matrix[row][col];
+
+                // 保存第三个值
+                int tmp3 = matrix[n - 1 - row][n -1 - col];
+                // 用第二个值覆盖第三个值matrix[n - 1 - row][n -1 - col]
+                matrix[n - 1 - row][n - 1 - col] = tmp2;
+
+                // 保存第四个值
+                int tmp4 = matrix[n -1 - col][row];
+                // 用第三个值覆盖第四个值matrix[n - 1 - row][n -1 - col]
+                matrix[n - 1 - col][row] = tmp3;
+
+                // 保存第一个值(其实没有必要)
+                int tmp1 = matrix[row][col];
+                // 用第四个值覆盖第一个值matrix[row][col]
+                matrix[row][col] = tmp4;
+            }
+            colNum = colNum - 2; //这一圈的列数，比如，n=4的情况下，最外圈colNum = 4, 第二圈colNum = 2
+        }
+    }
+
     public static void main(String[] args) {
 
         int[][] matrix = {{5,1,9,11},{2,4,8,10},{13,3,6,7},{15,14,12,16}};

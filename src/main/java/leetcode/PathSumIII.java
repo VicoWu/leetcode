@@ -93,6 +93,7 @@ public class PathSumIII {
     public long search(TreeNode root, long currentSum, int targetSum, Map<Long, Integer> prefixSumInPath){
         if(root == null)
             return 0;
+        
         //这里相加以后可能出现溢出，因此我们用long类型
         long expectedPrefix = currentSum + (long)root.val - targetSum;
         long count = 0;

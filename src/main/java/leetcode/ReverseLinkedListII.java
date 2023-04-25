@@ -16,6 +16,24 @@ package leetcode;
  */
 
 public class ReverseLinkedListII {
+   public static class ListNode {
+       int val;
+       ListNode next;
+
+       ListNode() {
+       }
+
+       ListNode(int val) {
+           this.val = val;
+       }
+
+       ListNode(int val, ListNode next) {
+           this.val = val;
+           this.next = next;
+
+       }
+   }
+
     public ListNode reverseBetween(ListNode head, int m, int n) {
 
         ListNode mockHead = new ListNode(-1);
@@ -42,14 +60,45 @@ public class ReverseLinkedListII {
         return mockHead.next;
     }
 
+    public ListNode reverseBetween2(ListNode head, int left, int right) {
+        if(left == right)
+            return head;
+        ListNode pivot = new ListNode();
+        pivot.next = head;
+        for(int i = 0;i<left-1; i++){
+            pivot = pivot.next;
+        }
+        ListNode pre = pivot;
+        ListNode tail = pivot;
+        for(int i = left; i<=right; i++){
+            tail = tail.next;
+        }
+        ListNode toReverse = pivot.next.next;
+        pivot.next.next = tail.next;
+
+        while(toReverse != null){
+            ListNode newToReverse = toReverse.next;
+
+            ListNode oldHead = pivot.next;
+            pivot.next = toReverse;
+            toReverse.next = oldHead;
+
+            if(toReverse == tail)
+                break;
+            toReverse = newToReverse;
+        }
+        pre.next = pivot.next;
+        return pre.next;
+    }
+
     public static void main(String[] args) {
-        ListNode a1 = new ListNode(1);
-        ListNode a2 = new ListNode(2);
-        ListNode a3 = new ListNode(3);
-        ListNode a4 = new ListNode(4);
+        ListNode a1 = new ListNode(3);
+        ListNode a2 = new ListNode(5);
+//        ListNode a3 = new ListNode(3);
+//        ListNode a4 = new ListNode(4);
         a1.next = a2;
-        a2.next = a3;
-        a3.next = a4;
-        new ReverseLinkedListII().reverseBetween(a1,1,5);
+//        a2.next = a3;
+//        a3.next = a4;
+        new ReverseLinkedListII().reverseBetween2(a1,1,2);
     }
 }

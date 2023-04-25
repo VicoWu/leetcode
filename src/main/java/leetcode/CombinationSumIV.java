@@ -95,6 +95,28 @@ public class CombinationSumIV {
 
 
 
+    public int combinationSum5(int[] nums, int target) {
+        int[] cache = new int[target+1];
+        cache[0] = 1;
+        for(int i = 1;i<cache.length;i++){
+            cache[i] = -1;
+        }
+        return combinationSum4InRange(nums, target, cache);
+    }
+
+    private int combinationSum4InRange(int[] nums, int target, int[] cache){
+        if(cache[target] != -1){
+            return cache[target];
+        }
+        int count = 0;
+        for(int i = 0; i<nums.length;i++){
+            if(target >= nums[i]){
+                count += combinationSum4InRange(nums, target - nums[i], cache);
+            }
+        }
+        cache[target] = count;
+        return count;
+    }
 
     public static void main(String[] args) {
 

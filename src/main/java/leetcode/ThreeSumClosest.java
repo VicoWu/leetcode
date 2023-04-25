@@ -1,6 +1,9 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by wuchang at 1/2/18
@@ -17,7 +20,6 @@ import java.util.Arrays;
 
 public class ThreeSumClosest {
     public int threeSumClosest(int[] nums, int target) {
-
         Arrays.sort(nums);
         int minDistance = Integer.MAX_VALUE;int result = nums[0]+nums[1]+nums[2];
         for(int i=0;i<nums.length-2;i++){ //固定第一个元素，在右侧找第二个和第三个元素
@@ -46,10 +48,38 @@ public class ThreeSumClosest {
         return result;
     }
 
+    public int threeSumClosest2(int[] nums, int target) {
+        Arrays.sort(nums);
+        Integer result = nums[0] + nums[1] + nums[2];
+        Integer currentClosestDist = Math.abs(result - target);
+        for(int mid = 1; mid<nums.length-1; mid++){
+            for(int left = 0, right = nums.length-1;  left < mid && right > mid; ){
+                int sum = nums[mid] + nums[left] + nums[right];
+                int distance = sum - target;
+                if(distance > 0){
+                    if(distance < currentClosestDist){
+                        result = sum;
+                        currentClosestDist = distance;
+                    }
+                    right--;
+                }else if(distance < 0){
+                    if(-distance < currentClosestDist){
+                        result = sum;
+                        currentClosestDist = -distance;
+                    }
+                    left++;
+                }else{
+                    return result;
+                }
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args) {
 
         int[] nums = {-1,2,1,-4};
-        int[] nums2 = {0,1,2};
-        System.out.println(new ThreeSumClosest().threeSumClosest(nums2,3));
+        int[] nums2 = {4,0,5,-5,3,3,0,-4,-5};
+        System.out.println(new ThreeSumClosest().threeSumClosest2(nums2,-2));
     }
 }

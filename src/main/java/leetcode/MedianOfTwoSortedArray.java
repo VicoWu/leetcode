@@ -2,17 +2,53 @@ package leetcode;
 
 public class MedianOfTwoSortedArray {
 
+    public double findMedianSortedArrays3(int[] nums1, int[] nums2) {
+        int k = (nums1.length + nums2.length)/2;
+        if( (nums1.length + nums2.length) % 2 == 0){ // 元素个数的和为偶数，因此中位数是中间两个元素的平均值
 
+            return (findKthItem(nums1, nums2, 0,  0,  k)
+                    + findKthItem(nums1, nums2, 0,   0,  k+1)
+            )/2;
+        }
+        else
+        {
+            // 元素个数为奇数，因此中位数为中间的那个元素， 第k个元素
+            return findKthItem(nums1, nums2, 0, 0, k+1);
+        }
+    }
+
+    private double findKthItem(int[] nums1, int[] nums2, int left1, int left2, int k){
+        int mid = k/2;
+        if(left1 == nums1.length)
+            return nums2[left2+k-1];
+        else if(left2 == nums2.length)
+            return nums1[left1+k-1];
+        if(k == 1){
+            return Math.min(nums1[left1], nums2[left2]);
+        }
+        int last1 = Math.min(left1 + mid, nums1.length) - 1;
+        int last2 = Math.min(left2 + mid, nums2.length) - 1;
+
+        if(nums1[last1] < nums2[last2]){
+            k = k - (last1 - left1 + 1);
+            return findKthItem(nums1, nums2, last1 + 1,left2,  k);
+        }else{
+            k = k - (last2 - left2 + 1);
+            return findKthItem(nums1, nums2, left1,  last2 + 1,  k);
+        }
+    }
     public static void main(String[] args){
-        int[] a = {1};
-        int[] b = {2,3};
+        int[] a = {};
+        int[] b = {2};
         System.out.println("hello world");
         //System.out.println(new Solution().findMedianSortedArrays(a,b));
-        System.out.println(new Solution().findMedianSortedArrays(a,b));
+        System.out.println(new MedianOfTwoSortedArray().findMedianSortedArrays3(a,b));
     }
 }
 
 class Solution {
+
+
 
     public double findMedianSortedArrays2(int[] A, int[] B) {
         int m = A.length;
