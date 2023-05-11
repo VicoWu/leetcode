@@ -86,19 +86,84 @@ public class SortList {
     }
 
     public static void main(String[] args) {
-        ListNode l1 = new ListNode(2);
-        ListNode l2 = new ListNode(1);
+        ListNode l1 = new ListNode(4);
+        ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(1);
-        ListNode l4 = new ListNode(1);
-        ListNode l5 = new ListNode(1);
-        ListNode l6 = new ListNode(1);
-        l1.next=l2;l2.next=l3;l3.next=l4;l4.next=l5;l5.next=l6;
+        ListNode l4 = new ListNode(3);
 
-        ListNode rs = new SortList().sortList(l1);
-        while(rs!=null){
-            System.out.print(rs.val+" ");
+        l1.next=l2;l2.next=l3;l3.next=l4;
 
-            rs = rs.next;
+        new SortList().sortList3(l1);
+    }
+
+
+    public ListNode sortList3(ListNode head) {
+        ListNode cur = head;
+        int length = 0;
+        while(cur!=null){
+            length++;
+            cur = cur.next;
         }
+        ListNode pivot = new ListNode(0);
+        pivot.next = head;
+        for(int step=1;step <= length;step<<=1){
+            ListNode pre = pivot;
+            cur = pivot.next;
+            ListNode lastTail = null;
+            while(cur != null){
+                ListNode head1 = cur;
+                // 当循环结束， cur指向了链表1的最后一个节点，而不是链表2的头节点
+                for(int i = 1;i<step && cur != null && cur.next!=null;i++){
+                    cur = cur.next;
+                }
+                //lastTail=cur;
+                if(cur != null){
+                    // cur指向下一个list的头节点（有可能为null）
+                    ListNode tmp = cur.next;
+                    cur.next=null;
+                    cur = tmp;
+                }
+
+                ListNode head2 = cur;
+                // 当循环结束， cur指向了链表2的最后一个节点，而不是链表2的最后一个节点的next
+                for(int i = 1;i<step && cur!=null && cur.next!=null;i++){
+                    cur = cur.next;
+                }
+               // lastTail=cur;
+
+                if(cur != null){
+                    ListNode tmp = cur.next;
+                    cur.next=null;
+                    cur = tmp;
+                }
+                ListNode sortedHead = mergeSortedList(head1, head2);
+                pre.next = sortedHead;
+                while(pre.next != null){
+                    pre=pre.next;
+                }
+            }
+        }
+        return pivot.next;
+    }
+
+    private ListNode mergeSortedList(ListNode head1, ListNode head2){
+        ListNode dummyHead = new ListNode(0);
+        ListNode temp = dummyHead, temp1 = head1, temp2 = head2;
+        while (temp1 != null && temp2 != null) {
+            if (temp1.val <= temp2.val) {
+                temp.next = temp1;
+                temp1 = temp1.next;
+            } else {
+                temp.next = temp2;
+                temp2 = temp2.next;
+            }
+            temp = temp.next;
+        }
+        if (temp1 != null) {
+            temp.next = temp1;
+        } else if (temp2 != null) {
+            temp.next = temp2;
+        }
+        return dummyHead.next;
     }
 }

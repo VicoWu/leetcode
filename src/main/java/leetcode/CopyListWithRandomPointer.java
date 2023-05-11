@@ -2,7 +2,7 @@ package leetcode;
 
 /**
  * Created by wuchang at 12/26/17
- * 138
+ * Question 138
  *
  * # 我自己的解法
  # 暴力解法
@@ -60,16 +60,78 @@ public class CopyListWithRandomPointer {
         return copyHead.next;
     }
 
-    public static void main(String[] args) {
-        RandomListNode n1 = new RandomListNode(-1);
-        //RandomListNode n2 = new RandomListNode(2);
-        //RandomListNode n3 = new RandomListNode(3);
+    static class Node {
+        int val;
+        Node next;
+        Node random;
 
-        //n1.next = n2;
-        //n2.next = n3;
-        //n1.random = n3;
-        //n3.random = n1;
-        new CopyListWithRandomPointer().copyRandomList(n1);
+        public Node(int val) {
+            this.val = val;
+            this.next = null;
+            this.random = null;
+        }
+    }
+
+    public Node copyRandomList2(Node head) {
+        if(head == null)
+            return null;
+        Node cur = head;
+        Node tail = new Node(-1);
+        tail.next = head;
+        while(cur != null){
+            tail.next = cur;
+
+            Node copy = new Node(cur.val);
+            Node nextHead = cur.next;
+
+            cur.next = copy;
+            copy.next = null;
+            tail = copy;
+            cur = nextHead;
+        }
+
+        cur = head;
+        while(cur != null){
+            if(cur.random != null){
+                cur.next.random = cur.random.next;
+            }
+            cur = cur.next.next;
+        }
+
+        Node pivotOfSource = new Node(-1);
+        Node curOfSource = pivotOfSource;
+        Node pivotOfCopy = new Node(-1);
+        Node curOfCopy = pivotOfCopy;
+        cur = head;
+        while(cur!= null){
+            Node nextBoth = cur.next.next;
+            curOfSource.next = cur;
+            curOfCopy.next = cur.next;
+            curOfSource = curOfSource.next;
+            curOfCopy = curOfCopy.next;
+            curOfSource.next = null;
+            curOfCopy.next = null;
+            cur = nextBoth;
+        }
+        return pivotOfCopy.next;
+    }
+
+    public static void main(String[] args) {
+        Node a = new Node(-1);
+//        Node b = new Node(13);
+//        Node c = new Node(11);
+//        Node d = new Node(10);
+//        Node e = new Node(1);
+//        a.next = b;
+//        b.next = c;
+//        c.next = d;
+//        d.next = e;
+//        b.random = a;
+//        c.random = e;
+//        d.random = c;
+//        e.random = a;
+
+        new CopyListWithRandomPointer().copyRandomList2(a);
     }
    static class RandomListNode {
          int label;

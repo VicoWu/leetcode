@@ -157,12 +157,74 @@ public class MaxPointsOnALine {
         return result;
 
     }
+
+    /**
+     *
+     *     如果被除数为正数，那么取余的结果也为正数。例如，5 % 3 的结果是 2，因为 5 除以 3 余 2。
+     *     如果被除数为负数，那么取余的结果也为负数。例如，-5 % 3 的结果是 -2，因为 -5 除以 3 余 -2。
+     *     如果被除数和除数都为负数，那么取余的结果为负数或者 0。例如，-5 % -3 的结果是 -2，因为 -5 除以 -3 余 -2。
+     *     System.out.println(0 % 2); // 0
+     *     System.out.println(3 % 2); // 1
+     *     System.out.println(3 % -2); // 1
+     *
+     *     System.out.println(3 % -10); // 3
+     *     System.out.println(-3 % 2); // -1
+     *     System.out.println(-3 % 10); // -3
+     *
+     *     System.out.println(-3 % -10); // -3
+     *
+     * @param points
+     * @return
+     */
+    public int maxPoints(int[][] points) {
+        int maxInLine = 1;
+        for(int i = 0;i<points.length;i++){
+            Map<Integer, Integer> stat = new HashMap<Integer, Integer>();
+            for(int j = i+1;j<points.length;j++){
+                int dividend = points[i][0] - points[j][0];
+                int divisor = points[i][1] - points[j][1];
+                if(divisor == 0){ // 在一条横线上
+                    stat.put(Integer.MAX_VALUE, stat.getOrDefault(Integer.MAX_VALUE, 1) + 1);
+                }else if(dividend == 0){ // 在一条竖线上
+                    stat.put(Integer.MIN_VALUE, stat.getOrDefault(Integer.MIN_VALUE, 1) + 1);
+                }else{
+                    int maxGcd = gcd(Math.abs(dividend), Math.abs(divisor));
+                    int key = Math.abs(dividend/=maxGcd) + Math.abs(divisor/=maxGcd) * 10000;
+                    if(dividend < 0 && divisor > 0 || dividend > 0 && divisor < 0 ){
+                        key = -key;
+                    }
+                    stat.put(key, stat.getOrDefault(key, 1) + 1);
+                }
+            }
+            // 统计这个点所在的直线的最大的点数
+            for(Map.Entry<Integer,Integer> entry: stat.entrySet()){
+                maxInLine = Math.max(maxInLine, entry.getValue());
+            }
+        }
+        return maxInLine;
+    }
+
+    private int gcd(int largest, int smallest){
+        return smallest == 0 ? largest : gcd(smallest, largest%smallest);
+    }
+
+
     public static void main(String[] args) {
+        MaxPointsOnALine mp = new MaxPointsOnALine();
+
+  //      System.out.println(mp.gcd(2, 0));
+//        System.out.println(mp.gcd(0, 2));
+        System.out.println(0 % 2); // 0
+        System.out.println(3 % 2); // 1
+        System.out.println(3 % -2); // 1
+
+        System.out.println(3 % -10); // 3
+        System.out.println(-3 % 2); // -1
+        System.out.println(-3 % 10); // -3
+
+        System.out.println(-3 % -10); // -3
         Point p1 = new Point(0,0);
         Point p2 = new Point(0,0);
-//        Point p2 = new Point(94911151,94911150);
-//        Point p3 = new Point(94911152,94911151);
-//        Point p4 = new Point(4,5);
 
         int[][]  ps = {{-54,-297},{-36,-222},{3,-2},{30,53},{-5,1},{-36,-222},{0,2},{1,3},{6,-47},{0,4},{2,3},{5,0},{48,128},{24,28},{0,-5},{48,128},{-12,-122},{-54,-297},{-42,-247},{-5,0},{2,4},{0,0},{54,153},{-30,-197},{4,5},{4,3},{-42,-247},{6,-47},{-60,-322},{-4,-2},{-18,-147},{6,-47},{60,178},{30,53},{-5,3},{-42,-247},{2,-2},{12,-22},{24,28},{0,-72},{3,-4},{-60,-322},{48,128},{0,-72},{-5,3},{5,5},{-24,-172},{-48,-272},{36,78},{-3,3}};
         Point[] points = new Point[ps.length];
