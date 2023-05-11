@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="497e5782-cca1-4351-97a0-710e7380121c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/SwordToOffer/RobotMoving.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/DiceProbability.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ConstructBinaryTreeFromPreorderAndInorderTraversal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ConstructBinaryTreeFromPreorderAndInorderTraversal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/CopyListWithRandomPointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/CopyListWithRandomPointer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/FlattenBinaryTreeToLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/FlattenBinaryTreeToLinkedList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/MaxPointsOnALine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/MaxPointsOnALine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/SortList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/SortList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/ValidNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/ValidNumber.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +351,7 @@
       <recent name="leetcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.FindMedianFromDataStream">
+  <component name="RunManager" selected="Application.DiceProbability">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
@@ -366,6 +360,20 @@
     </configuration>
     <configuration name="CopyListWithRandomPointer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.CopyListWithRandomPointer" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiceProbability" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.DiceProbability" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -394,20 +402,6 @@
     </configuration>
     <configuration name="FlattenBinaryTreeToLinkedList" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="leetcode.FlattenBinaryTreeToLinkedList" />
-      <module name="leetcode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MaxPointsOnALine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.MaxPointsOnALine" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -466,19 +460,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.MaxPointsOnALine" />
       <item itemvalue="Application.RobotMoving" />
       <item itemvalue="Application.FlattenBinaryTreeToLinkedList" />
       <item itemvalue="Application.CopyListWithRandomPointer" />
       <item itemvalue="Application.FindMedianFromDataStream" />
+      <item itemvalue="Application.DiceProbability" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DiceProbability" />
         <item itemvalue="Application.FindMedianFromDataStream" />
         <item itemvalue="Application.CopyListWithRandomPointer" />
         <item itemvalue="Application.FlattenBinaryTreeToLinkedList" />
         <item itemvalue="Application.RobotMoving" />
-        <item itemvalue="Application.MaxPointsOnALine" />
       </list>
     </recent_temporary>
   </component>
@@ -530,7 +524,7 @@
       <workItem from="1658110606742" duration="11385000" />
       <workItem from="1680507661677" duration="2000" />
       <workItem from="1680507844477" duration="65335000" />
-      <workItem from="1681958880130" duration="28337000" />
+      <workItem from="1681958880130" duration="31665000" />
     </task>
     <servers />
   </component>
@@ -2118,38 +2112,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>67</line>
+          <line>65</line>
           <option name="timeStamp" value="664" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>69</line>
+          <line>66</line>
           <option name="timeStamp" value="665" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>78</line>
+          <line>79</line>
           <option name="timeStamp" value="669" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>52</line>
+          <line>50</line>
           <option name="timeStamp" value="672" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>57</line>
+          <line>54</line>
           <option name="timeStamp" value="673" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>53</line>
+          <line>51</line>
           <option name="timeStamp" value="674" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindMedianFromDataStream.java</url>
-          <line>54</line>
+          <line>52</line>
           <option name="timeStamp" value="675" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/DiceProbability.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="676" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java</url>
@@ -2212,6 +2211,7 @@
         <watch expression="even" language="JAVA" />
         <watch expression="largeHeap.peek()" language="JAVA" />
         <watch expression="largeHeap.peek()" language="JAVA" />
+        <watch expression="count[cur]" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>

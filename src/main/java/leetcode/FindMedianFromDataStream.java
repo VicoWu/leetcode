@@ -1,5 +1,6 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -47,7 +48,6 @@ public class FindMedianFromDataStream {
     }
 
     public void addNum(int num) {
-
         if(large.size() == small.size()){
             large.add((long)num);
             small.add(large.poll());
