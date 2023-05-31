@@ -192,10 +192,41 @@ the reason of this movement must be height[i-1] <= height[j+1] ; In this conditi
     }
 
 
+    /**
+     * 这一道题需要跟Question 11 https://leetcode.cn/problems/container-with-most-water/description/区别开
+     * Question 11无法使用排序栈进行求解，排序栈能解决的问题是左侧或者右侧遇到的**第一个**满足某个有序条件的位置，而这一题，不是第一个，是最远
+     * @param heights
+     * @return
+     */
+    public int largestRectangleArea3(int[] heights) {
+        Stack<Integer> stack = new Stack();
+        int[] leftWidth = new int[heights.length];
+        for(int i = 0;i<heights.length;i++){
+            while(!stack.isEmpty() && heights[i] < heights[stack.peek()]){
+                stack.pop();
+            }
+            leftWidth[i] = stack.isEmpty() ? 0 : stack.peek() - 1;
+            stack.push(i);
+        }
+        stack.clear();
+        int[] rightWidth = new int[heights.length];
+        for(int i = heights.length -1 ; i>=0 ; i--){
+            while(!stack.isEmpty() && heights[i] < heights[stack.peek()]){
+                stack.pop();
+            }
+            rightWidth[i] = stack.isEmpty() ? heights.length-1 : stack.peek() - 1;
+            stack.push(i);
+        }
+        int area = Integer.MIN_VALUE;
+        for(int i = 0;i<heights.length;i++){
+            area=Math.max(area, heights[i] * (rightWidth[i] - leftWidth[i] + 1));
+        }
+        return area;
+    }
 
     public static void main(String[] args) {
 
-        int[] heights={2,1,4,5,1,3,3};
-        System.out.println( new LargestRectangleInHistogram().largestRectangleAreaByStack(heights));
+        int[] heights={2,4};
+        System.out.println( new LargestRectangleInHistogram().largestRectangleArea3(heights));
     }
 }

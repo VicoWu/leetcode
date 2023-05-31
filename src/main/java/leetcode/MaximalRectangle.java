@@ -1,7 +1,10 @@
 package leetcode;
 
+import java.util.ArrayList;
+
 /**
  * Question 85
+ * 剑指 Offer II 040. 矩阵中最大的矩形
  *
  ## 根据分层的方式，使用动态规划
  https://discuss.leetcode.com/topic/6650/share-my-dp-solution/20
@@ -197,13 +200,63 @@ public class MaximalRectangle {
         return maxA;
     }
 
+    public int maximalRectangle(String[] matrix) {
+        ArrayList<Integer[]> cand = new ArrayList<Integer[]>();
+        int maxArea = Integer.MIN_VALUE;
+        for(int i=0;i<matrix.length;i++){
+            String row = matrix[i];
+            Integer[] initial = new Integer[2];
+            initial[0] = 0; initial[1] = row.length()-1;
+            cand.add(initial);
+            for(int j = i;j<matrix.length;j++){
+                cand = findCandidate(matrix[j], cand);
+                maxArea = Math.max(maxArea, computeMaxArea(cand, j - i + 1)) ;
+            }
+        }
+        return maxArea;
+    }
+
+    private ArrayList<Integer[]> findCandidate(String row, ArrayList<Integer[]> pre){
+        ArrayList<Integer[]> cand = new ArrayList<Integer[]>();
+        for(int i = 0; i<pre.size(); i++){
+            Integer[] range = pre.get(i);
+            int start = range[0];
+            int end = start;
+            while(start <= range[1]){
+                while(start <= range[1] && row.charAt(start) == '0'){
+                    start++;
+                }
+                end = start;
+                while(end <= range[1] && row.charAt(end) == '1'){
+                    end++;
+                }
+                end--;
+                if(end >= start){
+                    Integer[] r ={start, end};
+                    cand.add(r);
+                }
+                start=end+1;
+            }
+        }
+        return cand;
+    }
+
+    private int computeMaxArea(ArrayList<Integer[]> cands, int height){
+        int max = Integer.MIN_VALUE;
+        for(int i = 0;i<cands.size();i++){
+            Integer[] cand = cands.get(i);
+            max = Math.max(max, (cand[1] - cand[0] + 1) * height);
+        }
+        return max;
+    }
     public static void main(String[] args) {
 
         //char[][] matrix = {{'0','0','1','0'},{'1','1','1','1'},{'1','1','1','1'},{'1','1','1','0'},{'1','1','0','0'},{'1','1','1','1'},{'1','1','1','0'}};  //}
-        char[][] matrix = {{'1','0','1','0','0'},{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
+        char[][] matrix = {{'1','0','1','1','1'},{'1','1','1','1','1'},{'1','0','0','1','0'}};
        // char[][] matrix = {{'0','1'},{'0','1'}};
         //char[][] matrix = {{'0','0','0','0','1','1','1','0','1'},{'0','0','1','1','1','1','1','0','1'},{'0','0','0','1','1','1','1','1','0'}};
-       System.out.println(new MaximalRectangle().maximalRectangle1(matrix)); ;
+        String[] m = {"10111","11111","10010"};
+        System.out.println(new MaximalRectangle().maximalRectangle(m)); ;
     }
 
 }

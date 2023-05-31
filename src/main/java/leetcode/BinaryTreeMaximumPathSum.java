@@ -75,6 +75,29 @@ public class BinaryTreeMaximumPathSum {
         return result;
     }
 
+    int globalMax = -1000;
+    public int maxPathSum2(TreeNode root) {
+        maxPathSumByRoot2(root);
+        return globalMax;
+    }
+
+    /**
+     * 给定一个root，返回以这个root作为最上侧节点的最大路径和，注意，这里的最大路径，需要包含root节点，root的左子树或者右子树最多只包含一个，或者都不包含
+     * @param root
+     * @return
+     */
+    public int maxPathSumByRoot2(TreeNode root){
+        if(root == null){
+            return 0;
+        }
+        int leftMax = maxPathSumByRoot2(root.left);
+        int rightMax = maxPathSumByRoot2(root.right);
+        // 计算以当前节点作为根节点的最大路径和
+        int curMax = root.val + Math.max(leftMax, 0) + Math.max(rightMax, 0);
+        globalMax = Math.max(curMax, globalMax);
+        // 这个最大值或者是由root和左侧形成，或者是由root跟右侧形成
+        return root.val + Math.max(Math.max(leftMax, 0), Math.max(rightMax,0));
+    }
 
     public static void main(String[] args) {
 

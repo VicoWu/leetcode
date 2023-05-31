@@ -1,6 +1,9 @@
 package leetcode;
 
+import java.util.ArrayList;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.LinkedBlockingDeque;
 
 /**
@@ -39,6 +42,8 @@ public class SerializeAndDeserializeBinaryTree {
         String[] values =  data.split(SPLITTER);
         TreeNode root = new TreeNode(Integer.valueOf(values[0])); //第一个元素是根元素
         treeDueue.addLast(root);
+        ArrayList q = new ArrayList();
+
 
 
        for(int i=1;i<values.length;){
@@ -112,18 +117,57 @@ public class SerializeAndDeserializeBinaryTree {
         return currentRoot;
     }
 
+    int currentEnd = 0;
+    // Encodes a tree to a single string.
+    public String serialize2(TreeNode root) {
+        if(root == null){
+            return "N";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append(root.val);
+        sb.append("|");
+        sb.append(serialize2(root.left));
+        sb.append("|");
+        sb.append(serialize2(root.right));
+        return sb.toString();
+    }
+
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize2(String data) {
+        return deserialize2(data, 0);
+    }
+
+    public TreeNode deserialize2(String data, int startIndex){
+        if(data.charAt(startIndex) == 'N'){
+            currentEnd = startIndex;
+            return null;
+        }
+        TreeNode t = new TreeNode(getValue(data, startIndex));
+        TreeNode left = deserialize2(data, currentEnd + 2);
+        TreeNode right = deserialize2(data, currentEnd + 2);
+        t.left = left;
+        t.right = right;
+        return t;
+    }
+
+    public int getValue(String data, int startIndex){
+        int nextSplit = data.indexOf("|", startIndex);
+        currentEnd = Math.min(nextSplit, data.length()) - 1;
+        return Integer.valueOf(data.substring(startIndex, currentEnd + 1));
+    }
+
     public static void main(String[] args) {
-        TreeNode node1 = new TreeNode(1);
+        TreeNode node1 = new TreeNode(-1);
         TreeNode node2 = new TreeNode(2);
-        TreeNode node3 = new TreeNode(3);
+        TreeNode node3 = new TreeNode(-3);
         //TreeNode node4 = new TreeNode(4);
-        node1.right=node2;
+        node1.left=node2;
         node2.right = node3;
         //node3.right = node4;
 
 
-        String serilized = new SerializeAndDeserializeBinaryTree().serialize(node1);
-        TreeNode root = new SerializeAndDeserializeBinaryTree().deserialize(serilized);
+        String serilized = new SerializeAndDeserializeBinaryTree().serialize2(node1);
+        TreeNode root = new SerializeAndDeserializeBinaryTree().deserialize2(serilized);
         System.out.println(root.val);
     }
 }

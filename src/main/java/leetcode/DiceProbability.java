@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * 剑指 Offer 60. n个骰子的点数
  */
@@ -33,6 +35,32 @@ class DiceProbability {
         }
         return res;
     }
+
+    /**
+     *
+     作者：Krahets
+     链接：https://leetcode.cn/problems/nge-tou-zi-de-dian-shu-lcof/solutions/637778/jian-zhi-offer-60-n-ge-tou-zi-de-dian-sh-z36d/
+     来源：力扣（LeetCode）
+     著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+     * @param n
+     * @return
+     */
+    public double[] dicesProbability2(int n) {
+        double[] dp = new double[6];
+        Arrays.fill(dp, 1.0 / 6.0); // 初始化为只有一个骰子的概率结果
+        for (int i = 2; i <= n; i++) {
+            double[] tmp = new double[5 * i + 1];
+            for (int j = 0; j < dp.length; j++) { // 对于上一轮的概率结果dp
+                for (int k = 0; k < 6; k++) { // 对于当前的骰子每一种1 ～ 6 的点数可能
+                    tmp[j + k] += dp[j] / 6.0; // k = 0, 代表当前骰子点数是1，
+                }
+            }
+            dp = tmp; // 保存当前i=n的概率结果，为下一轮n+1的计算作准备
+        }
+        return dp;
+    }
+
 
     public static void main(String[] args) {
         new DiceProbability().dicesProbability(2);

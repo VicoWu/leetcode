@@ -9,10 +9,13 @@ package leetcode;
  [这里](https://leetcode.com/problems/container-with-most-water/discuss/6099/Yet-another-way-to-see-what-happens-in-the-O(n)-algorithm)的解释是直接证明的。
  假如现在我们求`[a1,a2...,a6]`，开始的时候 ，我们有`a1<a6`，那么，可以看到，`[a1,a2]`、`[a1,a3]`，`[a1,a4]`，`[a1,a5]`形成的面积肯定都小于`[a1,a6]`，因此，
  左侧指针往右移动一个，我们看`[a2,a6]`，假如`a2>a6`，那么，可以知道,`[a3,a6]`,`[a4,a6]`,`[a5,a6]`都是小于`[a2,a6]`的，因此右侧指针向左移动一个，我们开始看`[a2,a5]`，以此类推。
+ 通过双指针来缩小搜索范围的类似题目：
+ https://leetcode.cn/problems/search-a-2d-matrix-ii/
+ https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/description/
+ https://leetcode.cn/problems/search-a-2d-matrix-ii/description/
  */
 public class ContainerWithMostWater {
     public int maxArea(int[] height) {
-
         int i=0;
         int j=height.length-1;
         int l = i;
