@@ -1,7 +1,9 @@
 package leetcode;
 
 import java.util.ArrayDeque;
+import java.util.Comparator;
 import java.util.Deque;
+import java.util.PriorityQueue;
 
 /**
  * Question 239
@@ -94,11 +96,33 @@ public class SlidingWindowMaximum {
         return sliding_max;
     }
 
+    public int[] maxSlidingWindow(int[] nums, int k) {
+        int n = nums.length;
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(new Comparator<Integer>(){
+            public int compare(Integer a, Integer b){
+                return ((a > b) ? -1 : 1);
+            }
+
+        });
+        for(int i = 0;i<k;i++){
+            pq.offer(nums[i]);
+        }
+
+        int[] ans = new int[n-k+1];
+        ans[0] = pq.peek();
+        for(int i = k;i<n;i++){
+            pq.offer(nums[i]);
+            pq.remove(nums[i-k]);
+            ans[i-k+1] = pq.peek();
+        }
+        return ans;
+    }
+
 
     public static void main(String[] args) {
-        int[] input = {2,1,3,4,6,3,8,9,10,12,56}; int k=3;
-        new SlidingWindowMaximum().maxSlidingWindow2(input ,3);
-        SlidingWindowMaximum.slidingWindowMax(input,4);
+//
+//        new SlidingWindowMaximum().maxSlidingWindow(input ,5000);
+//        SlidingWindowMaximum.slidingWindowMax(input,4);
     }
 
 }

@@ -201,11 +201,45 @@ public class ReversePairs {
     }
 
 
+    public int reversePairs2(int[] nums) {
+        return reversePairs2(nums, 0, nums.length - 1);
+    }
+
+    public int reversePairs2(int[] nums, int i, int j) {
+        if(i==j){
+            return 0;
+        }
+        int[] cache = new int[j - i + 1];
+        int k = (i+j)/2;
+        int reverse = reversePairs2(nums, i, k) + reversePairs2(nums, k+1, j);
+
+        int cur1 = i;
+        int cur2 = k+1;
+        int cur = 0;
+        while(cur1 <= k && cur2 <= j){
+            if(nums[cur1] <= nums[cur2])
+                cache[cur++] = nums[cur1++];
+            else{
+                cache[cur++] = nums[cur2++];
+                reverse+=(k - cur1 + 1);
+            }
+        }
+        for(;cur1<=k;){
+            cache[cur++] = nums[cur1++];
+        }
+        for(;cur2<=j;){
+            cache[cur++] = nums[cur2++];
+        }
+        for(int m = 0;m<cache.length;m++){
+            nums[m+i] = cache[m];
+        }
+        return reverse;
+    }
+
     public static void main(String[] args) {
-        int[] input = {3,1,2};
+        int[] input = {7,5,6};
         int[] sorted = {2,7,9};
-        for(int i=0;i<10;i++)
-            System.out.println(new ReversePairs().index(sorted,i));
+        new ReversePairs().reversePairs2(input);
         System.out.println(new ReversePairs().reversePairsByBIT(input));
     }
 }
