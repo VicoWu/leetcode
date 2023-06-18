@@ -109,13 +109,53 @@ public class LongestConsecutiveSequence {
     }
 
 
+    public int longestConsecutive3(int[] nums) {
+        Map<Integer,Integer> lower = new HashMap<Integer,Integer>();
+        Map<Integer,Integer> upper = new HashMap<Integer,Integer>();
+        Set<Integer> existing = new HashSet();
+        int longest = 0;
+        for(int i = 0;i<nums.length;i++){
+            int leftLength = 1; int rightLength = 1;
+            int leftNum = 0; int rightNum = 0;
+            if(existing.contains(nums[i])){
+                continue;
+            }
+            existing.add(nums[i]);
+            if(upper.containsKey(nums[i]-1)){
+                leftLength = upper.get(nums[i]-1) + 1;
+                leftNum = nums[i] - upper.get(nums[i]-1);
+                upper.put(nums[i], leftLength);
+                lower.put(leftNum, leftLength);
+                upper.remove(nums[i]-1);
+            }else{
+                upper.put(nums[i], 1);
+            }
+            if(lower.containsKey(nums[i]+1)){
+                rightLength = lower.get(nums[i]+1) + 1;
+                rightNum = nums[i] + lower.get(nums[i]+1);
+                lower.put(nums[i], rightLength);
+                upper.put(rightNum, rightLength);
+                lower.remove(nums[i]+1);
+            }else{
+                lower.put(nums[i],1);
+            }
+            if(leftLength != 1 && rightLength != 1){
+                lower.remove(nums[i]);
+                upper.remove(nums[i]);
+                lower.put(leftNum, leftLength + rightLength - 1);
+                upper.put(rightNum, leftLength + rightLength - 1);
+            }
+            longest = Math.max(longest, leftLength + rightLength - 1);
+        }
+        return longest;
+    }
 
 
     public static void main(String[] args) {
 
 
-        int[] input = {};
-        System.out.println(new LongestConsecutiveSequence().longestConsecutive(input));
+        int[] input = {0,3,7,2,5,8,4};
+        System.out.println(new LongestConsecutiveSequence().longestConsecutive3(input));
 
         System.out.println(-100 / 10);
         System.out.println(-20 % 10);

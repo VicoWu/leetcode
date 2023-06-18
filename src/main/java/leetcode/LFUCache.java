@@ -2,6 +2,8 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Created by wuchang at 2/27/18
@@ -15,6 +17,7 @@ public class LFUCache {
     //key 代表数量，value的 LinkedHashSet<Integer>代表访问次数为这个数量的所有的key，为什么要使用LinkedHashSet?首先，这里面的元素是不可以重复的，其次，又需要是线性的，这样头部元素就代表最久没有访问的元素
     HashMap<Integer, LinkedHashSet<Integer>> lists;
     int cap;
+    LinkedList q;
     int min = -1; //当前最小的访问次数，这样我们在进行evict的时候可以从lists中知道哪些key的访问次数最少，然后从中淘汰一个
     public LFUCache(int capacity) {
         cap = capacity;
