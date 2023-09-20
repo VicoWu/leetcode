@@ -120,11 +120,55 @@ public class PermutationSequence {
     }
 
 
+    public String getPermutation3(int n, int k) {
+        int step = 1;
+        for(int i = 1;i<n;i++){
+            step = step * i;
+        }
+        if(k > step * n){ // k is out of range
+            return null;
+        }
+        char[] res = new char[n];
+        boolean[] visit = new boolean[n+1];
+        Arrays.fill(visit, false);
+        findKthInVisitArray(n, k-1, step, 0, visit, res); // 由于k是从1开始，为了统一，我们还是从0开始，以0为起始点
+        return new String(res);
+    }
+
+    public void findKthInVisitArray(int n, int remain, int step, int depth, boolean[] visit, char[] res){
+        while(depth < n){
+            int order = remain / step;
+            int num = findKthUnVisit(visit, order);
+            visit[num] = true; // 标记为已访问
+            res[depth] = (char) ('0' + num); // 第depth位的结果确定了
+            remain = remain % step; // 剩余的排序，第一个的序号是0
+            if(depth == n - 1){
+                return;
+            }
+            step = step / (n - 1 - depth);
+            depth++;
+        }
+    }
+
+    /**
+     找到第k大的还没有访问的元素,第一个未访问的元素序号是0
+     */
+    public int findKthUnVisit(boolean[] visit, int order){
+        for(int i = 1;i<visit.length;i++){
+            if(!visit[i]){
+                order--;
+                if(order < 0){
+                    return i;
+                }
+            }
+        }
+        return -1;
+    }
 
 
 
     public static void main(String[] args) {
-         System.out.println(new PermutationSequence().getPermutation2(3, 2));
+         System.out.println(new PermutationSequence().getPermutation3(3, 3));
 //       for(int i=1;i<=24;i++)
 //         System.out.println(new PermutationSequence().getPermutation(1,1));
     }

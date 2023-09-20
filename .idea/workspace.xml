@@ -5,15 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="497e5782-cca1-4351-97a0-710e7380121c" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/LFUCache2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/DelayWrite.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/TestThreadPool.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/VolatileData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/VolatileMain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/VolatileThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/FindAnagrams.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/FindSubstring.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/GasStation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/IsSubSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/Sort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/Solution.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/leetcode/test/ZookeeperBugs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/LFUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/LFUCache.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/LongestConsecutiveSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/LongestConsecutiveSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leetcode.iml" beforeDir="false" afterPath="$PROJECT_DIR$/leetcode.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/LRUCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/LRUCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/NumberOfIslands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/NumberOfIslands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicateCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicateCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/SlidingWindowMaximum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/SlidingWindowMaximum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,29 +368,15 @@
       <recent name="leetcode" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LFUCache2">
+  <component name="RunManager" selected="Application.ZookeeperBugs">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DelayWrite" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.test.DelayWrite" />
-      <module name="leetcode" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="leetcode.test.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LFUCache2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.LFUCache2" />
+    <configuration name="FindAnagrams" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.FindAnagrams" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -392,8 +389,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LongestConsecutiveSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.LongestConsecutiveSequence" />
+    <configuration name="FindSubstring" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.FindSubstring" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -406,13 +403,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestThreadPool" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.test.TestThreadPool" />
+    <configuration name="FirstMissingPositive" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.FirstMissingPositive" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="leetcode.test.*" />
+          <option name="PATTERN" value="leetcode.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -420,8 +417,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VolatileMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="leetcode.test.VolatileMain" />
+    <configuration name="SudokuSolver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.SudokuSolver" />
+      <module name="leetcode" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="leetcode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZookeeperBugs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="leetcode.test.ZookeeperBugs" />
       <module name="leetcode" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -466,19 +477,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.VolatileMain" />
-      <item itemvalue="Application.DelayWrite" />
-      <item itemvalue="Application.TestThreadPool" />
-      <item itemvalue="Application.LongestConsecutiveSequence" />
-      <item itemvalue="Application.LFUCache2" />
+      <item itemvalue="Application.SudokuSolver" />
+      <item itemvalue="Application.FindAnagrams" />
+      <item itemvalue="Application.FindSubstring" />
+      <item itemvalue="Application.FirstMissingPositive" />
+      <item itemvalue="Application.ZookeeperBugs" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LFUCache2" />
-        <item itemvalue="Application.LongestConsecutiveSequence" />
-        <item itemvalue="Application.TestThreadPool" />
-        <item itemvalue="Application.DelayWrite" />
-        <item itemvalue="Application.VolatileMain" />
+        <item itemvalue="Application.ZookeeperBugs" />
+        <item itemvalue="Application.FirstMissingPositive" />
+        <item itemvalue="Application.FindSubstring" />
+        <item itemvalue="Application.FindAnagrams" />
+        <item itemvalue="Application.SudokuSolver" />
       </list>
     </recent_temporary>
   </component>
@@ -533,7 +544,11 @@
       <workItem from="1681958880130" duration="51476000" />
       <workItem from="1684740202112" duration="39186000" />
       <workItem from="1686295112421" duration="5552000" />
-      <workItem from="1686365968485" duration="15715000" />
+      <workItem from="1686365968485" duration="24411000" />
+      <workItem from="1687682299282" duration="33870000" />
+      <workItem from="1688719395164" duration="8404000" />
+      <workItem from="1689905393838" duration="600000" />
+      <workItem from="1693296975154" duration="965000" />
     </task>
     <servers />
   </component>
@@ -2559,6 +2574,231 @@
           <line>77</line>
           <option name="timeStamp" value="837" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java</url>
+          <line>126</line>
+          <option name="timeStamp" value="839" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java</url>
+          <line>155</line>
+          <option name="timeStamp" value="847" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java</url>
+          <line>235</line>
+          <option name="timeStamp" value="849" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="850" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SurroundedRegions.java</url>
+          <line>228</line>
+          <option name="timeStamp" value="851" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/RemoveDuplicateCharacter.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="854" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/Sort.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="863" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java</url>
+          <line>166</line>
+          <option name="timeStamp" value="864" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/TrappingRainWater.java</url>
+          <line>170</line>
+          <option name="timeStamp" value="865" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/NumberOfIslands.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="866" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/NumberOfIslands.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="867" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>210</line>
+          <option name="timeStamp" value="873" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="875" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="876" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>207</line>
+          <option name="timeStamp" value="877" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>149</line>
+          <option name="timeStamp" value="880" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>130</line>
+          <option name="timeStamp" value="881" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="882" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/MinimumWindowSubstring.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="883" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java</url>
+          <line>245</line>
+          <option name="timeStamp" value="884" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java</url>
+          <line>314</line>
+          <option name="timeStamp" value="885" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/RegularExpressionMatching.java</url>
+          <line>260</line>
+          <option name="timeStamp" value="886" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java</url>
+          <line>124</line>
+          <option name="timeStamp" value="887" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="888" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="889" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="893" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>198</line>
+          <option name="timeStamp" value="894" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="896" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>120</line>
+          <option name="timeStamp" value="897" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="898" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>141</line>
+          <option name="timeStamp" value="899" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>146</line>
+          <option name="timeStamp" value="900" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="901" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>114</line>
+          <option name="timeStamp" value="903" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="904" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/SudokuSolver.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="905" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindAnagrams.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="906" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindSubstring.java</url>
+          <line>68</line>
+          <option name="timeStamp" value="913" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindSubstring.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="924" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FindSubstring.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="926" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="928" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="931" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="932" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/FirstMissingPositive.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="933" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/leetcode/test/ZookeeperBugs.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="935" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/SwordToOffer/Print1ToN.java</url>
           <line>52</line>
@@ -2574,14 +2814,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="372" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/leetcode/PermutationSequence.java</url>
-          <line>125</line>
-          <properties class="leetcode.PermutationSequence" method="main">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="376" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/leetcode/SymmetricTree.java</url>
@@ -2633,27 +2865,21 @@
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="even" language="JAVA" />
-        <watch expression="largeHeap.peek()" language="JAVA" />
-        <watch expression="largeHeap.peek()" language="JAVA" />
-        <watch expression="count[cur]" language="JAVA" />
-        <watch expression="-1 &gt;&gt; 1" language="JAVA" />
-        <watch expression="-1 &gt;&gt; 2" language="JAVA" />
-        <watch expression="(add + longList.val)/10" language="JAVA" />
-        <watch expression="longList.val" language="JAVA" />
-        <watch expression="preCost[(j+1)%3]" language="JAVA" />
-        <watch expression="preCost[(j+2)%3" language="JAVA" />
-        <watch expression="pre" language="JAVA" />
-        <watch expression="this.tail" language="JAVA" />
-        <watch expression="pi.pre()" language="JAVA" />
-        <watch expression="pi.pre" language="JAVA" />
-        <watch expression="unsignedByteToInt(thisByte)" language="JAVA" />
-        <watch expression="unsignedByteToInt(thatByte)" language="JAVA" />
+        <watch expression="statInPattern" language="JAVA" />
+        <watch expression="currentStat.getOrDefault(c, 0)" language="JAVA" />
+        <watch expression="statInPattern" language="JAVA" />
+        <watch expression="stat[p.charAt(right) - 'a'] " language="JAVA" />
+        <watch expression="stat[p.charAt(right) - 'a'] != 0" language="JAVA" />
+        <watch expression="time_20220407 &lt;&lt; 24" language="JAVA" />
+        <watch expression="time_20220406 &lt;&lt; 24" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/leetcode$MaxProfit.ic" NAME="MaxProfit Coverage Results" MODIFIED="1685693103048" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>leetcode.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/leetcode$TrappingRainWater.ic" NAME="TrappingRainWater Coverage Results" MODIFIED="1688286270070" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>leetcode.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/leetcode$CutLine2.ic" NAME="CutLine2 Coverage Results" MODIFIED="1684140596361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

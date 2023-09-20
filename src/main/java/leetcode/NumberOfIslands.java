@@ -42,13 +42,65 @@ public class NumberOfIslands {
     }
 
 
+
     public static void main(String[] args) {
         char[][] nums = {
                 {'1','1','0','0','0'},
                 {'1','1','0','0','0'},
                 {'0','0','1','0','0'},
                 {'0','0','0','1','1'}};
-        System.out.println(new NumberOfIslands().numIslands(nums));
+        System.out.println(new NumberOfIslands().numIslands2(nums));
+    }
+
+    private int[][] direction = {{-1,0},{0,-1}};
+    private int[] parent;
+    private int count;
+    public NumberOfIslands(){
+        count = 0;
+    }
+    public int numIslands2(char[][] grid) {
+        parent = new int[grid[0].length * grid.length];
+        for(int i = 0;i<parent.length;i++){ // init union find
+            parent[i] = i;
+        }
+        for(int i = 0;i<grid.length;i++){
+            for(int j = 0;j<grid[0].length;j++){
+                if(grid[i][j] == '0'){
+                    continue;
+                }
+                count++; // find an isolated island 1
+                for(int d = 0;d<direction.length;d++){
+                    if(i + direction[d][0] < 0 || j + direction[d][1] < 0 || grid[i + direction[d][0]][j + direction[d][1]] != '1')
+                        continue;
+                    int ra = find(grid,getIndex(grid, i, j));
+                    int rb = find(grid,getIndex(grid, i+direction[d][0],j+direction[d][1]));
+                    if(ra != rb){ // a new union happened
+                        union(grid,ra,rb);
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+    public int getIndex(char[][] grid, int i , int j){
+        return i * grid[0].length + j;
+    }
+
+    public void union(char[][] grid, int ra, int rb){
+        int rootA = find(grid, ra);
+        int rootB = find(grid, rb);
+        if(rootA != rootB){
+            parent[rootA] = rootB;
+            count--;
+        }
+    }
+
+    public int find(char[][] grid, int index){
+        if(parent[index] != index){
+            return find(grid, parent[index]);
+        }
+        return index;
     }
 
 }

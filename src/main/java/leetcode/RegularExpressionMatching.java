@@ -238,6 +238,72 @@ public class RegularExpressionMatching {
     }
 
 
+    public boolean isMatch5(String s, String p) {
+        return isMatch(s, 0, p, 0);
+    }
+
+    public boolean isMatch(String s, int sI, String p, int pI){
+        if(sI == s.length() && pI == p.length()){ // 已经到最后了
+            return true;
+        }
+        if(sI != s.length() && pI == p.length()){ //正则已经匹配完了，但是字符串还没结束
+            return false;
+        }
+        if(isExactCharMatch(p, pI)){
+            return s.charAt(sI) == p.charAt(pI) && isMatch(s, sI + 1, p , pI + 1);
+        }
+        if(isDot(p, pI)){
+            return isMatch(s, sI + 1, p , pI + 1);
+        }
+        if(isWildcardForWord(p, pI)){
+            int cur = sI - 1;
+            while(cur == sI - 1 || (cur < s.length() && s.charAt(cur) == p.charAt(pI))){
+                if(isMatch(s, cur + 1, p, pI + 2)){ // 有一个匹配，就返回结果
+                    return true;
+                }
+                cur++;
+            }
+            return false;
+        }
+        if(isWildcardForDot(p, pI)){
+            int cur = sI - 1;
+            while(cur == sI - 1 || cur < s.length()){
+                if(isMatch(s, cur + 1, p, pI + 2)){ // 有一个匹配，就返回结果
+                    return true;
+                }
+                cur++;
+            }
+            return false;
+        }
+        return false;
+
+
+    }
+
+    private boolean isExactCharMatch(String p, int pI){
+        if(p.charAt(pI) > 'z' || p.charAt(pI) < 'a'){
+            return false;
+        }
+        return pI == p.length() - 1 || (p.charAt(pI + 1) != '*');
+    }
+
+    private boolean isDot(String p, int pI){
+        return p.charAt(pI) == '.';
+    }
+
+    private boolean isWildcardForWord(String p, int pI){
+        if(p.charAt(pI) > 'z' || p.charAt(pI) < 'a' || pI >= p.length() - 1){
+            return false;
+        }
+        return p.charAt(pI + 1) == '*';
+    }
+
+    private boolean isWildcardForDot(String p, int pI){
+        return p.charAt(pI) == '.'
+                && (pI < p.length() -1)
+                && (p.charAt(pI + 1) == '*');
+    }
+
     public static void main(String[] args) {
 
         String a = "12";
@@ -246,6 +312,6 @@ public class RegularExpressionMatching {
         //Pattern p = Pattern.compile("c*a*b");
         //System.out.println(p.matcher("aab").matches());
        //System.out.println(new RegularExpressionMatching().isMatch("aaa","a.a"));
-        System.out.println(new RegularExpressionMatching().upToBottomDP("a","b*"));
+        System.out.println(new RegularExpressionMatching().isMatch5("a","ab*"));
     }
 }

@@ -163,12 +163,38 @@ public class TrappingRainWater {
         return sum;
     }
 
+    public int trap3(int[] height) {
+        Stack<Integer> decStack = new Stack<Integer>();
+        decStack.push(0);
+        int sum = 0;
+        for(int i = 1;i<height.length;){
+            while(i < height.length && !decStack.isEmpty() && height[i] < decStack.peek()){
+                decStack.push(i);
+                i++;
+            }
+            while(i < height.length && height[i] == decStack.peek()){
+                i++;
+            }
+            while(i < height.length && !decStack.isEmpty() && height[i] > decStack.peek()){
+                int bottom = decStack.pop();
+                if(decStack.isEmpty()){
+                    continue;
+                }
+                int leftWall = decStack.peek();
+                int rightWall = i;
+                int depth = Math.min(height[leftWall], height[rightWall]) - height[bottom];
+                sum = sum + (rightWall - leftWall - 1) * depth;
+            }
+            decStack.push(i++);
+        }
+        return sum;
+    }
 
 
 
     public static void main(String[] args) {
 
-        int[] height = {0,5,0,5,1,0,1,3,2,1,2,1};
-        System.out.println(new TrappingRainWater().trap2(height));
+        int[] height = {3,1,1,3};
+        System.out.println(new TrappingRainWater().trap3(height));
     }
 }

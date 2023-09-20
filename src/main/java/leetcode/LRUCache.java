@@ -62,8 +62,6 @@ public class LRUCache {
     private void updateLatest(CacheNode cacheNode){
         if(cacheNode.previous == null) //这刚好是最旧的一个节点
         {
-
-
             oldest =cacheNode.next;
             oldest.previous = null;
 
@@ -122,7 +120,6 @@ public class LRUCache {
                 this.latest = node;
                 currentCap++;
             }
-
         }
         else{ //set ,no matter the key is equals or not
             cacheNode.setKV(key,value);

@@ -33,7 +33,7 @@ public class MinimumWindowSubstring {
             counter[(int) t.charAt(i)] ++;//数字代表这个字符在t中的出现次数，即目前还需要在s中找到这个字符多少次，0代表刚好找全，为负数代表目前已经找到的次数大于这个字符在t中的出现次数
         while (end < s.length()) {
             int index = (int) s.charAt(end++); //当前字符
-            if (counter[index]-- > 0) //在s中遇到的任何一个字符，都把对应的counter值减去1
+            if (counter[index]-- > 0) //在s中遇到的任何一个存在于t中的字符，都把对应的counter值减去1
                 unFoundCounter--; //由于counter[index]-- > 0，说明是t中的字符，因此unFoundCounter--
             while (unFoundCounter == 0) { //目前s在begin - end范围内包含了t字符串
 
@@ -104,6 +104,81 @@ public class MinimumWindowSubstring {
         return minLength == Integer.MAX_VALUE?"":s.substring(maxBegin,minEnd);
     }
 
+    HashMap<Character, Integer> statInPattern;
+    HashMap<Character, Integer> currentStat;
+    public MinimumWindowSubstring(){
+        currentStat = new HashMap<Character, Integer>();
+        statInPattern = new HashMap<Character, Integer>();
+    }
+
+    private HashMap statInPattern(String t){
+        for(int i = 0;i<t.length();i++){
+            if(statInPattern.containsKey(t.charAt(i))){
+                statInPattern.put(t.charAt(i), statInPattern.get(t.charAt(i)) + 1);
+            }else{
+                statInPattern.put(t.charAt(i), 1);
+            }
+        }
+        return statInPattern;
+    }
+    public String minWindow3(String s, String t) {
+        statInPattern(t);
+        int effective = 0;
+        String res = "";
+        int l = 0;
+        int r = 0;
+        while(l < s.length() && r < s.length()){
+            if(isEffective(s.charAt(r))){
+                effective++;
+            }
+            inc(s.charAt(r));
+
+            // Found an effective string, now squeeze 在收缩时，始终保证字符串包含t
+            while(l < s.length() && effective == t.length() && couldSqueeze(s.charAt(l)) ){
+                dec(s.charAt(l));
+                l++;
+            }
+            if(effective == t.length() && ("".equals(res) || (r - l + 1 < res.length()) )){
+                res=s.substring(l, r+1);
+            }
+            r++;
+        }
+        return res;
+    }
+
+    private boolean couldSqueeze(Character c){
+        return !statInPattern.containsKey(c)  // 这不是一个在pattern中存在的字符
+                || currentStat.getOrDefault(c, 0) > statInPattern.get(c);
+    }
+
+    private boolean isEffective(Character c){
+        return  statInPattern.containsKey(c)
+                && currentStat.getOrDefault(c,0) < statInPattern.get(c);
+    }
+
+    private void inc(Character c){
+        if(statInPattern.containsKey(c)) {
+            if(currentStat.containsKey(c)){
+                currentStat.put(c, currentStat.get(c) + 1);
+            }else{
+                currentStat.putIfAbsent(c, 1);
+            }
+        }
+    }
+
+    private int dec(Character c){
+        if(currentStat.containsKey(c)) {
+            currentStat.put(c, currentStat.get(c) - 1);
+            if(currentStat.get(c) < 0){
+                return -1;
+            }
+        }
+
+        return 0;
+    }
+
+
+
     public static void main(String[] args) {
 
 //       String a =  new String("kgfidhktkjhlkbgjkylgdracfzjduycghkomrbfbkoowqwgaurizliesjnveoxmvjdjaepdqftmvsuyoogobrutahogxnvuxyezevfuaaiyufwjtezuxtpycfgasburzytdvazwakuxpsiiyhewctwgycgsgdkhdfnzfmvhwrellmvjvzfzsdgqgolorxvxciwjxtqvmxhxlcijeqiytqrzfcpyzlvbvrksmcoybxxpbgyfwgepzvrezgcytabptnjgpxgtwei" +
@@ -131,9 +206,9 @@ public class MinimumWindowSubstring {
 //
 //            String b = FileUtils.readFileToString(new File("/Users/wuchang/t"));
 //            System.out.println("length 1 "+a.length()+",length b is "+b.length());
-            String s = "abcedfg";
-            String t = "dec";
-            System.out.println(new MinimumWindowSubstring().minWindow2(s, t)) ;
+            String s = "aa";
+            String t = "aa";
+            System.out.println(new MinimumWindowSubstring().minWindow3(s, t)) ;
 
 //        } catch (IOException e) {
 //            e.printStackTrace();

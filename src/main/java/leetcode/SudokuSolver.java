@@ -1,5 +1,9 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+
 /**
  * Created by wuchang at 12/20/17
  *
@@ -69,6 +73,116 @@ public class SudokuSolver {
         return true;
     }
 
+    private HashSet<Character>[] rowChoice; // 按照行规则当前可以填入的字符
+    private HashSet<Character>[] columnChoice;// 按照列规则当前可以填入的字符
+    private HashSet<Character>[] boxChoice ; // 按照方框规则当前可以填入的字符
+    public SudokuSolver(){
+        rowChoice = new HashSet[9];
+        columnChoice = new HashSet[9];
+        boxChoice = new HashSet[9];
+    }
+    public void solveSudoku3(char[][] board) {
+        HashSet<Character> init = new HashSet();
+        for(int i = 1;i<10;i++){
+            init.add((char)(i + '0'));
+        }
+
+        for(int i = 1;i<10;i++){
+            rowChoice[i-1] = new HashSet(init);
+            columnChoice[i-1] = new HashSet(init);
+            boxChoice[i-1] = new HashSet(init);
+        }
+
+        // 根据当前棋盘已经填入的数组，确定按照行规则、列规则、方框规则可用的数字
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[i].length;j++){
+                rowChoice[i].remove(board[i][j]); // 这个字符在行规则中不能再填写
+                columnChoice[j].remove(board[i][j]); // 这个字符在列规则中不能再填写
+                boxChoice[3 * (i / 3) + j/3].remove(board[i][j]);  // 这个字符在方框规则中不能再填写
+            }
+        }
+        findFrom(board, 0, 0);
+    }
+
+    /**
+     从位置[i,j]开始按照从左往右、从上到下的顺序查找
+     */
+    private boolean findFrom(char[][] board, int i, int j){
+        if(i==9){ // 出结果了
+            return true;
+        }
+        if(i == 0 && j == 0){
+            System.out.println();
+        }
+        if(board[i][j] != '.'){
+            boolean result = findFrom(board, j == 8 ? i + 1 : i, j == 8 ? j = 0:j+1);
+            if(result){
+                if(i == 0 && j == 0){
+                    System.out.println();
+                }
+                return true;
+            }
+            if(i == 0 && j == 0){
+                System.out.println();
+            }
+            return false;
+        } else{ // it is blank
+            List<Character> choices = choice(rowChoice[i], columnChoice[j], boxChoice[3 * (i / 3) + j/3]);
+            if(i == 0 && j == 0){
+                System.out.println();
+            }
+            for(Character choice: choices){
+                attempt(board, choice, i, j);
+                if(i == 0 && j == 7){
+                    System.out.println();
+                }
+                boolean result = findFrom(board, j == 8 ? i + 1 : i, j == 8 ? j = 0:j+1);
+                if(result){
+                    if(i == 0 && j == 0){
+                        System.out.println();
+                    }
+                    return true;
+                }
+                if(i == 0 && j == 0){
+                    System.out.println();
+                }
+                wipe(board, i, j);
+            }
+            return false;
+        }
+    }
+
+    /**
+     在位置[i,j]能够填入的数字
+     */
+    private List<Character> choice(HashSet<Character> rowChoice, HashSet<Character> columnChoice, HashSet<Character> boxChoice){
+        List<Character> choice = new ArrayList();
+        for(Character c: rowChoice){
+            if(columnChoice.contains(c) && boxChoice.contains(c)){
+                choice.add(c);
+            }
+        }
+        return choice;
+    }
+
+    private void attempt(char[][] board, char c, int i , int j){
+        board[i][j] = c;
+        rowChoice[i].remove(c); // 这个字符在行规则中不能再填写
+        columnChoice[j].remove(c); // 这个字符在列规则中不能再填写
+        boxChoice[3 * (i / 3) + j/3].remove(c);  // 这个字符在方框规则中不能再填写
+    }
+
+    /**
+     这个数字不行，擦掉
+     */
+    private void wipe(char[][] board, int i , int j){
+        char c = board[i][j];
+        board[i][j] = '.';
+        rowChoice[i].add(c); // 这个字符在行规则中不能再填写
+        columnChoice[j].add(c); // 这个字符在列规则中不能再填写
+        boxChoice[3 * (i / 3) + j/3].add(c);  // 这个字符在方框规则中不能再填写
+    }
+
     public static void main(String[] args) {
 
         char[][] board = {
@@ -81,7 +195,8 @@ public class SudokuSolver {
                 {'.','6','.','.','.','.','2','8','.'},
                 {'.','.','.','4','1','9','.','.','5'},
                 {'.','.','.','.','8','.','.','7','9'}};
-        new SudokuSolver().solveSudoku(board);
+        new SudokuSolver().solveSudoku3(board);
+        System.out.println("");
     }
 
 

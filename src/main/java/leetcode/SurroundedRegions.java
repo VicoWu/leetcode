@@ -114,10 +114,125 @@ public class SurroundedRegions {
     }
 
 
+    public void solve2(char[][] board) {
+        if(board == null || board.length == 0 || board[0].length == 0){
+            return;
+        }
+        int[][] direction = {{-1,0},{1,0},{0,-1},{0,1}};
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[0].length;j++){
+                solve3(board, i, j, direction);
+            }
+        }
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[0].length;j++){
+                if(board[i][j] == 'V'){
+                    board[i][j] = 'X';
+                }else if(board[i][j] == 'F'){
+                    board[i][j] = 'O';
+                }
+            }
+        }
+        return;
+    }
+
+    public boolean solve3(char[][] board, int i, int j, int[][] direction){
+        System.out.println("Checking " + i + ", " + j);
+        if( i < 0 || j < 0 || i >= board.length || j >= board[0].length ){ // 越界，false
+            return false;
+        }
+        if(board[i][j] == 'X' || board[i][j] == 'V'){
+            return true;
+        }
+        if(board[i][j] == 'F'){
+            return false;
+        }
+
+        boolean isNotSurrounding = check(board, i , j, direction);
+
+        board[i][j] =  isNotSurrounding ? 'V' : 'F';
+
+        // This is O, check its surroundings
+        for(int d = 0; d < direction.length; d++){
+            int[] dir = direction[d];
+            boolean re = solve3(board, i+dir[0], j+dir[1], direction);
+            if(!re){
+                board[i][j] = 'F'; // 标记为不被包围
+            }
+        }
+        return board[i][j] != 'F';
+    }
+
+    private boolean check(char[][] board, int i, int j, int[][] direction){
+        for(int d = 0; d < direction.length; d++){
+            if( i+direction[d][0] < 0 || j + direction[d][1] < 0 || i+direction[d][0] >= board.length || j + direction[d][1] >= board[0].length || board[i+direction[d][0]][j + direction[d][1]] == 'F'){ // 越界，没有被包围
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    public void solve4(char[][] board) {
+        int[] parent = new int[board.length * board[0].length+1];
+        for(int i = 0;i<parent.length;i++){
+            parent[i] = i;
+        }
+
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[0].length;j++){
+                if(board[i][j] != 'O')
+                    continue;
+                if (isBoarder(i,j,board)) {
+                    System.out.println(i + ", " + j);
+                    union(parent.length-1, getIndex(i,j,board), parent);
+                }
+                if(i-1 >= 0 && board[i][j] == board[i-1][j]){
+                    union(getIndex(i-1,j,board), getIndex(i,j,board), parent);
+                }
+                if(j-1 >= 0 && board[i][j] == board[i][j-1]){
+                    union(getIndex(i,j-1,board), getIndex(i,j,board), parent);
+                }
+            }
+        }
+
+        for(int i = 0;i<board.length;i++){
+            for(int j = 0;j<board[0].length;j++){
+                if(find(getIndex(i,j,board),parent) != find(parent.length-1,parent)){
+                    board[i][j] = 'X';
+                }
+            }
+        }
+    }
+
+    public boolean isBoarder(int i, int j,char[][] board){
+        return i==0 || j == 0 || i == board.length-1 || j == board[0].length - 1;
+    }
+
+    public void union(int m, int n, int[] parent){
+        int p1 = find(m,parent);
+        int p2 = find(n,parent);
+        if(p1 != p2){
+            parent[p2] = p1;
+        }
+    }
+
+    public int find(int i,int[] parent){
+        if(parent[i]!=i){
+            return find(parent[i],parent);
+        }
+        return i;
+    }
+
+    private int getIndex(int i, int j, char[][] board){
+        return i * board[0].length + j;
+    }
 
     public static void main(String[] args) {
-
-        char[][] board = {{'X','X','X','X'},{'X','O','O','X'},{'X','X','O','X'},{'X','O','X','X'}};
-        new SurroundedRegions().solve(board);
+        //char[][] board = {{'O','O','O','O','X','X'},{'O','O','O','O','O','O'},{'O','X','O','X','O','O'},{'O','X','O','O','X','O'},{'O','X','O','X','O','O'},{'O','X','O','O','O','O'}};
+       /// char[][] board = {{'X','X','X','X','O','O','X','X','O'},{'O','O','O','O','X','X','O','O','X'},{'X','O','X','O','O','X','X','O','X'},{'O','O','X','X','X','O','O','O','O'},{'X','O','O','X','X','X','X','X','O'},{'O','O','X','O','X','O','X','O','X'},{'O','O','O','X','X','O','X','O','X'},{'O','O','O','X','O','O','O','X','O'},{'O','X','O','O','O','X','O','X','O'}};
+        char[][] board = {{'X','O','X','X'},{'O','X','O','X'},{'X','O','X','O'},{'O','X','O','X'},{'X','O','X','O'},{'O','X','O','X'}};
+        new SurroundedRegions().getIndex(4,2,board);
     }
 }

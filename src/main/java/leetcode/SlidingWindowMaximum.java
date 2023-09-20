@@ -34,9 +34,6 @@ import java.util.PriorityQueue;
 
  */
 public class SlidingWindowMaximum {
-
-
-
     /**
      * 这个算法的思想是，由于窗口是向右移动，因此，如果右侧的元素大于左侧的元素，这个元素肯定不会影响以后窗口的最大值的结果，因为以后的窗口都是在该窗口的右侧，此时
      * 这个左侧较小的元素可以抛弃
